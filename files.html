@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Files | SJMC Production Handbook</title>
+<meta name="description" content="Naming files, organizing project folders, versions, backups, drives, zipping, and sending large files.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="index.html">SJMC Production Handbook</a>
+    <nav class="site-nav" aria-label="Handbook pages">
+      <ul>
+        <li><a href="graphics.html">Graphics</a></li>
+        <li><a href="type.html">Type</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html">Web</a></li>
+        <li><a href="rights.html">Rights and Credit</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="files.html" aria-current="page">Files</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#naming">Naming files</a></li>
+    <li><a href="#extensions">File extensions</a></li>
+    <li><a href="#folders">Project folders</a></li>
+    <li><a href="#versions">Versions</a></li>
+    <li><a href="#backups">Backups</a></li>
+    <li><a href="#cards">Memory cards and drives</a></li>
+    <li><a href="#zipping">Zipping and packaging</a></li>
+    <li><a href="#sending">Sending files</a></li>
+    <li><a href="#quick-answers">Quick answers</a></li>
+  </ol>
+</nav>
+
+<article>
+
+<h1 id="top">Files</h1>
+<p class="lede">How professionals name, organize, back up, and send files, so work isn't lost and other people can open it.</p>
+<p>Most lost work isn't a technical failure. It's a file saved in the wrong place, overwritten, never backed up, or sent without the files it needs.</p>
+
+
+<h2 id="naming">Naming files</h2>
+
+<p>A file name should tell someone else what's in it without opening it.</p>
+<ul>
+  <li><b>Say what it is:</b> project, subject, and type. <code>cubs-poster</code>, not <code>design1</code>.</li>
+  <li><b>Put dates as year-month-day:</b> <code>2026-04-18</code>. Files then sort in date order.</li>
+  <li><b>Add a version number</b> with two digits: <code>v01</code>, <code>v02</code>. See <a href="#versions">Versions</a>.</li>
+  <li><b>Use hyphens or underscores, not spaces.</b> Spaces break web addresses and some software.</li>
+  <li><b>Skip special characters:</b> / \ : * ? " &lt; &gt; | # % &amp;. Some systems won't accept them.</li>
+  <li><b>Use lowercase for anything going on the web.</b> Web servers treat <code>Photo.jpg</code> and <code>photo.jpg</code> as different files. See <a href="web.html#files">Web: Files and links</a>.</li>
+  <li><b>When you hand in or send work,</b> include your last name: <code>ripka-cubs-poster-v03.pdf</code>.</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Instead of</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>poster FINAL final2.pdf</td><td>cubs-poster-v04.pdf</td></tr>
+    <tr><td>IMG_4821.JPG</td><td>2026-04-18-cardinal-feeder-001.jpg</td></tr>
+    <tr><td>interview.m4a</td><td>2026-03-02-interview-lopez.m4a</td></tr>
+    <tr><td>Untitled-1.psd</td><td>cubs-poster-photo-edit.psd</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Rename camera files when you import them, not later. Lightroom, Photo Mechanic, and Bridge can rename a whole batch at once.</p>
+
+
+<h2 id="extensions">File extensions</h2>
+
+<p>The letters after the dot, such as .jpg, .psd, or .mp4, tell the computer what kind of file it is. Turn on extensions so you can see them. Two files named "poster" can be a working file and an export.</p>
+<p class="software"><strong>Where to find it:</strong> On a Mac, in Finder, <span class="path">Finder › Settings › Advanced › Show all filename extensions</span>. In Windows, in File Explorer, <span class="path">View › Show › File name extensions</span>.</p>
+<p>Changing the extension doesn't convert the file. Renaming <code>photo.heic</code> to <code>photo.jpg</code> makes a file that won't open. Export or convert it in software instead.</p>
+<p>Which formats to use for each medium is on <a href="graphics.html#formats">Graphics</a>, <a href="photo.html#files">Photo</a>, <a href="video.html#formats">Video</a>, and <a href="audio.html#formats">Audio</a>.</p>
+
+
+<h2 id="folders">Project folders</h2>
+
+<p>Give every project one folder, and keep everything the project uses inside it. Layouts, video projects, and audio sessions link to their images, footage, and sound instead of holding them. If those files are scattered around the computer, the project breaks when it moves.</p>
+<p>A folder setup that works for most projects:</p>
+<pre class="folders">cubs-poster/
+  01-working/      the files you edit: .indd, .psd, .prproj, .sesx
+  02-assets/       everything placed or imported
+    photos/
+    graphics/
+    audio/
+    video/
+    fonts/
+  03-exports/      finished files: PDF, JPG, MP4, MP3
+  04-docs/         brief, notes, source log, releases, licenses</pre>
+<ul>
+  <li><b>Import from inside the folder.</b> Copy a file into <code>02-assets</code> first, then place or import it. Placing it from Downloads or the desktop links to it there.</li>
+  <li><b>Don't rename or move assets</b> after they're placed. The project loses track of them.</li>
+  <li><b>Keep releases and licenses</b> with the project. See <a href="rights.html#people-brands">Rights and Credit</a> and <a href="research.html#log">Research: Keeping track</a>.</li>
+  <li><b>Lab computers may erase files</b> when you log out or overnight. Work from an external drive or cloud folder, and don't leave work only on the desktop.</li>
+</ul>
+
+
+<h2 id="versions">Versions</h2>
+
+<ul>
+  <li><b>Save a new version</b> before a big change, after a round of feedback, and at the end of each work session: <code>v01</code>, <code>v02</code>, <code>v03</code>. Use <span class="path">File › Save As</span>.</li>
+  <li><b>Never edit the only copy</b> of an original photo, recording, or footage. Keep originals untouched in their own folder.</li>
+  <li><b>Don't call anything "final."</b> There's always another round. The highest version number is the latest.</li>
+  <li><b>Cloud storage keeps a version history,</b> which can bring back a file you overwrote. Learn where it is before you need it.</li>
+  <li><b>Turn on auto-save or auto-recovery</b> in your software. Premiere Pro, InDesign, and Photoshop all have it in their preferences.</li>
+</ul>
+
+
+<h2 id="backups">Backups</h2>
+
+<p>A backup is a second copy on a different device. If it's on the same drive, it isn't a backup.</p>
+<h3>The 3-2-1 rule</h3>
+<ul>
+  <li><b>3</b> copies of anything you can't replace</li>
+  <li>on <b>2</b> different devices or kinds of storage</li>
+  <li>with <b>1</b> in a different place, such as cloud storage</li>
+</ul>
+<p>For class work: your computer or drive, plus cloud storage, is a good start. For an interview, event, or shoot that can't be repeated, copy it to two places the same day.</p>
+
+<h3>Sync isn't backup</h3>
+<p>OneDrive, Google Drive, iCloud, and Dropbox sync: when you delete or overwrite a file in one place, it changes everywhere. Version history and the trash can save you, but only for a limited time. Keep a separate copy of anything important.</p>
+
+
+<h2 id="cards">Memory cards and drives</h2>
+
+<h3>Copying from a camera card</h3>
+<ol>
+  <li>Copy everything on the card to your project folder. Copy the whole card, not only the files you think you want.</li>
+  <li>Check that the copy opens: a few photos, the start and end of each video clip.</li>
+  <li>Make the backup copy.</li>
+  <li>Only then erase the card, by formatting it in the camera. Don't delete files from the card on a computer.</li>
+</ol>
+<p>Eject cards and drives before unplugging them. Unplugging during a copy can damage the files and the card.</p>
+
+<h3>Formatting a drive</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Format</th><th>Works on</th><th>Use it for</th></tr></thead>
+  <tbody>
+    <tr><td>exFAT</td><td>Mac and Windows</td><td>Drives you use on both, including lab computers. The safest choice for students.</td></tr>
+    <tr><td>APFS</td><td>Mac only</td><td>Drives used only with your own Mac</td></tr>
+    <tr><td>NTFS</td><td>Windows. Macs can read but not write it.</td><td>Drives used only with Windows</td></tr>
+    <tr><td>FAT32</td><td>Almost everything</td><td>Avoid. Files over 4 GB won't fit, so most video won't copy.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Formatting erases the drive. Do it once, when the drive is new.</p>
+<p class="software"><strong>Where to find it:</strong> On a Mac, Disk Utility, then <b>Erase</b>. In Windows, right-click the drive in File Explorer and choose <b>Format</b>.</p>
+<p>For video, use a solid-state drive (SSD). Older spinning hard drives are cheaper per gigabyte but too slow to edit 4K from.</p>
+
+
+<h2 id="zipping">Zipping and packaging</h2>
+
+<h3>Zip files</h3>
+<p>A zip file holds a folder and everything in it as one file. Zip a project folder to send it or upload it, so nothing is left behind.</p>
+<ul>
+  <li>Zipping barely shrinks photos, video, and audio. They're already compressed.</li>
+  <li>Unzip a file before you work from it. Software can't link to files inside a zip.</li>
+</ul>
+<p class="software"><strong>Where to find it:</strong> On a Mac, right-click the folder and choose <b>Compress</b>. In Windows, right-click the folder and choose <span class="path">Compress to › ZIP File</span>.</p>
+
+<h3>Packaging a project</h3>
+<p>Packaging gathers a project and every file it links to into one new folder, ready to send or hand in.</p>
+<ul>
+  <li><b>InDesign:</b> <span class="path">File › Package</span> collects the layout, linked images, and fonts. See <a href="graphics.html#print">Graphics: Exporting for print</a>.</li>
+  <li><b>Illustrator:</b> <span class="path">File › Package</span>.</li>
+  <li><b>Premiere Pro:</b> <span class="path">File › Project Manager</span> copies the project and its media into a new folder.</li>
+  <li><b>Audition:</b> <span class="path">File › Save As</span> with <b>Save copies of all associated files</b> turned on.</li>
+</ul>
+<p>Package and zip working files only when someone needs to edit them. Most of the time, send the export.</p>
+
+
+<h2 id="sending">Sending files</h2>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Size</th><th>How to send it</th></tr></thead>
+  <tbody>
+    <tr><td>Under about 20 MB</td><td>Email attachment</td></tr>
+    <tr><td>Larger files</td><td>Upload to cloud storage and share a link: OneDrive, Google Drive, Dropbox, or a transfer service</td></tr>
+    <tr><td>Video for viewing</td><td>Upload to YouTube or Vimeo, unlisted or private, and share the link. See <a href="video.html#exporting">Video: Exporting</a>.</td></tr>
+    <tr><td>ICON assignments</td><td>Follow the assignment's instructions. If a file is too large to upload, ask before the deadline, not after.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Sharing links</h3>
+<ul>
+  <li>Set the link to let the person view or download it. Many services default to "only people with access."</li>
+  <li>Test the link in a private browser window, where you aren't signed in. If you can't open it there, they can't either.</li>
+  <li>Don't move or delete the file after you share the link.</li>
+  <li>Say in the message what the file is and what you need: "Here's the poster PDF for print, v04."</li>
+</ul>
+
+<h3>Sending to a printer, client, or editor</h3>
+<ul>
+  <li>Send the export they need, named clearly, not your working file, unless they ask for it.</li>
+  <li>Open the exported file yourself before you send it.</li>
+  <li>Keep your own copy of exactly what you sent.</li>
+</ul>
+
+
+<h2 id="quick-answers">Quick answers</h2>
+
+<dl class="qa">
+  <dt>Why are my images missing when I open my layout on another computer?</dt>
+  <dd>The images were linked from outside the project folder. Package the project. See <a href="#zipping">Zipping and packaging</a>.</dd>
+
+  <dt>Why won't my files copy to my drive?</dt>
+  <dd>The drive is probably FAT32, which can't hold files over 4 GB, or NTFS on a Mac. Reformat it as exFAT. See <a href="#cards">Memory cards and drives</a>.</dd>
+
+  <dt>I saved over my file. Can I get it back?</dt>
+  <dd>Check cloud version history, the software's auto-recovery, or Time Machine on a Mac. Next time, save versions. See <a href="#versions">Versions</a>.</dd>
+
+  <dt>Why won't my file open after I changed .heic to .jpg?</dt>
+  <dd>Renaming doesn't convert. Export it as a JPG instead. See <a href="#extensions">File extensions</a>.</dd>
+
+  <dt>Why can't they open the link I sent?</dt>
+  <dd>The sharing settings are limited to people with access. Change them and test the link in a private window. See <a href="#sending">Sharing links</a>.</dd>
+
+  <dt>My file is too big to email. What do I do?</dt>
+  <dd>Share it through cloud storage. See <a href="#sending">Sending files</a>.</dd>
+</dl>
+
+<p class="back-top"><a href="#top">Back to top</a></p>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">School of Journalism and Mass Communication</div>
+</footer>
+
+<script src="toc.js"></script>
+</body>
+</html>

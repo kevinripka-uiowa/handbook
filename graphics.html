@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graphics Technical Basics | SJMC Production Handbook</title>
+<meta name="description" content="File types, resolution, viewing at size, color, and exporting for print and screens.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="index.html">SJMC Production Handbook</a>
+    <nav class="site-nav" aria-label="Handbook pages">
+      <ul>
+        <li><a href="graphics.html" aria-current="page">Graphics</a></li>
+        <li><a href="type.html">Type</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html">Web</a></li>
+        <li><a href="rights.html">Rights and Credit</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#raster-vector">Raster and vector</a></li>
+    <li><a href="#formats">File formats</a></li>
+    <li><a href="#resolution">Pixels and resolution</a></li>
+    <li><a href="#viewing-size">Viewing at size</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#fonts">Fonts and text sizes</a></li>
+    <li><a href="#print">Exporting for print</a></li>
+    <li><a href="#screens">Exporting for screens</a></li>
+    <li><a href="#accessibility">Accessibility</a></li>
+    <li><a href="#quick-answers">Quick answers</a></li>
+  </ol>
+</nav>
+
+<article>
+
+<h1 id="top">Graphics Technical Basics</h1>
+<p class="lede">How graphic files work in professional software: file types, resolution, viewing at size, color, and how to prepare files for print and for screens. Fonts and text sizes are on the <a href="type.html">Type</a> page.</p>
+
+
+<h2 id="raster-vector">Raster and vector</h2>
+
+<p>Every graphic file is raster, vector, or a mix of both.</p>
+
+<figure>
+  <svg viewBox="0 0 520 226" role="img" aria-labelledby="rv-title">
+    <title id="rv-title">A circle drawn as pixels has jagged steps when enlarged. A circle drawn as a vector stays smooth.</title>
+    <path fill="var(--figure-ink)" d="M68 20H148V36H164V52H180V68H196V148H180V164H164V180H148V196H68V180H52V164H36V148H20V68H36V52H52V36H68Z"/>
+    <circle cx="390" cy="108" r="88" fill="var(--figure-ink)"/>
+    <text x="108" y="222" text-anchor="middle" font-size="17" fill="var(--figure-ink)">Raster, enlarged</text>
+    <text x="390" y="222" text-anchor="middle" font-size="17" fill="var(--figure-ink)">Vector, enlarged</text>
+  </svg>
+  <figcaption>The same circle at 10 times its size.</figcaption>
+</figure>
+
+<h3>Raster</h3>
+<p>A raster image is a grid of colored squares called pixels. Photos are always raster. Raster images have a fixed number of pixels, so they get blurry or blocky when you make them bigger.</p>
+
+<h3>Vector</h3>
+<p>A vector image is a set of shapes described by math: points, lines, and curves. It can be scaled to any size and stay sharp. Logos, icons, and illustrations with flat color are usually vector.</p>
+
+<h3>Which to use</h3>
+<ul>
+  <li>Photos: raster.</li>
+  <li>Logos: vector. A logo has to work on a business card and a banner, so it can't depend on a pixel count.</li>
+  <li>Layouts with photos and text (posters, flyers): a mix. The photo stays raster. The text and shapes stay vector until you export.</li>
+</ul>
+<p>Placing a photo inside a vector file doesn't make the photo vector. It's still a grid of pixels and has the same size limits.</p>
+
+<p class="software"><strong>Where to find it:</strong> Photoshop makes raster images. Illustrator makes vector images. InDesign combines both in page layouts.</p>
+
+
+<h2 id="formats">File formats</h2>
+
+<h3>Working files and exports</h3>
+<p>A <b>working file</b> is the file you edit. It keeps your layers, editable text, and settings. Examples: .psd (Photoshop), .ai (Illustrator), .indd (InDesign).</p>
+<p>An <b>export</b> is a copy made for someone else to view or print. Examples: .jpg, .png, .pdf. Exports usually flatten layers and can't be edited the same way.</p>
+<p>Working files open fully only in the app that made them. Send exports to anyone who doesn't have that app.</p>
+<p>Keep the working file. Hand in or publish the export. If you only have the export, you can't fix a typo without rebuilding the design.</p>
+<p class="software"><strong>Where to find it:</strong> In Adobe apps, <span class="path">File › Save</span> saves the working file. <span class="path">File › Export</span> makes the export.</p>
+
+<h3>Common formats</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Format</th><th>Type</th><th>Transparent background?</th><th>Use it for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>JPG</td><td>Raster</td><td>No</td><td>Photos on the web and in email. Small files.</td></tr>
+    <tr><td>PNG</td><td>Raster</td><td>Yes</td><td>Screenshots, graphics with text or flat color, logos on the web when you don't have SVG.</td></tr>
+    <tr><td>WebP</td><td>Raster</td><td>Yes</td><td>Photos and graphics on websites. Smaller than JPG or PNG at the same quality.</td></tr>
+    <tr><td>GIF</td><td>Raster</td><td>Yes (on or off, no partial)</td><td>Short animations. Limited to 256 colors, so photos look rough.</td></tr>
+    <tr><td>TIFF</td><td>Raster</td><td>Yes</td><td>High-quality images for print. Large files.</td></tr>
+    <tr><td>PSD</td><td>Raster (with layers)</td><td>Yes</td><td>Photoshop working file.</td></tr>
+    <tr><td>SVG</td><td>Vector</td><td>Yes</td><td>Logos and icons on websites.</td></tr>
+    <tr><td>AI</td><td>Vector</td><td>Yes</td><td>Illustrator working file.</td></tr>
+    <tr><td>EPS</td><td>Vector</td><td>Yes</td><td>Older format for sending logos to printers and vendors. Some still ask for it.</td></tr>
+    <tr><td>PDF</td><td>Either or both</td><td>Yes</td><td>Finished layouts for print, and documents to share. Keeps fonts and vector shapes.</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<h3 id="compression">Compression</h3>
+<p>Compression makes files smaller.</p>
+<ul>
+  <li><b>Lossless</b> compression (PNG, TIFF) keeps every pixel exactly.</li>
+  <li><b>Lossy</b> compression (JPG, most WebP) throws away detail you're unlikely to notice. Too much and you'll see blocky smudges, especially around text and sharp edges.</li>
+</ul>
+<p>For the quality setting to use when you export a JPG for screens, see <a href="#jpg-quality">JPG quality</a>.</p>
+<p>Each time you open a JPG, edit it, and save it as JPG again, it loses a little more. Edit from the original or the working file, and export a new JPG at the end.</p>
+
+<h3 id="file-size">File size is not image size</h3>
+<p>File size (KB, MB) is how much storage the file takes. Image size (pixels) is how much detail it has. A 3000 px JPG can be smaller in MB than a 1000 px PNG. When an upload limit says "under 5 MB," that's file size.</p>
+
+<h3>Linked images</h3>
+<p>In InDesign and Illustrator, a placed photo is usually <b>linked</b>, not stored inside the file. The layout file points to the photo in its folder. If you move or email the layout without the photos, the photos go missing.</p>
+<p>Before you move a layout to another computer, package it. Packaging copies the layout, every linked image, and the fonts into one folder.</p>
+<p class="software"><strong>Where to find it:</strong> In InDesign, see links in <span class="path">Window › Links</span>. Package with <span class="path">File › Package</span>. In Illustrator, use <span class="path">File › Package</span>.</p>
+
+
+<h2 id="resolution">Pixels and resolution</h2>
+
+<p>Whether an image looks sharp depends on three things:</p>
+<ol>
+  <li>how many pixels it has</li>
+  <li>how big it's shown or printed</li>
+  <li>how far away people see it</li>
+</ol>
+<p>Change one and the others change what you need.</p>
+
+<h3>Pixel dimensions</h3>
+<p>The real size of a raster image is its width and height in pixels, for example 3000 × 2000 px. This number decides how large the image can be shown or printed before it looks soft.</p>
+
+<h3>PPI and DPI</h3>
+<p><b>PPI</b> (pixels per inch) tells a printer how many pixels to fit into each inch of paper. <b>DPI</b> (dots per inch) is the printer's own ink dots. People often say DPI when they mean PPI. In design apps they mean the same setting.</p>
+<p>PPI only matters for print. A screen shows pixels one-to-one and ignores the PPI number. A 1200 × 800 px image looks the same online whether its PPI is 72 or 300.</p>
+
+<h3>How many pixels you need for print</h3>
+<p>Multiply the print size in inches by 300.</p>
+<ul>
+  <li>A 5 × 7 in photo print needs 1500 × 2100 px.</li>
+  <li>An 11 × 17 in poster needs 3300 × 5100 px.</li>
+</ul>
+<p>300 PPI is the standard for anything read up close: flyers, magazines, handouts. Large prints seen from farther away need less (see <a href="#distance">Viewing distance</a>).</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">Image › Image Size</span>. To change PPI without changing the pixels, turn off <b>Resample</b> first.</p>
+
+<h3>How many pixels you need for screens</h3>
+<p>Most phones and laptops have high-density screens that use 2 pixels for every 1 they display. Export at twice the size the image will be shown. If a website shows a photo 800 px wide, export it 1600 px wide.</p>
+
+<h3 id="distance">Viewing distance</h3>
+<p>Your eye can't see individual pixels or ink dots past a certain distance. The closer people are, the more pixels per inch the work needs. The farther away, the fewer.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Work</th><th>Seen from</th><th>Resolution needed</th></tr></thead>
+  <tbody>
+    <tr><td>Flyer, magazine, handout</td><td>About 1 ft</td><td>300 PPI</td></tr>
+    <tr><td>Poster</td><td>Across a room</td><td>About 150 PPI</td></tr>
+    <tr><td>Printed billboard</td><td>Down the road</td><td>About 9–15 PPI</td></tr>
+    <tr><td>Digital billboard</td><td>Down the road</td><td>About 4–6 PPI</td></tr>
+  </tbody>
+</table>
+</div>
+<h3>Example: a billboard</h3>
+<p>A standard billboard is 48 × 14 ft, which is 576 × 168 in. Here's what it would need at different resolutions:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Resolution</th><th>Pixels needed</th><th>Works?</th></tr></thead>
+  <tbody>
+    <tr><td>300 PPI</td><td>172,800 × 50,400 px</td><td>No. About 8.7 billion pixels. Far more than anyone can see from the road, and too big for most computers to open.</td></tr>
+    <tr><td>150 PPI</td><td>86,400 × 25,200 px</td><td>No. Still far more than needed.</td></tr>
+    <tr><td>15 PPI</td><td>8,640 × 2,520 px</td><td>Yes. Sharp from the road.</td></tr>
+    <tr><td>9 PPI</td><td>5,184 × 1,512 px</td><td>Yes. The low end for a printed billboard.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>A 24-megapixel camera photo (6000 × 4000 px) stretched across a billboard is about 10 PPI. That's enough. The same photo printed at 300 PPI is only about 20 × 13 in.</p>
+<p>Digital billboards are built from LED lights with a fixed number of pixels. The billboard company gives you the exact pixel size. Design at that size.</p>
+
+<p>Distance also hides small problems. A 1080 px wide Instagram post on a phone 1206 px wide is enlarged about 11%, but it doesn't look blurry. The phone's pixels are tiny, and the phone is a foot from your eyes.</p>
+<p>To judge how the work will look at its real distance, see <a href="#viewing-size">Viewing at size</a>.</p>
+
+<h3 id="resampling">Changing resolution by resizing up or down</h3>
+<p>Changing an image's pixel dimensions is called <b>resampling</b>. The app has to add pixels or remove them, and each way has a cost.</p>
+<p>Changing only the PPI, with Resample turned off, doesn't touch the pixels. It just changes how big the image prints.</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Method</th><th>What happens</th><th>The cost</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Upsampling by interpolation</td>
+      <td>The app adds pixels by averaging the colors of the pixels around them.</td>
+      <td>No new detail. Edges and texture get soft. Small enlargements (10–20%) are hard to see. Large ones look blurry.</td>
+    </tr>
+    <tr>
+      <td>AI upscaling</td>
+      <td>A trained model adds pixels by predicting what the detail probably looked like.</td>
+      <td>Sharper, but the detail is invented. Feathers, hair, faces, and text can come out wrong.</td>
+    </tr>
+    <tr>
+      <td>Downsampling</td>
+      <td>The app removes pixels by merging them.</td>
+      <td>The detail is gone for good. Fine lines and small text can get thin or break up.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Before you resize</h3>
+<ul>
+  <li><b>Start with the largest original you can get.</b> No method gets back detail the camera or scan didn't capture.</li>
+  <li><b>Resize once, from the original, at the end.</b> Each resize softens the image a little. Never enlarge and then shrink, or shrink and then enlarge.</li>
+  <li><b>Keep the original.</b> Downsample a copy, so you can export a bigger version later.</li>
+  <li><b>AI upscaling isn't a record.</b> The image no longer shows only what the camera saw. Don't use it on news photos. In other work, check every detail at 100%, and follow your publication's or client's rules on disclosing it. Some tools upload the image to a company's servers to do the work.</li>
+  <li><b>Downsampled images can look a little soft.</b> A light sharpen after resizing fixes this.</li>
+  <li><b>Fine patterns can shimmer after downsampling.</b> Stripes, screens, and fabric weaves can form wavy patterns called moiré. Check them at 100%.</li>
+</ul>
+
+<h3>Resizing inside a layout</h3>
+<p>Scaling a placed photo in InDesign or Illustrator doesn't resample it. It spreads the same pixels over more or less space. This is the image's <b>effective resolution</b>: a 3000 px wide photo placed 10 in wide is 300 PPI. Stretched to 20 in, it's 150 PPI.</p>
+<p>In Photoshop, scaling a regular layer down and back up loses detail. Convert the layer to a <b>Smart Object</b> first. A Smart Object keeps the original pixels, so you can rescale it without loss up to its original size.</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop, resample in <span class="path">Image › Image Size</span>: turn on <b>Resample</b> and pick a method. Preserve Details 2.0 is a good choice for enlarging, and Bicubic Sharper for reducing. Make a Smart Object with <span class="path">Layer › Smart Objects › Convert to Smart Object</span>. Super Resolution, an AI upscaler, is in Camera Raw and Lightroom under <b>Enhance</b>. In InDesign, effective PPI is shown in the <b>Links</b> panel under Link Info.</p>
+
+<h2 id="viewing-size">Viewing at size</h2>
+
+<p>Judge type size, spacing, and image sharpness at the size your audience will see the work. Zoomed in, small type looks big enough. Zoomed out, a crowded layout looks tidy. Check at size before you decide.</p>
+<p>The most reliable check is the real thing: print it at full size, or look at it on the device it's made for, from the distance people will see it.</p>
+
+<h3>Why your screen isn't a reliable size</h3>
+<p>Pixels in a file have no physical size. Screens pack different numbers of pixels into an inch, called pixel density or PPI. The same file shows at different sizes on a laptop, a lab monitor, and a phone.</p>
+<p>Apps also count pixels differently:</p>
+<ul>
+  <li><b>Adobe apps</b> show one pixel of the file on one pixel of the screen at 100% zoom. On a high-density screen, 100% looks small.</li>
+  <li><b>Web browsers</b>, and apps that run in them, use their own pixel. Browsers treat 96 of their pixels as an inch, then scale up for the screen: most phones and laptops use 2 or 3 screen pixels for each browser pixel. Browser zoom changes the size again. A browser "inch" is rarely a real inch.</li>
+</ul>
+
+<h3>Find your screen's PPI</h3>
+<p>Look up your screen's specs, or work it out:</p>
+<p>PPI = √(width in px² + height in px²) ÷ diagonal in inches</p>
+<p>For example, a 27-inch screen at 5120 × 2880 px is about 218 PPI.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>SJMC lab monitors</th><th>PPI</th></tr></thead>
+  <tbody>
+    <tr><td>W336, W340, and the Student Center</td><td>218</td></tr>
+    <tr><td>W332</td><td>163</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Photoshop</h3>
+<ol>
+  <li>Enter your screen's PPI in <span class="path">Preferences › Units &amp; Rulers › Screen Resolution</span> (called Settings in newer versions).</li>
+  <li>In <span class="path">Image › Image Size</span>, turn off <b>Resample</b>. Then change the width to inches and enter the size the work will be shown. For an Instagram post, that's its width on a phone, about 2.8 in. The pixels don't change.</li>
+  <li>Choose <span class="path">View › Print Size</span>. It uses the PPI you entered in step 1.</li>
+</ol>
+<p><span class="path">View › Actual Size</span>, just below it in the menu, gets the PPI from your computer instead and ignores step 1. It can work, but check it with a ruler.</p>
+<p>When the view is right, type set in points shows at its real size. 72 pt type is 1 inch tall.</p>
+
+<h3>Illustrator</h3>
+<p>Illustrator has no setting for your screen's PPI. Its <span class="path">View › Actual Size</span> is based on pixels, so it's rarely real size.</p>
+<p>Instead, draw a rectangle of a known size, such as 4 in wide. Zoom until it measures 4 in with a ruler held to the screen. Save that zoom with <span class="path">View › New View</span>, so you can return to it from the View menu if you zoom in or out.</p>
+
+<h3>InDesign</h3>
+<p><span class="path">View › Actual Size</span> (Cmd+1 on Mac, Ctrl+1 on Windows) gets close, but it can be off depending on your screen. Check it with a ruler and adjust the zoom, or hold a sheet of paper the same size next to the screen. For print work, a test print at full size is the best check.</p>
+
+<h3>Canva and other browser apps</h3>
+<p>Canva runs in a web browser, so its zoom works like a browser's. 100% isn't real size, and the size changes with your screen and your browser zoom. Zoom until the design's width matches its real width on a ruler held to the screen. For a phone graphic, download it and look at it on a phone.</p>
+
+<h3>Work too big for your screen</h3>
+<p>A poster, a menu board on a wall, or a billboard can't be shown at full size on a monitor. Show it smaller, and move closer by the same amount. It looks the same to your eye as the real thing.</p>
+<p>For example, a menu board 40 in wide will be read from 10 ft away. Show it 10 in wide on your screen, a quarter of its size, and look from 2.5 ft, a quarter of the distance.</p>
+<p>Viewing distance also sets how much resolution the work needs. See <a href="#resolution">Pixels and resolution</a>.</p>
+
+
+<h2 id="color">Color</h2>
+
+<h3>RGB and CMYK</h3>
+<p><b>RGB</b> (red, green, blue) is light. Screens mix it to make color. Use RGB for anything shown on a screen.</p>
+<p><b>CMYK</b> (cyan, magenta, yellow, black) is ink. Printers mix it on paper. Use CMYK for files going to a print shop, unless the shop asks for RGB.</p>
+<p>RGB can show brighter colors than ink can print. Bright greens, blues, and oranges often look duller in print. That's normal, and it's why you should print a proof. <a href="#gamut">Color gamut</a> explains why.</p>
+
+<h3 id="gamut">Color gamut</h3>
+<p>A <b>gamut</b> is the range of colors a device or color space can reproduce. People can see far more colors than any screen, printer, or paper can make. Every gamut is only part of what you can see.</p>
+<figure>
+  <svg viewBox="0 0 560 400" role="img" aria-labelledby="gamut-title">
+    <title id="gamut-title">A horseshoe shape shows all the colors people can see. Inside it, a triangle for sRGB covers a small part. A larger triangle for Adobe RGB covers more, mostly in the greens. A six-sided shape for typical CMYK print is smaller than sRGB in most places but reaches a little past it in cyan and yellow.</title>
+    <path d="M113.1 377.9 L100.5 367.5 L92.1 355.7 L78.3 324.3 L59.1 256.1 L43.4 153.9 L45.8 64.9 L71.2 29.8 L105.0 41.5 L136.4 63.2 L166.7 89.2 L196.7 117.7 L226.5 147.0 L255.2 175.6 L281.6 201.8 L303.3 223.6 L330.4 250.5 L348.6 268.6 Z" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <path d="M308.8 241.4 L128.2 81.8 L103.0 354.8 Z" fill="none" stroke="var(--figure-safe)" stroke-width="2" stroke-dasharray="7 5"/>
+    <path d="M308.8 241.4 L166.0 128.0 L103.0 354.8 Z" fill="none" stroke="var(--figure-ink)" stroke-width="2.5"/>
+    <path d="M297.0 241.4 L223.5 172.5 L145.0 170.0 L109.7 286.8 L104.7 334.2 L231.9 283.4 Z" fill="none" stroke="var(--figure-bleed)" stroke-width="2.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+    <g font-size="15" fill="var(--figure-ink)">
+      <rect x="372" y="60" width="16" height="16" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+      <text x="398" y="74">Colors people see</text>
+      <line x1="370" y1="108" x2="390" y2="108" stroke="var(--figure-safe)" stroke-width="2" stroke-dasharray="7 5"/>
+      <text x="398" y="113">Adobe RGB</text>
+      <line x1="370" y1="140" x2="390" y2="140" stroke="var(--figure-ink)" stroke-width="2.5"/>
+      <text x="398" y="145">sRGB (web)</text>
+      <line x1="370" y1="172" x2="390" y2="172" stroke="var(--figure-bleed)" stroke-width="2.5" stroke-dasharray="2 4" stroke-linecap="round"/>
+      <text x="398" y="177">CMYK print</text>
+    </g>
+  </svg>
+  <figcaption>Each shape is a gamut. The CMYK shape is a typical print setup on coated paper and is approximate.</figcaption>
+</figure>
+<ul>
+  <li><b>Gamuts are different sizes.</b> sRGB, the web standard, is small. Adobe RGB reaches more greens and cyans. Printing with CMYK ink is smaller than sRGB in most places.</li>
+  <li><b>They don't fit neatly inside each other.</b> CMYK can print some cyans and yellows that an sRGB screen can't show.</li>
+  <li><b>Paper and screens change the gamut.</b> Coated (glossy) paper holds more color than uncoated paper. Newsprint holds less still. An inexpensive laptop screen shows fewer colors than a professional monitor.</li>
+</ul>
+<p>A color outside a gamut can't be reproduced. When a file moves to a smaller gamut, such as RGB to CMYK or Adobe RGB to sRGB, those colors are replaced with the closest ones the new gamut can make. Bright, saturated colors get duller. You can't get them back by converting again, so keep an RGB original.</p>
+<p>For a color CMYK can't reach, such as a brand's bright orange, printers use a premixed spot color (see <a href="#spot-color">Spot color</a>).</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">View › Gamut Warning</span> marks colors that won't print with the current CMYK setup. <span class="path">View › Proof Colors</span> shows a preview of how the file will look in print. The Color Picker shows a warning triangle next to a color that's out of the print gamut.</p>
+
+<h3>Writing down a color</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>System</th><th>Example</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td>Hex</td><td>#FFCD00</td><td>Websites, most design apps</td></tr>
+    <tr><td>RGB</td><td>255, 205, 0</td><td>Screen design apps</td></tr>
+    <tr><td>CMYK</td><td>0, 15, 100, 0</td><td>Print</td></tr>
+    <tr><td>Pantone (PMS)</td><td>PMS 116 C</td><td>Print with premixed ink</td></tr>
+  </tbody>
+</table>
+</div>
+<p>A brand guide usually lists one color in all of these systems. Use the one that matches where the work is going.</p>
+
+<h3>Color profiles</h3>
+<p>A color profile tells the next app or printer how to read the color numbers in a file. Without one, the same file can look different on different devices.</p>
+<ul>
+  <li><b>sRGB</b>: the standard for screens and the web. If you're not sure, use sRGB.</li>
+  <li><b>Adobe RGB</b> and <b>ProPhoto RGB</b>: wider ranges of color for photo editing and print. They look dull or wrong online if not converted to sRGB first.</li>
+</ul>
+<p>When you export, keep the box that embeds the profile turned on.</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">File › Export › Export As</span> has a <b>Convert to sRGB</b> option. <span class="path">Edit › Convert to Profile</span> changes a file's profile.</p>
+
+<h3 id="spot-color">Spot color</h3>
+<p>A <b>spot color</b> is one premixed ink, usually a Pantone color, printed on its own instead of being built from CMYK dots. It gives an exact match every time. Brands use it for logos. It costs more, so it's mostly used for jobs like business cards, shirts, and packaging.</p>
+
+<h3>Black in print</h3>
+<p>Black made only from black ink (0, 0, 0, 100) looks dark gray on large areas. Large black backgrounds use <b>rich black</b>, which adds other inks under the black. Ask your print shop for their rich black. A common one is 60, 40, 40, 100.</p>
+<p>Keep small text in plain 100% black. Rich black on small text can print blurry if the inks don't line up.</p>
+
+
+<h2 id="fonts">Fonts and text sizes</h2>
+
+<p id="text-sizes">Fonts, text sizes, line length, spacing, and font licenses are on the <a href="type.html">Type</a> page:</p>
+<ul>
+  <li><a href="type.html#print-sizes">Print sizes</a>, including posters</li>
+  <li><a href="type.html#screen-graphic-sizes">Screen graphic sizes</a>, such as social media posts and digital signs</li>
+  <li><a href="type.html#line-length">Line length</a> and <a href="type.html#spacing">spacing</a></li>
+  <li><a href="type.html#fonts">Font files and licenses</a>, including why fonts change on another computer</li>
+</ul>
+
+
+<h2 id="print">Exporting for print</h2>
+
+<p>There are two kinds of printing, and they need different files.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th>Print shop</th><th>Campus printer</th></tr></thead>
+  <tbody>
+    <tr><td>Examples</td><td>A commercial printer, a press, a large-format poster printer</td><td>The printer in the student center, an office printer</td></tr>
+    <tr><td>Paper sizes</td><td>Almost any size</td><td>Letter (8.5 × 11 in) and tabloid (11 × 17 in) only</td></tr>
+    <tr><td>Edge to edge</td><td>Yes. Prints on a larger sheet and trims it.</td><td>No. Leaves a blank border.</td></tr>
+    <tr><td>Bleed</td><td>Required if the design touches the edge</td><td>Can't print it</td></tr>
+    <tr><td>Who prints it</td><td>You send a file; the shop prints and cuts it</td><td>You print it yourself</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Trim, bleed, and safe area</h3>
+<p>Print shops print on a larger sheet and cut it down. The cut is never perfectly exact, so a layout needs room on both sides of the cut line.</p>
+
+<figure>
+  <svg viewBox="0 0 400 300" role="img" aria-labelledby="bleed-title">
+    <title id="bleed-title">Three nested rectangles. The outer edge is the bleed. The middle line is the trim, where the paper is cut. The inner dashed line is the safe area, where text must stay.</title>
+    <rect x="40" y="20" width="220" height="260" fill="var(--figure-fill)"/>
+    <rect x="40" y="20" width="220" height="260" fill="none" stroke="var(--figure-bleed)" stroke-width="2"/>
+    <rect x="58" y="38" width="184" height="224" fill="none" stroke="var(--figure-ink)" stroke-width="2"/>
+    <rect x="76" y="56" width="148" height="188" fill="none" stroke="var(--figure-safe)" stroke-width="2" stroke-dasharray="6 5"/>
+    <line x1="260" y1="30" x2="300" y2="30" stroke="var(--figure-bleed)" stroke-width="1.5"/>
+    <text x="306" y="35" font-size="15" fill="var(--figure-ink)">Bleed</text>
+    <line x1="242" y1="80" x2="300" y2="80" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="306" y="85" font-size="15" fill="var(--figure-ink)">Trim</text>
+    <line x1="224" y1="130" x2="300" y2="130" stroke="var(--figure-safe)" stroke-width="1.5"/>
+    <text x="306" y="135" font-size="15" fill="var(--figure-ink)">Safe area</text>
+  </svg>
+  <figcaption>Background color and photos run out to the bleed. Text stays inside the safe area.</figcaption>
+</figure>
+
+<ul>
+  <li><b>Trim</b>: the finished size, where the paper is cut.</li>
+  <li><b>Bleed</b>: extra image past the trim, so there's no white sliver if the cut is off. In the US the standard is 0.125 in (1/8 in) on every side. An 11 × 17 in poster with bleed is 11.25 × 17.25 in.</li>
+  <li><b>Safe area</b>: keep text and logos at least 0.125 in inside the trim. 0.25 in is safer.</li>
+</ul>
+<p>Anything that touches the edge of the page, like a background color or a full-page photo, has to extend to the bleed line.</p>
+
+<h3>Common print sizes (US)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Name</th><th>Size</th><th>Common use</th></tr></thead>
+  <tbody>
+    <tr><td>Letter</td><td>8.5 × 11 in</td><td>Flyers, handouts</td></tr>
+    <tr><td>Tabloid</td><td>11 × 17 in</td><td>Small posters, newsletters folded in half</td></tr>
+    <tr><td>Poster</td><td>18 × 24 in</td><td>Event posters</td></tr>
+    <tr><td>Large poster</td><td>24 × 36 in</td><td>Posters, research posters</td></tr>
+    <tr><td>Postcard</td><td>4 × 6 in</td><td>Mailers, invitations</td></tr>
+    <tr><td>Business card</td><td>3.5 × 2 in</td><td>Business cards</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Sending a file to a print shop</h3>
+<p>Ask the shop what they want. Most want a print-ready PDF.</p>
+<p>A print-ready PDF is one file that holds the finished design at full size. It includes:</p>
+<ul>
+  <li>the bleed area past the trim</li>
+  <li>crop marks outside the bleed, showing the shop where to cut</li>
+  <li>every font, stored inside the PDF</li>
+  <li>every image at full resolution (300 PPI at the printed size)</li>
+  <li>CMYK color</li>
+</ul>
+<p>The shop doesn't need your working file or your fonts. Everything is in the PDF.</p>
+
+<p>Each app sets up bleed and exports the PDF in a different place:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>App</th><th>Set up bleed</th><th>Export the PDF</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>InDesign</td>
+      <td><span class="path">File › Document Setup</span>, Bleed</td>
+      <td><span class="path">File › Export</span>, Adobe PDF (Print). Pick a PDF/X preset. Under Marks and Bleeds, turn on Crop Marks and Use Document Bleed Settings.</td>
+    </tr>
+    <tr>
+      <td>Illustrator</td>
+      <td><span class="path">File › Document Setup</span>, Bleed</td>
+      <td><span class="path">File › Save a Copy</span>, Adobe PDF. Pick a PDF/X preset. Under Marks and Bleeds, turn on Trim Marks (Illustrator's name for crop marks) and Use Document Bleed Settings.</td>
+    </tr>
+    <tr>
+      <td>Photoshop</td>
+      <td>No bleed setting. Make the canvas the trim size plus 0.25 in, for example 11.25 × 17.25 in at 300 PPI. Add guides 0.125 in from each edge to mark the trim. To add bleed to an existing file, use <span class="path">Image › Canvas Size</span>.</td>
+      <td><span class="path">File › Save a Copy</span>, Photoshop PDF. Pick a PDF/X preset. Photoshop doesn't add crop marks, so tell the shop the file includes 0.125 in bleed.</td>
+    </tr>
+    <tr>
+      <td>Canva</td>
+      <td><span class="path">File › Settings › Show print bleed</span></td>
+      <td><span class="path">Share › Download</span>, PDF Print. Turn on Crop marks and bleed. Choosing CMYK needs Canva Pro. Canva doesn't make PDF/X files, so ask the shop if they accept its PDF.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Print work in the free version of Canva</h3>
+<p>The free version of Canva often can't produce a file that's ready for print. CMYK color, resizing a finished design, and choosing a larger download size all need Canva Pro. A design started at screen size, like an Instagram post, can't be turned into a sharp poster in the free version.</p>
+<p>If you use Canva for print:</p>
+<ul>
+  <li>Start the design at its printed size, in inches, with bleed showing.</li>
+  <li>Download it as PDF Print, not PNG or JPG.</li>
+  <li>Check the PDF before you send it (below). If the photos look soft or the size is wrong, rebuild the file in InDesign or Illustrator.</li>
+</ul>
+
+<h3>Check the PDF before you send it</h3>
+<p>Open the PDF in Adobe Acrobat and check:</p>
+<ul>
+  <li><b>Page size.</b> It should be the trim size plus bleed, for example 11.25 × 17.25 in. Crop marks add a little more around the outside.</li>
+  <li><b>Fonts.</b> In <span class="path">File › Properties › Fonts</span>, every font should say "Embedded" or "Embedded Subset."</li>
+  <li><b>Images.</b> Zoom to 100%. Photos should look sharp, not blocky.</li>
+  <li><b>Edges.</b> Backgrounds and photos run past the crop marks. Text stays well inside them.</li>
+</ul>
+<p>Don't send a JPG or PNG of a whole layout. Text in a raster file prints softer than text in a PDF.</p>
+
+<h3>Sending working files instead</h3>
+<p>Some shops want to open and adjust your files. InDesign and Illustrator can package a file. Packaging collects the working file, every linked image, and the fonts into one folder. Zip the folder and send it.</p>
+<p>Packaging leaves out Adobe Fonts. The shop can turn on the same fonts from its own Creative Cloud account. For fonts you bought or downloaded, check that the license allows sending them to a printer.</p>
+<p class="software"><strong>Where to find it:</strong> <span class="path">File › Package</span> in InDesign and Illustrator. Photoshop and Canva can't package, so send the PDF.</p>
+
+<h3>Printing on a campus printer</h3>
+<p>The printer in the student center prints only on letter and tabloid paper. Like most office printers, it can't print to the edge of the paper. It leaves a blank border, usually about 0.25 in, and it can't print bleed.</p>
+<p>Export a PDF at the trim size, without bleed or crop marks. If the design runs to the edge of the page, you have two choices:</p>
+<ol>
+  <li><b>Print at actual size.</b> The design prints at full size, but the outer strip that falls in the border doesn't print. You'll have a white border, and anything close to the edge is cut off. This works if all text and logos are well inside the safe area.</li>
+  <li><b>Scale to fit, then trim.</b> The printer shrinks the whole design to fit inside the border. Cut off the white edge with a paper cutter. Nothing is lost, but the finished piece is a little smaller than you designed it, and the type shrinks by about 3%. On an 11 × 17 in poster, that's 17 in down to about 16.5 in tall. Not ideal, but usually fine.</li>
+</ol>
+<p class="software"><strong>Where to find it:</strong> In the Acrobat print window, under Page Sizing, choose <b>Actual size</b> or <b>Fit</b>.</p>
+
+<h3>Print a proof</h3>
+<p>Before you print a full run, print one copy at full size. Check it for color shifts, small type, and anything cut off at the edges. Read it out loud for typos. Errors you miss on screen are often obvious on paper.</p>
+
+
+<h2 id="screens">Exporting for screens</h2>
+
+<h3>Websites</h3>
+<ul>
+  <li>Size: twice the width it will be shown (see <a href="#resolution">Pixels and resolution</a>).</li>
+  <li>Format: WebP or JPG for photos. PNG or SVG for logos and graphics with text.</li>
+  <li>Color: sRGB.</li>
+  <li>File size: keep a full-width image under about 500 KB, and smaller images under about 200 KB. Large images make pages slow, especially on phones with weak signal. Many visitors leave a page that loads slowly.</li>
+</ul>
+
+<h3 id="jpg-quality">JPG quality</h3>
+<p>When you export a JPG, the quality setting controls how much it's compressed. Lower quality makes a smaller file and throws away more detail. It's a balance between quality and file size: use the lowest quality that still looks right at the size the image will be shown.</p>
+<ul>
+  <li><b>Start around 60</b> (out of 100). For most photos on websites, that looks almost the same as 100 at a fraction of the file size.</li>
+  <li><b>Compare before you export.</b> View the preview at 100% and look at edges, text, skies, and skin. Blocky smudges or bands of color mean the quality is too low.</li>
+  <li><b>Go higher, around 70 to 80,</b> for images with text, fine detail, or smooth gradients.</li>
+  <li><b>Check the file size</b> against the limits above. If it's still too big, make the image's pixel size smaller before you lower the quality further.</li>
+  <li><b>Social media compresses your upload again.</b> If an image looks rough after posting, export it at a higher quality.</li>
+  <li><b>Print and files for an editor or client</b> get high quality, not screen settings. See <a href="#print">Exporting for print</a>.</li>
+</ul>
+<p>More on how compression works is in <a href="#compression">Compression</a>.</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop and Illustrator, <span class="path">File › Export › Save for Web (Legacy)</span>. Choose JPEG, set Quality, and read the file size under the preview. In Photoshop, <span class="path">File › Export › Export As</span> also has a Quality setting.</p>
+
+<h3 id="social-media">Social media</h3>
+<p>Platforms change these sizes. If an upload gets cropped in an odd place, check the platform's help page.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Use</th><th>Ratio</th><th>Size in pixels</th></tr></thead>
+  <tbody>
+    <tr><td>Instagram feed, portrait</td><td>4:5</td><td>1080 × 1350</td></tr>
+    <tr><td>Square post</td><td>1:1</td><td>1080 × 1080</td></tr>
+    <tr><td>Stories, Reels, TikTok</td><td>9:16</td><td>1080 × 1920</td></tr>
+    <tr><td>Link preview image</td><td>1.91:1</td><td>1200 × 630</td></tr>
+  </tbody>
+</table>
+</div>
+<p>In vertical formats, the app covers the top and bottom with buttons and captions. Keep text and faces out of the top 250 px and bottom 350 px or so.</p>
+<p>Platforms compress every upload. Upload at the exact size the platform wants, so it doesn't resize and compress your image a second time.</p>
+
+<h2 id="accessibility">Accessibility</h2>
+
+<p>Graphics for websites, apps, email, and social media need alt text, enough contrast, and meaning that doesn't depend on color alone. The standards and how to check them are on <a href="web.html#accessibility">Web: Accessibility</a>.</p>
+<p>Contrast and color matter in print too. Low-contrast text, or a chart that shows a difference only in red and green, is hard for many people to read on paper as well.</p>
+
+
+<h2 id="quick-answers">Quick answers</h2>
+
+<dl class="qa">
+  <dt>Why is my image blurry?</dt>
+  <dd>It has too few pixels for the size it's shown or printed. Find a larger original. See <a href="#resolution">Pixels and resolution</a>.</dd>
+
+  <dt>What size should body copy be in print?</dt>
+  <dd>9–11 pt for serif fonts and 8–10 pt for sans serif. 12 pt is too big in a designed layout. See <a href="type.html#print-sizes">Type: Print sizes</a>.</dd>
+
+  <dt>What size should text be on a social media post?</dt>
+  <dd>There's no reliable number. View it at the size it will be seen, or send it to your phone, and check that the smallest text is readable without zooming. See <a href="type.html#screen-graphic-sizes">Type: Screen graphic sizes</a>.</dd>
+
+  <dt>Why does my type look too small (or too big) once it's posted or printed?</dt>
+  <dd>You judged it zoomed in or out. Check at the size people will see it. See <a href="#viewing-size">Viewing at size</a>.</dd>
+
+  <dt>Why does my logo get blurry when I make it bigger?</dt>
+  <dd>It's a raster file (JPG or PNG). Ask for or make a vector version (SVG, AI, EPS, or PDF). See <a href="#raster-vector">Raster and vector</a>.</dd>
+
+  <dt>Why does my PNG have a white box behind it?</dt>
+  <dd>The background wasn't made transparent before export, or the file was saved as JPG, which can't be transparent. See <a href="#formats">File formats</a>.</dd>
+
+  <dt>Why did my colors change when I printed?</dt>
+  <dd>Screens use light (RGB) and printers use ink (CMYK). Ink can't match the brightest screen colors. Export in CMYK and print a proof. See <a href="#color">Color</a>.</dd>
+
+  <dt>Why is there a white edge on my printed poster?</dt>
+  <dd>From a print shop: the design had no bleed. Extend the background 0.125 in past the edge. From a campus printer: it can't print to the edge. See <a href="#print">Exporting for print</a>.</dd>
+
+  <dt>Why did my fonts change on another computer?</dt>
+  <dd>That computer doesn't have the font installed. Send a PDF, package the file, or convert the text to outlines. See <a href="type.html#fonts">Type: Font files and licenses</a>.</dd>
+
+  <dt>Which file do I send to the printer?</dt>
+  <dd>For a print shop, a print-ready PDF with bleed and crop marks. Ask the shop first. For a campus printer, a PDF at trim size with no bleed. See <a href="#print">Exporting for print</a>.</dd>
+
+  <dt>My file is too big to upload. What do I do?</dt>
+  <dd>Export it at the pixel size it will be shown, as JPG or WebP instead of PNG. For a PDF, use a smaller-file export setting. See <a href="#compression">Compression</a>.</dd>
+
+  <dt>Can I use this image I found online?</dt>
+  <dd>Only if it's public domain, under a license you follow, covered by fair use, or you have written permission. See <a href="rights.html">Rights and Credit</a>.</dd>
+</dl>
+
+<p class="back-top"><a href="#top">Back to top</a></p>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">School of Journalism and Mass Communication</div>
+</footer>
+
+<script src="toc.js"></script>
+</body>
+</html>

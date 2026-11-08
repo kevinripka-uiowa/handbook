@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Technical Basics | SJMC Production Handbook</title>
+<meta name="description" content="Frame rates, shutter speed, camera settings, codecs, editing files, and exporting video.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="index.html">SJMC Production Handbook</a>
+    <nav class="site-nav" aria-label="Handbook pages">
+      <ul>
+        <li><a href="graphics.html">Graphics</a></li>
+        <li><a href="type.html">Type</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="video.html" aria-current="page">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html">Web</a></li>
+        <li><a href="rights.html">Rights and Credit</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#resolution">Resolution and aspect ratio</a></li>
+    <li><a href="#frame-rate">Frame rate</a></li>
+    <li><a href="#shutter">Shutter speed</a></li>
+    <li><a href="#camera">Camera settings</a></li>
+    <li><a href="#phones">Shooting on a phone</a></li>
+    <li><a href="#formats">File formats and codecs</a></li>
+    <li><a href="#editing-files">Editing files</a></li>
+    <li><a href="#exporting">Exporting</a></li>
+    <li><a href="#accessibility">Captions and accessibility</a></li>
+    <li><a href="#quick-answers">Quick answers</a></li>
+  </ol>
+</nav>
+
+<article>
+
+<h1 id="top">Video Technical Basics</h1>
+<p class="lede">How video works in professional cameras and editing software: frame size, frame rate, shutter speed, camera settings, file formats, and exporting.</p>
+<p>Music, clips, and footage you didn't shoot are covered on <a href="rights.html">Rights and Credit</a>.</p>
+
+
+<h2 id="resolution">Resolution and aspect ratio</h2>
+
+<h3>Standard resolutions</h3>
+<p>Video resolution is the size of each frame in pixels.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Name</th><th>Pixels</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td>720p (HD)</td><td>1280 × 720</td><td>Small web video. Mostly outdated.</td></tr>
+    <tr><td>1080p (Full HD)</td><td>1920 × 1080</td><td>Most web, social, and TV news delivery</td></tr>
+    <tr><td>4K UHD</td><td>3840 × 2160</td><td>Shooting, streaming, large screens</td></tr>
+    <tr><td>DCI 4K</td><td>4096 × 2160</td><td>Cinema. Slightly wider than UHD.</td></tr>
+    <tr><td>Vertical 1080</td><td>1080 × 1920</td><td>Reels, TikTok, Shorts, Stories</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Shooting in 4K for a 1080p project gives you room to crop. You can punch in up to 2× on a shot and still have a full 1080p frame. 4K files are about four times larger, so plan for storage.</p>
+
+<h3>Aspect ratio</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Ratio</th><th>Shape</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td>16:9</td><td>Wide</td><td>YouTube, websites, TV, most standard video</td></tr>
+    <tr><td>9:16</td><td>Tall</td><td>Reels, TikTok, Shorts, Stories</td></tr>
+    <tr><td>4:5</td><td>Slightly tall</td><td>Instagram and Facebook feed video</td></tr>
+    <tr><td>1:1</td><td>Square</td><td>Feed video on some platforms</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Decide where the video will run before you shoot. A wide shot cropped to vertical loses most of the frame. If you need both, frame your subject near the center and leave space around them.</p>
+
+
+<h2 id="frame-rate">Frame rate</h2>
+
+<p>Video is a series of still frames. Frame rate is how many frames are recorded each second, written as fps (frames per second). It changes how motion looks.</p>
+
+<h3>Which frame rate to use</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Frame rate</th><th>How motion looks</th><th>Use it for</th></tr></thead>
+  <tbody>
+    <tr><td>23.976 or 24</td><td>Slight blur and flicker in motion, like movies</td><td>Documentary, narrative, brand video, anything meant to feel cinematic</td></tr>
+    <tr><td>25</td><td>Like 24</td><td>Work for Europe and other regions with 50 Hz power. Not used in the US.</td></tr>
+    <tr><td>29.97 or 30</td><td>Smoother, more like live TV</td><td>TV news, interviews for broadcast, social video, screen recordings</td></tr>
+    <tr><td>59.94 or 60</td><td>Very smooth and sharp</td><td>Sports, fast action, gaming. Can be slowed to half speed in a 30 fps project.</td></tr>
+    <tr><td>120 or higher</td><td>Shot for slow motion</td><td>Slow motion. 120 fps in a 24 fps project plays at one-fifth speed.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The odd numbers (23.976, 29.97, 59.94) come from US broadcast TV. Most cameras label them 24, 30, and 60. Professional work in the US usually uses the broadcast versions.</p>
+
+<h3>Keep one frame rate</h3>
+<ul>
+  <li>Pick a frame rate before you shoot, and set every camera to it.</li>
+  <li>Set the editing sequence to the same frame rate.</li>
+  <li>Footage at a different rate gets converted, which causes stutter or jumpy motion. The exception is footage shot at a high rate on purpose for slow motion.</li>
+</ul>
+
+<h3>Slow motion</h3>
+<p>To slow footage down smoothly, shoot at a higher frame rate than your project and play it back at the project's rate. Speed is the project rate divided by the shooting rate. 60 fps in a 30 fps project plays at 50% speed. Slowing down normal-speed footage in the editor makes it stutter, because the frames between don't exist.</p>
+<p class="software"><strong>Where to find it:</strong> In Premiere Pro, select the clip in the Project panel and choose <span class="path">Clip › Modify › Interpret Footage</span>. Set the frame rate to match the sequence.</p>
+
+
+<h2 id="shutter">Shutter speed</h2>
+
+<p>Shutter speed is how long each frame is exposed. It controls how much motion blur each frame has.</p>
+
+<h3>The 180° rule</h3>
+<p>Set the shutter speed to 1 over twice the frame rate:</p>
+<p><b>shutter speed = 1 ÷ (2 × frame rate)</b></p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Frame rate</th><th>Shutter speed</th><th>Closest common setting</th></tr></thead>
+  <tbody>
+    <tr><td>24 fps</td><td>1/48</td><td>1/50</td></tr>
+    <tr><td>30 fps</td><td>1/60</td><td>1/60</td></tr>
+    <tr><td>60 fps</td><td>1/120</td><td>1/125</td></tr>
+    <tr><td>120 fps</td><td>1/240</td><td>1/250</td></tr>
+  </tbody>
+</table>
+</div>
+<p>This gives motion the amount of blur people are used to seeing. The name comes from film cameras, whose shutter was a spinning disc open for half a turn, 180°.</p>
+<ul>
+  <li><b>Faster shutter</b> (1/500, 1/1000): each frame is sharp, but motion looks choppy and jittery. Sometimes used on purpose for action or tension.</li>
+  <li><b>Slower shutter</b> (1/30 at 30 fps): motion smears. Sometimes used on purpose for a dreamy look, or in very low light.</li>
+</ul>
+
+<h3>Bright light and ND filters</h3>
+<p>With the shutter locked at 1/50, a sunny day can be too bright even at the camera's lowest ISO. Don't raise the shutter speed to fix it. Use a <b>neutral density (ND) filter</b>, which darkens the image without changing the color, like sunglasses for the lens. Many video cameras have ND built in.</p>
+
+<h3>Flicker from lights</h3>
+<p>LED and fluorescent lights pulse with the power line, 60 times a second in the US. Some shutter speeds catch the pulse and make the picture flicker or roll with dark bands. In the US, 1/60 or 1/120 usually fixes it, even if it breaks the 180° rule a little. Check the camera's screen before you record.</p>
+
+
+<h2 id="camera">Camera settings</h2>
+
+<p>Automatic settings keep adjusting while you record. In a still photo, that's fine. In video, the viewer sees every change: focus pulsing, brightness shifting, color changing from shot to shot. For most professional work, set everything manually and lock it.</p>
+
+<h3>Focus</h3>
+<p><b>Use manual focus for interviews.</b> With autofocus, the camera keeps searching. When the person leans back, gestures, or turns their head, the focus slides off and back on. This is called <b>hunting</b>, and it makes an interview look unprofessional.</p>
+<ol>
+  <li>Put the camera on a tripod and frame the shot.</li>
+  <li>Switch the lens or camera to manual focus (MF).</li>
+  <li>Zoom in on the screen with the camera's focus magnifier, or turn on focus peaking.</li>
+  <li>Focus on the person's eyes.</li>
+  <li>Zoom back out and leave it. Ask the person to keep about the same distance from the camera.</li>
+</ol>
+<p>Check focus again if the person moves their chair. Autofocus with face or eye tracking can work for moving, unplanned shots, but test it before you rely on it.</p>
+
+<h3>Exposure</h3>
+<p>Exposure is set by three settings working together:</p>
+<ul>
+  <li><b>Shutter speed</b>: set by the 180° rule, so you mostly leave it alone.</li>
+  <li><b>Aperture</b> (f-stop): how wide the lens opens. A low number (f/2.8) lets in more light and blurs the background. A high number (f/8) keeps more in focus.</li>
+  <li><b>ISO</b>: how much the camera brightens the signal. Higher ISO is brighter but adds grain (noise). Keep it as low as the light allows.</li>
+</ul>
+<p>Set exposure once for the shot and lock it. Auto exposure brightens and darkens as people walk through the frame or clouds move.</p>
+
+<h3>White balance</h3>
+<p>White balance tells the camera what color the light is, so whites look white. Auto white balance shifts as the scene changes, so shots of the same scene don't match. Set it manually, in degrees Kelvin:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Light</th><th>Setting</th></tr></thead>
+  <tbody>
+    <tr><td>Indoor bulbs (tungsten)</td><td>About 3200 K</td></tr>
+    <tr><td>Daylight</td><td>About 5600 K</td></tr>
+    <tr><td>Cloudy or shade</td><td>About 6500 K</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Or use the camera's custom white balance: point it at a white card in the light you're shooting in.</p>
+
+<h3>Stability</h3>
+<p>Use a tripod for interviews and any shot that doesn't move. Handheld shots should be on purpose. A gimbal smooths moving shots.</p>
+
+<h3>Sound</h3>
+<p>The microphone built into a camera or phone picks up the whole room. For interviews, use a lavalier (clip-on) mic or a shotgun mic close to the person. Record 30 seconds of the room in silence, called room tone, at every location.</p>
+
+
+<h2 id="phones">Shooting on a phone</h2>
+
+<p>Phones choose settings for you. Most of them can be changed.</p>
+<ul>
+  <li><b>Lock focus and exposure.</b> On an iPhone, press and hold on the subject until "AE/AF Lock" appears. On Android, the steps vary by phone. Look for a lock icon or Pro mode.</li>
+  <li><b>Set resolution and frame rate.</b> On an iPhone, <span class="path">Settings › Camera › Record Video</span>. Choose 4K at 24 or 30 fps, and match it on every phone you use.</li>
+  <li><b>Turn off HDR video</b> unless you know you need it. iPhone HDR footage can look washed out or too bright in editing software and on other screens. It's in <span class="path">Settings › Camera › Record Video › HDR Video</span>.</li>
+  <li><b>File format.</b> iPhones record in HEVC (High Efficiency) by default. It's small but can be slow to edit. <span class="path">Settings › Camera › Formats › Most Compatible</span> records H.264 instead.</li>
+  <li><b>Shoot horizontal</b> unless the video is only for vertical platforms.</li>
+  <li><b>Turn on airplane mode</b> so calls and notifications don't interrupt recording.</li>
+  <li><b>Use a tripod mount</b> and an external mic. Both are inexpensive.</li>
+</ul>
+<p>Phones also record at a variable frame rate. See <a href="#vfr">Variable frame rate</a>.</p>
+
+
+<h2 id="formats">File formats and codecs</h2>
+
+<h3>Containers and codecs</h3>
+<p>A video file has two parts:</p>
+<ul>
+  <li>The <b>container</b> is the file type, shown by the extension: .mp4, .mov, .mxf. It holds the video, the audio, and information about them.</li>
+  <li>The <b>codec</b> is how the video inside is compressed. Two .mp4 files can use different codecs.</li>
+</ul>
+<p>If a file won't open or plays badly, the codec is usually the reason, not the container.</p>
+
+<h3>Common codecs</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Codec</th><th>File size</th><th>Use it for</th></tr></thead>
+  <tbody>
+    <tr><td>H.264 (AVC)</td><td>Small</td><td>Delivery. Plays almost everywhere. The safe choice for exports.</td></tr>
+    <tr><td>H.265 (HEVC)</td><td>Smaller</td><td>Phone and camera recording, 4K delivery. Less compatible, and heavy for older computers to edit.</td></tr>
+    <tr><td>ProRes</td><td>Very large</td><td>Editing and high-quality masters. Easy for editing software to play.</td></tr>
+    <tr><td>AV1</td><td>Smallest</td><td>Streaming platforms. Not common as an export yet.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>H.264 and H.265 save space by storing only what changes from frame to frame. That makes the editing software work harder to show any single frame, so playback can stutter. ProRes stores every frame whole, so it edits smoothly but takes much more space.</p>
+
+<h3>Bitrate</h3>
+<p>Bitrate is how much data each second of video gets, in megabits per second (Mbps). It decides quality and file size more than resolution does. Two 1080p files can be 50 MB or 2 GB depending on bitrate.</p>
+<ul>
+  <li>Too low: blocky smudges, especially in dark areas and fast motion.</li>
+  <li>Too high: huge files with no visible gain.</li>
+</ul>
+<p>For 1080p H.264 delivery, 10–20 Mbps is plenty for most web video. 4K needs about 35–50 Mbps.</p>
+
+<h3 id="vfr">Variable frame rate</h3>
+<p>Phones and screen recorders often record at a <b>variable frame rate</b>: the number of frames per second changes as the phone works. Editing software expects a constant rate. The result is audio that drifts out of sync, often getting worse the longer the clip runs.</p>
+<p>Convert variable frame rate files to a constant frame rate before you edit.</p>
+<p class="software"><strong>Where to find it:</strong> In Adobe Media Encoder, export the clip with the frame rate set to match your project. HandBrake, a free app, does the same under Video, Framerate, with Constant Framerate selected.</p>
+
+
+<h2 id="editing-files">Editing files</h2>
+
+<h3>Project files and media</h3>
+<p>A Premiere Pro project file (.prproj) doesn't contain your video. It points to the media files where they're stored. Move, rename, or delete the media, and the project shows "Media Offline."</p>
+<ul>
+  <li>Make one folder for each project. Put the project file and all media inside it before you import.</li>
+  <li>Don't edit from a phone, the camera card, or the Downloads folder. Copy the media into the project folder first.</li>
+  <li>Back up the camera card before you format it.</li>
+  <li>To move a project to another computer or drive, copy the whole folder.</li>
+</ul>
+<p class="software"><strong>Where to find it:</strong> To fix offline media, right-click the clip in the Project panel and choose <b>Link Media</b>, then find the file. To gather a project and only the media it uses into one folder, use <span class="path">File › Project Manager</span>.</p>
+
+<h3>Proxies</h3>
+<p>A <b>proxy</b> is a small, low-resolution copy of a clip made only for editing. Editing with proxies is smooth on slower computers. The export still uses the full-quality originals.</p>
+<p class="software"><strong>Where to find it:</strong> In Premiere Pro, select clips in the Project panel, right-click, and choose <span class="path">Proxy › Create Proxies</span>. Turn them on and off with the Toggle Proxies button in the Program Monitor.</p>
+
+<h3>Sequence settings</h3>
+<p>The sequence sets the frame size and frame rate of the finished video. The easiest way to get it right is to drag your main clip onto the New Item button in the Project panel. Premiere makes a sequence that matches the clip.</p>
+<p>Don't let one mismatched clip set the sequence. A phone clip at 29.97 fps in a 23.976 fps project should be conformed to the project, not the other way around.</p>
+
+
+<h2 id="exporting">Exporting</h2>
+
+<h3>Export settings by destination</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Destination</th><th>Settings</th></tr></thead>
+  <tbody>
+    <tr><td>YouTube, Vimeo, websites</td><td>H.264, MP4, 1080p or 4K at the project frame rate, 10–20 Mbps for 1080p. Upload to a video host and embed it on a site.</td></tr>
+    <tr><td>Reels, TikTok, Shorts</td><td>H.264, MP4, 1080 × 1920, 30 fps. Burned-in captions.</td></tr>
+    <tr><td>Feed video</td><td>H.264, MP4, 1080 × 1350 (4:5) or 1080 × 1080 (1:1)</td></tr>
+    <tr><td>Master copy to keep</td><td>ProRes 422, MOV, full resolution</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Platforms re-compress every upload. Export at the size the platform wants, so it doesn't resize and compress a second time.</p>
+<p class="software"><strong>Where to find it:</strong> In Premiere Pro, <span class="path">File › Export › Media</span>. Choose H.264 as the format. The <b>Match Source – High Bitrate</b> preset is a good starting point.</p>
+
+<h3>Safe zones on vertical video</h3>
+<p>On Reels, TikTok, and Shorts, the app covers the bottom and right side with captions, buttons, and the account name. Keep text, faces, and logos out of the bottom 20% and right edge of the frame. Check the export on a phone before posting.</p>
+
+<h3>Sending large files</h3>
+<p>Video files are usually too big for email or many upload forms. Upload to a video host or cloud storage and share a link. If a file has to be under a size limit, lower the bitrate, not the resolution.</p>
+
+<h3>Watch the export</h3>
+<p>Play the whole exported file before you hand it in or post it. Check for black frames, missing media, audio sync, and caption timing. Watch it on the screen it's made for: a phone for vertical video, a large screen for a lobby display.</p>
+
+
+<h2 id="accessibility">Captions and accessibility</h2>
+
+<h3>Closed and open captions</h3>
+<ul>
+  <li><b>Closed captions</b> are a separate text file (SRT or VTT) that viewers can turn on or off. YouTube, Vimeo, and most video players use them. Upload the file with the video.</li>
+  <li><b>Open captions</b> are burned into the picture and always show. Use them on social video, where most people watch with the sound off.</li>
+</ul>
+
+<h3>Caption standards</h3>
+<ul>
+  <li>Match the words spoken, including names spelled correctly.</li>
+  <li>No more than two lines on screen at once.</li>
+  <li>Time each caption to appear with the speech.</li>
+  <li>Identify speakers when it isn't clear who's talking.</li>
+  <li>Note important sounds: [crowd cheering], [phone rings].</li>
+</ul>
+<p>Automatic captions are a starting point. Check every caption for errors, especially names, places, and numbers.</p>
+<p class="software"><strong>Where to find it:</strong> In Premiere Pro, open the <b>Text</b> panel, transcribe the sequence, and choose Create Captions. When you export, choose to burn captions into the video or create a sidecar SRT file.</p>
+
+<h3>Transcripts and description</h3>
+<p>A transcript is all the spoken words and important sounds as text. Post it with the video for people who can't watch it.</p>
+<p>If important information is only shown, not said, such as a name on a sign or a chart, people who can't see the video miss it. Say it in the narration, or add audio description.</p>
+
+
+<h2 id="quick-answers">Quick answers</h2>
+
+<dl class="qa">
+  <dt>Why does the focus keep pulsing in my interview?</dt>
+  <dd>Autofocus is hunting. Use manual focus on a tripod. See <a href="#camera">Focus</a>.</dd>
+
+  <dt>Why is my audio out of sync?</dt>
+  <dd>The clip was probably recorded at a variable frame rate on a phone. Convert it to a constant frame rate before editing. See <a href="#vfr">Variable frame rate</a>.</dd>
+
+  <dt>Why does my motion look choppy?</dt>
+  <dd>The shutter speed is too fast, or the clip's frame rate doesn't match the sequence. See <a href="#shutter">Shutter speed</a> and <a href="#frame-rate">Frame rate</a>.</dd>
+
+  <dt>Why does my video flicker or have rolling dark bands?</dt>
+  <dd>The shutter speed is catching the pulse of LED or fluorescent lights. Try 1/60 or 1/120. See <a href="#shutter">Flicker from lights</a>.</dd>
+
+  <dt>Why do my shots of the same scene have different colors?</dt>
+  <dd>Auto white balance changed between shots. Set it manually. See <a href="#camera">White balance</a>.</dd>
+
+  <dt>Why does my iPhone footage look washed out or too bright?</dt>
+  <dd>It was recorded in HDR. Turn off HDR video on the phone. See <a href="#phones">Shooting on a phone</a>.</dd>
+
+  <dt>Why does my project say "Media Offline"?</dt>
+  <dd>The media files were moved or renamed. Use Link Media to find them. See <a href="#editing-files">Editing files</a>.</dd>
+
+  <dt>Why is my export so big?</dt>
+  <dd>The bitrate is high, or you exported ProRes. Use H.264 at 10–20 Mbps for 1080p. See <a href="#formats">Bitrate</a>.</dd>
+
+  <dt>Why does playback stutter while I edit?</dt>
+  <dd>The footage is H.264 or HEVC, or 4K on a slower computer. Make proxies. See <a href="#editing-files">Proxies</a>.</dd>
+
+  <dt>Can I use this song or clip?</dt>
+  <dd>Probably not without a license. See <a href="rights.html">Rights and Credit</a>.</dd>
+</dl>
+
+<p class="back-top"><a href="#top">Back to top</a></p>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">School of Journalism and Mass Communication</div>
+</footer>
+
+<script src="toc.js"></script>
+</body>
+</html>

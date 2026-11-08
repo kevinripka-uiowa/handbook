@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Technical Basics | SJMC Production Handbook</title>
+<meta name="description" content="How websites work, ways to build one, hosting, files and links, responsive design and text sizes, media, embeds, writing, share previews, and accessibility.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="index.html">SJMC Production Handbook</a>
+    <nav class="site-nav" aria-label="Handbook pages">
+      <ul>
+        <li><a href="graphics.html">Graphics</a></li>
+        <li><a href="type.html">Type</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html" aria-current="page">Web</a></li>
+        <li><a href="rights.html">Rights and Credit</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#how-it-works">How a website works</a></li>
+    <li><a href="#html">HTML</a></li>
+    <li><a href="#css">CSS</a></li>
+    <li><a href="#javascript">JavaScript</a></li>
+    <li><a href="#building">Ways to build a site</a></li>
+    <li><a href="#hosting">Hosting and domains</a></li>
+    <li><a href="#files">Files and links</a></li>
+    <li><a href="#screens">Responsive design</a></li>
+    <li><a href="#media">Images, video, and fonts</a></li>
+    <li><a href="#embeds">Embeds</a></li>
+    <li><a href="#writing">Writing for the web</a></li>
+    <li><a href="#share">Share previews</a></li>
+    <li><a href="#accessibility">Accessibility</a></li>
+    <li><a href="#publishing">Before you publish</a></li>
+    <li><a href="#quick-answers">Quick answers</a></li>
+  </ol>
+</nav>
+
+<article>
+
+<h1 id="top">Web Technical Basics</h1>
+<p class="lede">How websites work and how professionals build them: code and builders, hosting, files and links, responsive design and text sizes, media, embeds, writing, share previews, and accessibility.</p>
+<p>Most of this applies whether you write code, use a site builder, or work in a newsroom or company content management system.</p>
+
+
+<h2 id="how-it-works">How a website works</h2>
+
+<h3>Files and folders on a server</h3>
+<p>A website is files and folders, the same kind you have on your own computer. They're stored on a <b>server</b>: a computer that's always on and connected to the internet, set up to send those files to anyone who asks.</p>
+<p>The address of a page is mostly the path to a file in those folders:</p>
+<pre class="folders">Files on the server        Address in the browser
+ballpark-site/
+  index.html               example.com/
+  schedule.html            example.com/schedule.html
+  players/
+    index.html             example.com/players/
+  images/
+    logo.svg               example.com/images/logo.svg
+  styles.css</pre>
+<p>A file named <code>index.html</code> is the page a folder opens to, so the address can leave it off. Site builders and CMSs hide the files from you, but they're still there. The builder makes and stores them for you.</p>
+
+<h3>From address to page</h3>
+<ol>
+  <li>Someone types an address or taps a link.</li>
+  <li>The <b>domain</b> (uiowa.edu) is looked up to find the computer, called a <b>server</b>, that stores the site.</li>
+  <li>The server sends the page's files to the browser.</li>
+  <li>The browser reads the files and draws the page on that person's screen.</li>
+</ol>
+<p>The last step matters most for design. The browser builds the page on every screen separately, so the same page looks different on a phone, a laptop, and a large monitor.</p>
+
+<h3>Parts of a web address</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Part</th><th>Example</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td>Protocol</td><td>https://</td><td>How the page is sent. The s means the connection is encrypted. Every site should use https.</td></tr>
+    <tr><td>Subdomain</td><td>clas.</td><td>A section of a domain, often its own site</td></tr>
+    <tr><td>Domain</td><td>uiowa.edu</td><td>The name you register and pay for each year</td></tr>
+    <tr><td>Path</td><td>/journalism/students</td><td>The page within the site, often matching folders</td></tr>
+    <tr><td>Anchor</td><td>#contact</td><td>A spot on the page. The browser jumps to it.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>HTML, CSS, and JavaScript</h3>
+<p>Every web page is made of three kinds of code, whether you write it or a tool writes it for you.</p>
+<ul>
+  <li><a href="#html"><b>HTML</b></a> is the content and its structure: headings, paragraphs, links, images, lists.</li>
+  <li><a href="#css"><b>CSS</b></a> is the appearance: fonts, colors, spacing, and layout at different screen sizes.</li>
+  <li><a href="#javascript"><b>JavaScript</b></a> is behavior: menus that open, maps you can drag, charts that respond.</li>
+</ul>
+<p>Keeping them apart is why a site can be redesigned without rewriting its content, and why a screen reader can read a page aloud from its HTML.</p>
+<p>Everyone who publishes on the web should know basic HTML. You'll see it in CMS code views, embed codes, email newsletters, and site builders' code blocks, and it's how you fix what a visual editor gets wrong. CSS and JavaScript are worth knowing at least well enough to recognize.</p>
+
+
+<h2 id="html">HTML</h2>
+
+<p>HTML marks up content so the browser knows what each part is. Each part is wrapped in <b>tags</b>: an opening tag, the content, and a closing tag with a slash.</p>
+<pre class="folders"><code>&lt;p&gt;The Kernels won 4–2 on Friday.&lt;/p&gt;</code></pre>
+<p>The tags and what's between them make an <b>element</b>. This one is a paragraph.</p>
+
+<h3>The tags to know first</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Tag</th><th>What it is</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td><td>Headings. <code>h1</code> is the page title. <code>h2</code> starts a section, <code>h3</code> a part of a section.</td><td><code>&lt;h2&gt;Schedule&lt;/h2&gt;</code></td></tr>
+    <tr><td><code>&lt;p&gt;</code></td><td>Paragraph</td><td><code>&lt;p&gt;Gates open at 6.&lt;/p&gt;</code></td></tr>
+    <tr><td><code>&lt;a&gt;</code></td><td>Link. <code>href</code> is where it goes.</td><td><code>&lt;a href="schedule.html"&gt;See the schedule&lt;/a&gt;</code></td></tr>
+    <tr><td><code>&lt;img&gt;</code></td><td>Image. <code>src</code> is the file, <code>alt</code> is the alt text. No closing tag.</td><td><code>&lt;img src="images/cardinal.jpg" alt="A male cardinal on a feeder"&gt;</code></td></tr>
+    <tr><td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></td><td>Bulleted list, numbered list, and each item in it</td><td><code>&lt;ul&gt;&lt;li&gt;Tickets&lt;/li&gt;&lt;li&gt;Parking&lt;/li&gt;&lt;/ul&gt;</code></td></tr>
+    <tr><td><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></td><td>Strong importance (bold) and emphasis (italic)</td><td><code>&lt;strong&gt;Rain date:&lt;/strong&gt; Sunday</code></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Choose tags for what the content is, not how it looks. A heading is an <code>h2</code> because it starts a section, not because you want big bold text. Screen readers and search engines depend on this. See <a href="#accessibility">Accessibility</a>.</p>
+
+<h3>A whole page</h3>
+<pre class="folders"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Bird Count 2026&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bird Count 2026&lt;/h1&gt;
+  &lt;p&gt;Volunteers counted 84 species in Johnson County.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="results.html"&gt;See the full results&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+  <li>The <code>head</code> holds information about the page, like the title in the browser tab. It doesn't show on the page.</li>
+  <li>The <code>body</code> holds everything that shows.</li>
+  <li>Elements go inside other elements. Close them in reverse order.</li>
+</ul>
+
+<h3>Try it</h3>
+<ul>
+  <li><b>In a browser:</b> W3Schools' "Try it Yourself" editor lets you change HTML and see the result, on any device.</li>
+  <li><b>On a computer:</b> type the page above into a code editor such as Visual Studio Code, save it as <code>index.html</code>, and open it in a browser.</li>
+  <li><b>On any website:</b> right-click part of a page and choose <b>Inspect</b> to see its HTML. In Safari, turn on the developer features first. See <a href="#screens">Check on a phone</a>.</li>
+</ul>
+<p class="software"><strong>Learn more:</strong> <a href="https://www.w3schools.com/html/">W3Schools HTML Tutorial</a>. For more depth, <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">MDN Web Docs: Learn web development</a>.</p>
+
+
+<h2 id="css">CSS</h2>
+
+<p>CSS controls how HTML looks. A CSS <b>rule</b> picks elements and sets their style:</p>
+<pre class="folders"><code>h1 {
+  font-family: Georgia, serif;
+  color: #000000;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 65ch;
+}</code></pre>
+<ul>
+  <li>The <b>selector</b> (<code>h1</code>, <code>p</code>) says which elements the rule applies to.</li>
+  <li>Inside the braces, each <b>property</b> gets a <b>value</b>, ending with a semicolon.</li>
+  <li>CSS usually lives in its own file, such as <code>styles.css</code>, linked from the head of every page: <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>. Change the file, and every page changes.</li>
+</ul>
+
+<h3>Properties to know first</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Property</th><th>What it sets</th></tr></thead>
+  <tbody>
+    <tr><td><code>font-family</code>, <code>font-size</code>, <code>font-weight</code></td><td>Typeface, size, and weight</td></tr>
+    <tr><td><code>line-height</code></td><td>Space between lines of text</td></tr>
+    <tr><td><code>color</code>, <code>background-color</code></td><td>Text color and background color, as hex codes such as <code>#FFCD00</code></td></tr>
+    <tr><td><code>margin</code>, <code>padding</code></td><td>Space outside and inside an element's edges</td></tr>
+    <tr><td><code>max-width</code></td><td>The widest an element can get. Keeps lines of text readable on large screens.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Different screen sizes</h3>
+<p>A <b>media query</b> applies rules only at certain screen widths. This is how a layout changes between a phone and a laptop:</p>
+<pre class="folders"><code>h1 { font-size: 30px; }
+
+@media (min-width: 800px) {
+  h1 { font-size: 48px; }
+}</code></pre>
+<ul>
+  <li>The headline is 30 px on phones and 48 px on screens 800 px wide and wider.</li>
+  <li>Body text has no rule here, so it stays the same size on every screen. That's on purpose. See <a href="#body-text">Leave body text at its size</a>.</li>
+  <li>Professionals often write sizes in <code>rem</code> instead of <code>px</code>. <code>1rem</code> is the reader's browser text size, 16 px unless they've changed it, so text grows for readers who set larger text.</li>
+</ul>
+<p>See <a href="#screens">Responsive design</a>.</p>
+<p class="software"><strong>Learn more:</strong> <a href="https://www.w3schools.com/css/">W3Schools CSS Tutorial</a>.</p>
+
+
+<h2 id="javascript">JavaScript</h2>
+
+<p>JavaScript makes a page respond: menus that open, maps you can drag, charts that change when you tap them, forms that check what you typed. Most media makers don't write much JavaScript, but you'll paste it in embed codes and see it in code from AI tools and templates.</p>
+<pre class="folders"><code>&lt;button id="more"&gt;Show the box score&lt;/button&gt;
+&lt;p id="score" hidden&gt;Kernels 4, Loggers 2&lt;/p&gt;
+
+&lt;script&gt;
+  document.getElementById("more").addEventListener("click", function () {
+    document.getElementById("score").hidden = false;
+  });
+&lt;/script&gt;</code></pre>
+<ul>
+  <li>JavaScript goes inside <code>&lt;script&gt;</code> tags, or in its own file linked with <code>&lt;script src="..."&gt;</code>.</li>
+  <li>This example finds the button by its <code>id</code>, waits for a click, then shows the hidden paragraph.</li>
+  <li>Only paste scripts from sources you trust. A script can change anything on the page and send readers' information elsewhere.</li>
+  <li>Keep important content in the HTML, not only in JavaScript. If the script fails, the content should still be there.</li>
+</ul>
+<p class="software"><strong>Learn more:</strong> <a href="https://www.w3schools.com/js/">W3Schools JavaScript Tutorial</a>.</p>
+
+
+<h2 id="building">Ways to build a site</h2>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Approach</th><th>Examples</th><th>Good for</th><th>Trade-offs</th></tr></thead>
+  <tbody>
+    <tr><td>Site builder</td><td>Squarespace, Wix, Tilda</td><td>Portfolios, small business and event sites, stories built from blocks</td><td>Fast to start. Limited to what the builder allows. Hard to move to another service. Monthly fee for a custom domain and some features.</td></tr>
+    <tr><td>Content management system (CMS)</td><td>WordPress, Drupal, newsroom systems such as Arc</td><td>News sites, organizations, anything with many authors and many pages</td><td>Writers fill in fields, and templates control the design. You'll likely publish in one at work, but you don't design it.</td></tr>
+    <tr><td>Visual development</td><td>Webflow, Framer</td><td>Custom-designed sites without writing code by hand</td><td>More control than a builder. You need to understand how layout works in CSS to use them well.</td></tr>
+    <tr><td>Hand-coded</td><td>HTML and CSS files on GitHub Pages or a web server</td><td>Interactive graphics, custom pages, full control</td><td>Most control, most to learn. Small static sites are free to host.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The University of Iowa's sites are built in SiteNow, a CMS based on Drupal. Most newsrooms and companies use a CMS, so expect to publish into a template someone else built.</p>
+
+<h3 id="ai-code">Code written by AI</h3>
+<p>AI tools write working HTML, CSS, and JavaScript quickly. You're still responsible for it.</p>
+<ul>
+  <li>Decide what the page should do and how it should look before you ask.</li>
+  <li>Read the code. Know what each part does well enough to change it.</li>
+  <li>Test it on a phone and with a keyboard. AI code often skips accessibility.</li>
+  <li>Check what it loads from other sites. Scripts from unknown sources can break or track readers.</li>
+</ul>
+<p>More on using AI responsibly is on the <a href="ai.html">AI</a> page.</p>
+
+
+<h2 id="hosting">Hosting and domains</h2>
+
+<ul>
+  <li><b>A domain</b> is the address. You rent it from a registrar for a year at a time, usually $10–20 a year for a .com. If the renewal lapses, someone else can buy it.</li>
+  <li><b>Hosting</b> is the server space where the files live. Site builders include it. Hand-coded sites need a host, such as GitHub Pages.</li>
+  <li><b>A free address</b> such as yourname.wixsite.com or username.github.io works for class. For a portfolio you'll share with employers, a custom domain looks more professional.</li>
+</ul>
+
+<h3>Who owns it</h3>
+<p>When you build a site for a client or organization, the domain and hosting accounts should be in their name, not yours. Otherwise they lose the site when you leave. Hand over the logins in writing at the end of the project.</p>
+
+
+<h2 id="files">Files and links</h2>
+
+<h3>Naming files</h3>
+<ul>
+  <li>Lowercase letters, numbers, and hyphens only: <code>spring-game-poster.jpg</code>.</li>
+  <li>No spaces. A space becomes <code>%20</code> in the address and can break links.</li>
+  <li>Names are case-sensitive on most servers. <code>Photo.JPG</code> and <code>photo.jpg</code> are different files. A link that works on your computer can break once it's online.</li>
+  <li>The home page of a site or folder is named <code>index.html</code>.</li>
+</ul>
+
+<h3>Absolute and relative links</h3>
+<ul>
+  <li><b>Absolute:</b> the full address, <code>https://uiowa.edu/admissions</code>. Use for other sites.</li>
+  <li><b>Relative:</b> a path from the current page, <code>images/cardinal.jpg</code> or <code>../index.html</code>. Use within your own site, so it keeps working if the domain changes.</li>
+</ul>
+<p>Never link to a file on your own computer, such as <code>file:///Users/</code> or <code>C:\</code>. It works only on your computer.</p>
+
+<h3>Links that open a new tab</h3>
+<p>Let links open in the same tab unless the reader is in the middle of something they'd lose, such as a form. Readers know how to open a new tab themselves.</p>
+
+
+<h2 id="screens">Responsive design</h2>
+
+<p>More than half of web visits are on phones. A page has to work from about 320 px wide to wider than 2000 px. <b>Responsive design</b> means one page adjusts its layout to fit each screen. You don't build a separate phone site.</p>
+
+<h3 id="what-changes">What changes on a phone</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Part of the page</th><th>On a phone</th></tr></thead>
+  <tbody>
+    <tr><td>Body text</td><td>Stays the same size. Lines get shorter, and the text reflows onto more lines.</td></tr>
+    <tr><td>Columns</td><td>Stack into one column, top to bottom.</td></tr>
+    <tr><td>Headlines and other large text</td><td>Get smaller, so a headline doesn't fill the screen.</td></tr>
+    <tr><td>Images and video</td><td>Shrink to fit the width of the screen and keep their proportions.</td></tr>
+    <tr><td>Menus</td><td>Collapse behind a menu button.</td></tr>
+    <tr><td>Margins and space between sections</td><td>Get smaller, so the content uses the width of the screen.</td></tr>
+    <tr><td>Buttons and links</td><td>Stay the same size, so they're easy to tap.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="body-text">Leave body text at its size</h3>
+<p>Don't shrink body text to make the phone version look like the desktop version. People hold a phone closer to their eyes than a laptop screen, so text at the same size reads at about the same size on both. Let the text reflow. If a reader has to pinch to zoom, the text is too small.</p>
+<p>Don't make body text bigger on large screens either. Keep the size and limit how wide the lines get. See <a href="#text-sizes">Text sizes from desktop to phone</a>.</p>
+
+<h3 id="stacking">When columns stack</h3>
+<ul>
+  <li><b>Columns stack in order,</b> left column first. Check that the order still makes sense on a phone: a photo above its caption, the story before the sidebar.</li>
+  <li><b>Side-by-side comparisons</b>, such as before and after photos or two charts, end up one above the other. Label each one so the comparison still works.</li>
+  <li><b>Tables with many columns don't stack.</b> Let them scroll sideways inside their own box, or turn them into a list.</li>
+</ul>
+
+<h3 id="images-shrink">Images and video shrink to fit</h3>
+<ul>
+  <li><b>Site builders and video players from YouTube and Vimeo</b> shrink to fit on their own. In hand-coded pages, one CSS rule does it: <code>img { max-width: 100%; height: auto; }</code>.</li>
+  <li><b>Text in an image shrinks with the image.</b> A graphic that's readable on a laptop can be unreadable on a phone. Make a phone version with larger text, or put the words on the page instead.</li>
+  <li><b>Wide images get short.</b> A panorama or a wide chart can end up a thin strip on a phone. Try a taller crop or a phone version.</li>
+  <li><b>Embed codes with a fixed width</b> run off the screen. See <a href="#embeds">Embeds</a>.</li>
+</ul>
+
+<h3 id="breakpoints">Breakpoints</h3>
+<ul>
+  <li><b>A breakpoint</b> is a screen width where the layout changes, such as when columns stack. Site builders let you edit the layout at each one. Check every one.</li>
+  <li><b>Design for the phone first</b> when most of your audience reads on phones. News and social traffic is mostly phones.</li>
+</ul>
+
+<h3 id="text-sizes">Text sizes from desktop to phone</h3>
+<p>Text on a page does one of two jobs, and each is sized a different way:</p>
+<ul>
+  <li><b>Reading text</b>, such as stories, headlines, and captions. Body text stays the same size on a phone, 16–22 px. 16 px is the most common. Headlines get smaller.</li>
+  <li><b>UI text</b>, such as buttons, menus, and form fields. It stays the same size on every screen. Buttons and menu links are 16–18 px.</li>
+</ul>
+<p>Full size tables for headlines, captions, buttons, and HTML email are on <a href="type.html#web-sizes">Type: Web page sizes</a> and <a href="type.html#email-sizes">Type: HTML email sizes</a>.</p>
+
+<h3 id="check-phone">Check on a phone</h3>
+<p>Preview the page at phone width while you work, then open the published page on a real phone. Look for text too small to read, buttons too close to tap, and anything that scrolls sideways.</p>
+<p>Text often looks a different size on a real phone than in a phone-width preview on a computer. The preview doesn't show everything a phone does:</p>
+<ul>
+  <li><b>Phone pixels are smaller.</b> A phone fits more pixels into an inch than a computer screen, so 18 px text is physically smaller on a phone. A 375 px preview on a monitor is much wider than a real phone. Judge text size on the phone, held where you'd read it.</li>
+  <li><b>Phones enlarge some text on their own.</b> Safari on an iPhone can make text bigger when the phone is turned sideways. Chrome on Android can enlarge text in wide blocks. A computer browser does neither.</li>
+  <li><b>Readers change their settings.</b> Many people set larger text on their phones or zoom pages in the browser. Your phone may not match your reader's. The page should still work when text is bigger.</li>
+  <li><b>A page missing its viewport setting</b> shows up on a phone as a tiny desktop page. A narrow computer window doesn't show the problem. Site builders handle this for you. Hand-coded pages and code from AI tools sometimes leave it out.</li>
+</ul>
+<p>Site builders handle most of this. If you write your own code, two lines fix the viewport setting and the automatic enlarging: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> in the head, and <code>html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }</code> in the CSS. Use <code>100%</code>, not <code>none</code>, which can stop readers from zooming.</p>
+<p class="software"><strong>Where to find it:</strong> In Chrome, <span class="path">View › Developer › Developer Tools</span>, then the device button at the top left of the panel. In Safari, turn on <span class="path">Settings › Advanced › Show features for web developers</span>, then <span class="path">Develop › Enter Responsive Design Mode</span>. Site builders have a phone preview button in the editor.</p>
+
+
+<h2 id="media">Images, video, and fonts</h2>
+
+<h3>Images</h3>
+<ul>
+  <li><b>Export at twice the size it displays</b>, so it's sharp on high-density screens. An image shown 800 px wide should be 1600 px wide.</li>
+  <li><b>Keep file size down.</b> Aim for under 500 KB for a large photo, much less for small images. Large images make pages slow on phone data.</li>
+  <li><b>Use JPG or WebP for photos</b>, PNG or SVG for logos and graphics with flat color.</li>
+  <li><b>Write alt text.</b> See <a href="#accessibility">Accessibility</a>.</li>
+</ul>
+<p>Formats, sizes, and compression are on <a href="graphics.html#screens">Graphics: Exporting for screens</a>.</p>
+
+<h3>Video and audio</h3>
+<p>Don't upload video files to a page. Upload to YouTube or Vimeo and embed the player, which adjusts quality to each reader's connection. Do the same with audio and a podcast or audio host. See <a href="video.html#exporting">Video: Exporting</a>.</p>
+
+<h3>Fonts</h3>
+<ul>
+  <li>A web page can only use fonts the browser can load. Use the site builder's fonts, a web font service such as Adobe Fonts or Google Fonts, or system fonts already on every device.</li>
+  <li>Desktop font licenses often don't cover web use. Check before you upload a font file.</li>
+  <li>Each font weight is a separate download. Two or three weights are usually enough.</li>
+</ul>
+<p>Font files and licenses are on <a href="type.html#fonts">Type: Font files and licenses</a>.</p>
+
+
+<h2 id="embeds">Embeds</h2>
+
+<p>An embed shows something hosted on another site inside your page: a video, a Datawrapper chart, a map, a social post. You paste an embed code, usually an <code>&lt;iframe&gt;</code>, into the page.</p>
+<ul>
+  <li><b>It depends on the other site.</b> If the original is deleted, made private, or the service shuts down, your page shows an empty box. For important material, keep a screenshot or a copy you have rights to.</li>
+  <li><b>Check it on a phone.</b> Some embed codes set a fixed width and run off small screens. Look for a responsive embed option.</li>
+  <li><b>Builders may limit custom code.</b> Some only allow embed codes on paid plans or in a specific block type.</li>
+  <li><b>Embeds load other sites' scripts</b>, which can slow the page and track readers. Use only what the story needs.</li>
+</ul>
+<p>Embedding a post usually doesn't need permission. Downloading it and re-uploading it does. See <a href="rights.html#by-medium">Rights and Credit</a>.</p>
+
+
+<h2 id="writing">Writing for the web</h2>
+
+<p>People scan web pages before they decide to read. Search engines and screen readers depend on the same structure.</p>
+<ul>
+  <li><b>Page title.</b> The text in the browser tab and in search results. Make it specific, about 60 characters or fewer: "Hawks beat Iowa State 4–2" not "Home".</li>
+  <li><b>Headings in order.</b> One main heading (H1) per page, then H2s for sections and H3s inside them. Choose a heading level for its place in the outline, not for its size. Change the size with styles.</li>
+  <li><b>Front-load.</b> Put the important words at the start of headings, paragraphs, and links. Readers scan the left edge.</li>
+  <li><b>Short paragraphs.</b> One idea each. On a phone, a 6-line paragraph fills the screen.</li>
+  <li><b>Link text says where it goes.</b> "Download the 2026 schedule (PDF)," not "click here." Screen reader users often skip from link to link.</li>
+  <li><b>Interface text.</b> Button labels, menus, and form fields are writing too. Use plain words and say what happens: "Subscribe" or "Send message," not "Submit."</li>
+</ul>
+
+
+<h2 id="share">Share previews</h2>
+
+<p>When a link is posted on social media or in a text message, the app shows a preview card with an image, a title, and a description. The page sets these with hidden tags called <b>Open Graph</b> tags.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Part</th><th>Guideline</th></tr></thead>
+  <tbody>
+    <tr><td>Image</td><td>1200 × 630 px, JPG or PNG. Keep text and faces near the center: some apps crop it to a square.</td></tr>
+    <tr><td>Title</td><td>Usually the page title. About 60 characters.</td></tr>
+    <tr><td>Description</td><td>One or two sentences, about 150 characters. Write it. Otherwise the app picks text from the page.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Site builders and CMSs have fields for these, usually in the page's settings under SEO or Social. Apps save a copy of a preview, so a fix may not show on a link that's already been posted. Facebook's Sharing Debugger and LinkedIn's Post Inspector make them refresh.</p>
+
+
+<h2 id="accessibility">Accessibility</h2>
+
+<p>Web accessibility is measured against the <b>Web Content Accessibility Guidelines (WCAG)</b>. Level AA is the usual requirement. A federal rule from 2024 requires public universities, including Iowa, to meet WCAG 2.1 AA on their web content.</p>
+<ul>
+  <li><b>Alt text</b> on every meaningful image: what it shows that matters to this page, in a sentence or so. Screen readers read it aloud. Don't start with "Image of."
+    <ul>
+      <li>For a poster or flyer, include all the text on it.</li>
+      <li>For a chart, give the main finding, not every number.</li>
+      <li>For a decorative image that adds no information, leave the alt text empty so screen readers skip it.</li>
+    </ul>
+    Alt text is different from a caption. A caption is visible to everyone and adds context. Alt text replaces the image for people who can't see it, so a published photo usually needs both.</li>
+  <li><b>Text in images</b> isn't readable by screen readers or search. Put important words in the page text, or in the alt text.</li>
+  <li><b>Contrast:</b> text needs enough contrast with its background for people with low vision, and for anyone reading in bright sun.
+    <ul>
+      <li>Normal text: at least 4.5 to 1.</li>
+      <li>Large text (about 24 px, or 19 px bold) and important graphic shapes, such as chart lines, icons, and button edges: at least 3 to 1.</li>
+    </ul>
+    Check with a contrast checker: search "WebAIM contrast checker" and paste in both hex codes.</li>
+  <li><b>Don't use color alone</b> to carry meaning. About 1 in 12 men has some form of color blindness. Underline links in body text. If a chart or map uses red and green to show a difference, add labels, patterns, or a second difference such as light versus dark.</li>
+  <li><b>Headings in order</b> and <b>link text that says where it goes</b>. See <a href="#writing">Writing for the web</a>.</li>
+  <li><b>Reflow:</b> at 320 px wide, or zoomed to 400% on a laptop, the page should read without scrolling sideways. Text zoomed to 200% shouldn't get cut off or overlap.</li>
+  <li><b>Keyboard:</b> every link, button, and menu should work with the Tab and Enter keys. Try it.</li>
+  <li><b>Captions</b> on video and <b>transcripts</b> for audio. See <a href="video.html#accessibility">Video</a> and <a href="audio.html#transcripts">Audio</a>.</li>
+  <li><b>Embedded charts and maps</b> need a text version of the main point, in the text around them or in the alt text.</li>
+</ul>
+<p>Automatic checkers such as WAVE find missing alt text, low contrast, and skipped headings. They can't tell whether alt text is accurate or a page makes sense when read aloud. Check those yourself.</p>
+
+
+<h2 id="publishing">Before you publish</h2>
+
+<ul>
+  <li>Click every link and button on the published page, not the preview.</li>
+  <li>Open it on a phone. Read the whole page there.</li>
+  <li>Check every image has alt text, every video has captions, and nothing is pixelated or huge.</li>
+  <li>Proofread the title, headings, captions, and buttons. Errors in headings are the most visible.</li>
+  <li>Paste the link into a message to yourself and check the share preview.</li>
+  <li>Check credits for every photo, graphic, video, and song you didn't make. See <a href="rights.html#credit">Credit lines</a>.</li>
+</ul>
+
+
+<h2 id="quick-answers">Quick answers</h2>
+
+<dl class="qa">
+  <dt>Why does my site look different on my phone?</dt>
+  <dd>The layout changes at different screen widths. Edit the phone version, or the layout at each breakpoint. See <a href="#screens">Responsive design</a>.</dd>
+
+  <dt>Should text be smaller on a phone?</dt>
+  <dd>Body text, no. Leave it at its desktop size and let it reflow. Headlines, yes. UI text such as buttons and menus stays the same. See <a href="#text-sizes">Text sizes from desktop to phone</a>.</dd>
+
+  <dt>Why does my image show on my computer but not online?</dt>
+  <dd>The file name's capitals don't match the link, the file wasn't uploaded, or the link points to your computer. See <a href="#files">Files and links</a>.</dd>
+
+  <dt>Why is my page slow to load?</dt>
+  <dd>Usually large images, uploaded video, or too many embeds. Resize images and embed video from a host. See <a href="#media">Images, video, and fonts</a>.</dd>
+
+  <dt>Why does my link preview show the wrong image?</dt>
+  <dd>The share image isn't set, or the app saved an old preview. Set the image in the page settings and refresh it with the platform's debugger. See <a href="#share">Share previews</a>.</dd>
+
+  <dt>Why does my embed show an empty box?</dt>
+  <dd>The original was deleted or made private, the builder blocks custom code on your plan, or the code was pasted into the wrong kind of block. See <a href="#embeds">Embeds</a>.</dd>
+
+  <dt>Do I need my own domain?</dt>
+  <dd>Not for class. For a portfolio you send to employers, it's worth the yearly fee. See <a href="#hosting">Hosting and domains</a>.</dd>
+</dl>
+
+<p class="back-top"><a href="#top">Back to top</a></p>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">School of Journalism and Mass Communication</div>
+</footer>
+
+<script src="toc.js"></script>
+</body>
+</html>

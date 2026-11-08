@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio Technical Basics | SJMC Production Handbook</title>
+<meta name="description" content="Microphones, recording levels, sample rate, file formats, editing, loudness, and exporting audio.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="index.html">SJMC Production Handbook</a>
+    <nav class="site-nav" aria-label="Handbook pages">
+      <ul>
+        <li><a href="graphics.html">Graphics</a></li>
+        <li><a href="type.html">Type</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html" aria-current="page">Audio</a></li>
+        <li><a href="web.html">Web</a></li>
+        <li><a href="rights.html">Rights and Credit</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#microphones">Microphones</a></li>
+    <li><a href="#recording">Recording</a></li>
+    <li><a href="#levels">Levels and clipping</a></li>
+    <li><a href="#sample-rate">Sample rate, bit depth, and channels</a></li>
+    <li><a href="#formats">File formats</a></li>
+    <li><a href="#editing">Editing</a></li>
+    <li><a href="#loudness">Loudness</a></li>
+    <li><a href="#exporting">Exporting</a></li>
+    <li><a href="#transcripts">Transcripts and accessibility</a></li>
+    <li><a href="#quick-answers">Quick answers</a></li>
+  </ol>
+</nav>
+
+<article>
+
+<h1 id="top">Audio Technical Basics</h1>
+<p class="lede">How sound is recorded, measured, edited, and delivered: microphones, levels, file formats, loudness, and exporting for podcasts, video, and social media.</p>
+<p>People will watch a video with poor picture. They stop listening to poor sound. Most audio problems can't be fixed in editing, so most of this page is about recording.</p>
+<p>Music and sound effects you didn't make are covered on <a href="rights.html#by-medium">Rights and Credit</a>.</p>
+
+
+<h2 id="microphones">Microphones</h2>
+
+<h3>Types of microphones</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Type</th><th>What it is</th><th>Use it for</th></tr></thead>
+  <tbody>
+    <tr><td>Dynamic</td><td>Sturdy and less sensitive. Picks up the voice close to it and less of the room.</td><td>Podcasts in ordinary rooms, interviews in noisy places, handheld reporting</td></tr>
+    <tr><td>Condenser</td><td>More sensitive and detailed. Picks up more of the room. Needs power, called phantom power (48V), from the recorder or interface.</td><td>Quiet, treated rooms: studios, voiceover booths</td></tr>
+    <tr><td>Lavalier (lav)</td><td>A small clip-on mic, wired or wireless.</td><td>On-camera interviews, anyone who moves while talking</td></tr>
+    <tr><td>Shotgun</td><td>A long mic that picks up mostly what it points at.</td><td>On a camera or on a boom pole above the subject, just out of frame</td></tr>
+    <tr><td>Built-in</td><td>The mic in a phone, camera, or laptop. It picks up the whole room.</td><td>Reference sound for syncing. Not for anything you publish.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>USB mics are dynamic or condenser mics that plug straight into a computer. They're fine for a solo podcast at a desk.</p>
+
+<h3>Pickup patterns</h3>
+<p>A mic's pickup pattern is the direction it hears from.</p>
+<ul>
+  <li><b>Cardioid:</b> hears the front, rejects the back. Most podcast and handheld mics. Point the front at the mouth.</li>
+  <li><b>Supercardioid and shotgun:</b> narrower. Aim matters more: off-axis voices sound thin and far away.</li>
+  <li><b>Omnidirectional:</b> hears all directions equally. Most lavs. Placement matters more than aim.</li>
+</ul>
+
+<h3>Mic placement</h3>
+<ul>
+  <li><b>Closer is better.</b> Each time you halve the distance, the voice gets about 6 dB louder compared with the room. Moving the mic closer does more than any setting or plugin.</li>
+  <li><b>Podcast or handheld mic:</b> about a fist's width (4–6 in) from the mouth, slightly off to the side so breaths and p-sounds don't hit it directly. Use a foam cover or pop filter.</li>
+  <li><b>Lav:</b> on the chest, about a hand's width below the chin, on the side the person will face. Keep it away from jewelry, collars, and fabric that rubs.</li>
+  <li><b>Shotgun on a boom:</b> above the subject, pointed down at the mouth, as close as the frame allows. A shotgun on top of a camera is usually too far away for interviews.</li>
+</ul>
+
+
+<h2 id="recording">Recording</h2>
+
+<h3>The room</h3>
+<ul>
+  <li><b>Pick a soft room.</b> Carpet, curtains, couches, and closets full of clothes soak up echo. Bare walls, glass, and tile make it.</li>
+  <li><b>Turn off what hums.</b> Fans, heating and air conditioning, refrigerators, buzzing lights. Put a reminder on the fridge to plug it back in.</li>
+  <li><b>Silence phones.</b> Airplane mode, for everyone in the room.</li>
+  <li><b>Listen first.</b> Stand silently for 10 seconds before you record. Your brain tunes out noise the mic will pick up.</li>
+</ul>
+
+<h3>Room tone</h3>
+<p>Record 30 seconds of the room with everyone silent, at every location. Editors use it to fill gaps and cover edits so the background doesn't drop out. It's also the noise sample for noise reduction.</p>
+
+<h3>Wear headphones</h3>
+<p>Listen through headphones the whole time you record, not only at the start. The level meter can look fine while a cable crackles, a lav rubs, or the mic isn't on at all. Closed-back headphones block outside sound so you hear only the mic.</p>
+
+<h3>Recording on a phone</h3>
+<ul>
+  <li><b>Get the phone close.</b> Within about a foot of the speaker's mouth, pointed at them, mic end toward the mouth. A phone across a table records the room, not the voice.</li>
+  <li><b>Use an external mic</b> when you can. A lav or a small wireless mic made for phones is inexpensive and is the biggest improvement.</li>
+  <li><b>Record at full quality.</b> On an iPhone, Voice Memos saves compressed files by default. Change it to Lossless.</li>
+  <li><b>Turn on airplane mode.</b> A call or notification can stop the recording or add a buzz.</li>
+  <li><b>Don't hold it in your hand</b> while recording. Handling noise is loud. Set it on something soft or use a small stand.</li>
+</ul>
+<p class="software"><strong>Where to find it:</strong> On an iPhone, <span class="path">Settings › Apps › Voice Memos › Audio Quality › Lossless</span>.</p>
+
+<h3>Backups</h3>
+<p>For an interview you can't repeat, record on two devices. A second phone or a recorder's backup track has saved many interviews. Copy files off the card or phone the same day, to two places.</p>
+
+
+<h2 id="levels">Levels and clipping</h2>
+
+<h3>Decibels on a meter</h3>
+<p>Digital audio meters measure in <b>dBFS</b> (decibels full scale). The top of the scale is 0 dBFS, the loudest the file can hold. Every other level is a negative number: −6, −12, −20. Closer to 0 is louder.</p>
+
+<h3>Where to set levels</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Sound</th><th>Peaks on the meter</th></tr></thead>
+  <tbody>
+    <tr><td>Normal speech</td><td>Around −12 dBFS</td></tr>
+    <tr><td>Loudest moments (laughing, shouting)</td><td>No higher than −6 dBFS</td></tr>
+    <tr><td>Too quiet</td><td>Below about −24 dBFS most of the time</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Set the level while the person talks normally, then watch it. People get louder when they laugh or get excited. Leave room for it.</p>
+<p>Set the level with the gain on the recorder or interface, not the volume in editing. Gain changes what's recorded. Turning a quiet recording up later raises the noise with it.</p>
+
+<h3>Clipping</h3>
+<p>Sound louder than 0 dBFS can't be recorded. The tops of the waveform are cut off flat, which is called <b>clipping</b>. It sounds harsh and crackly.</p>
+<figure>
+  <svg viewBox="0 0 420 140" role="img" aria-labelledby="clip-title">
+    <title id="clip-title">Two waveforms. Left, good level: the peaks stay well inside the dashed lines that mark the maximum. Right, clipped: the peaks run into the dashed lines and are cut off flat.</title>
+    <line x1="15" y1="14" x2="195" y2="14" stroke="var(--figure-bleed)" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="15" y1="102" x2="195" y2="102" stroke="var(--figure-bleed)" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="15" y1="58.0" x2="195" y2="58.0" stroke="var(--line)" stroke-width="1"/>
+    <path d="M15.0 58.0 L15.5 54.0 L16.0 50.3 L16.5 47.1 L17.0 44.8 L17.5 43.4 L18.0 43.0 L18.5 43.4 L19.0 44.4 L19.5 45.7 L20.0 47.0 L20.5 48.1 L21.0 48.7 L21.5 48.9 L22.0 48.6 L22.5 48.2 L23.0 47.7 L23.5 47.6 L24.0 48.2 L24.5 49.7 L25.0 52.2 L25.5 55.7 L26.0 60.0 L26.5 64.8 L27.0 69.7 L27.5 74.2 L28.0 77.9 L28.5 80.5 L29.0 81.7 L29.5 81.5 L30.0 80.0 L30.5 77.5 L31.0 74.3 L31.5 70.9 L32.0 67.7 L32.5 65.0 L33.0 63.0 L33.5 61.8 L34.0 61.1 L34.5 60.8 L35.0 60.4 L35.5 59.7 L36.0 58.2 L36.5 55.8 L37.0 52.5 L37.5 48.4 L38.0 43.7 L38.5 39.0 L39.0 34.8 L39.5 31.5 L40.0 29.6 L40.5 29.3 L41.0 30.7 L41.5 33.8 L42.0 38.1 L42.5 43.3 L43.0 48.8 L43.5 54.0 L44.0 58.6 L44.5 62.2 L45.0 64.6 L45.5 66.0 L46.0 66.6 L46.5 66.7 L47.0 66.8 L47.5 67.2 L48.0 68.1 L48.5 69.9 L49.0 72.3 L49.5 75.2 L50.0 78.2 L50.5 80.9 L51.0 82.7 L51.5 83.4 L52.0 82.5 L52.5 80.1 L53.0 76.2 L53.5 71.0 L54.0 65.2 L54.5 59.1 L55.0 53.4 L55.5 48.4 L56.0 44.6 L56.5 42.2 L57.0 41.0 L57.5 41.0 L58.0 41.8 L58.5 43.0 L59.0 44.3 L59.5 45.2 L60.0 45.6 L60.5 45.4 L61.0 44.7 L61.5 43.8 L62.0 42.9 L62.5 42.4 L63.0 42.7 L63.5 44.0 L64.0 46.4 L64.5 49.8 L65.0 54.1 L65.5 58.9 L66.0 63.8 L66.5 68.4 L67.0 72.3 L67.5 75.1 L68.0 76.7 L68.5 77.0 L69.0 76.2 L69.5 74.6 L70.0 72.5 L70.5 70.1 L71.0 67.9 L71.5 66.1 L72.0 64.9 L72.5 64.1 L73.0 63.8 L73.5 63.7 L74.0 63.5 L74.5 63.1 L75.0 62.2 L75.5 60.6 L76.0 58.4 L76.5 55.6 L77.0 52.4 L77.5 49.1 L78.0 46.1 L78.5 43.6 L79.0 41.8 L79.5 41.0 L80.0 41.3 L80.5 42.5 L81.0 44.4 L81.5 46.9 L82.0 49.7 L82.5 52.4 L83.0 54.8 L83.5 56.7 L84.0 58.1 L84.5 59.0 L85.0 59.4 L85.5 59.7 L86.0 59.9 L86.5 60.3 L87.0 61.1 L87.5 62.3 L88.0 64.0 L88.5 66.1 L89.0 68.3 L89.5 70.5 L90.0 72.3 L90.5 73.5 L91.0 73.9 L91.5 73.3 L92.0 71.8 L92.5 69.4 L93.0 66.3 L93.5 62.9 L94.0 59.5 L94.5 56.2 L95.0 53.5 L95.5 51.5 L96.0 50.1 L96.5 49.5 L97.0 49.4 L97.5 49.6 L98.0 49.8 L98.5 49.8 L99.0 49.5 L99.5 48.7 L100.0 47.4 L100.5 45.9 L101.0 44.3 L101.5 43.0 L102.0 42.2 L102.5 42.3 L103.0 43.5 L103.5 45.8 L104.0 49.1 L104.5 53.3 L105.0 58.0 L105.5 62.8 L106.0 67.3 L106.5 71.1 L107.0 73.9 L107.5 75.6 L108.0 76.1 L108.5 75.6 L109.0 74.4 L109.5 72.8 L110.0 71.2 L110.5 69.9 L111.0 69.1 L111.5 68.9 L112.0 69.2 L112.5 69.7 L113.0 70.2 L113.5 70.2 L114.0 69.5 L114.5 67.8 L115.0 64.8 L115.5 60.7 L116.0 55.7 L116.5 50.2 L117.0 44.5 L117.5 39.4 L118.0 35.2 L118.5 32.3 L119.0 31.1 L119.5 31.4 L120.0 33.2 L120.5 36.2 L121.0 39.8 L121.5 43.7 L122.0 47.3 L122.5 50.3 L123.0 52.5 L123.5 53.9 L124.0 54.6 L124.5 55.0 L125.0 55.4 L125.5 56.2 L126.0 57.8 L126.5 60.3 L127.0 63.7 L127.5 68.0 L128.0 72.8 L128.5 77.6 L129.0 81.8 L129.5 85.1 L130.0 86.9 L130.5 87.0 L131.0 85.4 L131.5 82.2 L132.0 77.7 L132.5 72.5 L133.0 67.0 L133.5 61.9 L134.0 57.4 L134.5 54.0 L135.0 51.6 L135.5 50.3 L136.0 49.8 L136.5 49.8 L137.0 49.7 L137.5 49.4 L138.0 48.5 L138.5 47.0 L139.0 44.8 L139.5 42.2 L140.0 39.5 L140.5 37.2 L141.0 35.6 L141.5 35.1 L142.0 36.0 L142.5 38.3 L143.0 41.9 L143.5 46.5 L144.0 51.7 L144.5 57.0 L145.0 62.0 L145.5 66.3 L146.0 69.6 L146.5 71.6 L147.0 72.6 L147.5 72.5 L148.0 71.8 L148.5 70.7 L149.0 69.6 L149.5 68.8 L150.0 68.4 L150.5 68.6 L151.0 69.1 L151.5 69.9 L152.0 70.6 L152.5 71.0 L153.0 70.7 L153.5 69.6 L154.0 67.6 L154.5 64.8 L155.0 61.2 L155.5 57.2 L156.0 53.2 L156.5 49.4 L157.0 46.2 L157.5 43.8 L158.0 42.5 L158.5 42.1 L159.0 42.7 L159.5 44.1 L160.0 45.8 L160.5 47.8 L161.0 49.6 L161.5 51.1 L162.0 52.1 L162.5 52.8 L163.0 53.0 L163.5 53.1 L164.0 53.2 L164.5 53.5 L165.0 54.3 L165.5 55.7 L166.0 57.7 L166.5 60.2 L167.0 63.1 L167.5 66.1 L168.0 69.0 L168.5 71.5 L169.0 73.2 L169.5 74.1 L170.0 74.0 L170.5 73.0 L171.0 71.2 L171.5 68.9 L172.0 66.3 L172.5 63.6 L173.0 61.2 L173.5 59.3 L174.0 57.9 L174.5 57.0 L175.0 56.5 L175.5 56.2 L176.0 56.0 L176.5 55.5 L177.0 54.7 L177.5 53.3 L178.0 51.3 L178.5 49.0 L179.0 46.4 L179.5 43.8 L180.0 41.7 L180.5 40.2 L181.0 39.7 L181.5 40.3 L182.0 42.0 L182.5 44.7 L183.0 48.2 L183.5 52.2 L184.0 56.3 L184.5 60.1 L185.0 63.4 L185.5 65.8 L186.0 67.4 L186.5 68.2 L187.0 68.4 L187.5 68.2 L188.0 67.9 L188.5 67.9 L189.0 68.3 L189.5 69.2 L190.0 70.7 L190.5 72.6 L191.0 74.5 L191.5 76.1 L192.0 76.9 L192.5 76.8 L193.0 75.4 L193.5 72.6 L194.0 68.6 L194.5 63.6 L195.0 58.0" fill="none" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="105.0" y="130" text-anchor="middle" font-size="14" fill="var(--figure-ink)">Good level</text>
+    <line x1="225" y1="14" x2="405" y2="14" stroke="var(--figure-bleed)" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="225" y1="102" x2="405" y2="102" stroke="var(--figure-bleed)" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="225" y1="58.0" x2="405" y2="58.0" stroke="var(--line)" stroke-width="1"/>
+    <path d="M225.0 58.0 L225.5 45.8 L226.0 34.3 L226.5 24.7 L227.0 17.6 L227.5 14.0 L228.0 14.0 L228.5 14.0 L229.0 16.2 L229.5 20.2 L230.0 24.2 L230.5 27.5 L231.0 29.5 L231.5 30.0 L232.0 29.3 L232.5 27.8 L233.0 26.5 L233.5 26.2 L234.0 28.0 L234.5 32.5 L235.0 40.1 L235.5 50.8 L236.0 64.0 L236.5 78.7 L237.0 93.7 L237.5 102.0 L238.0 102.0 L238.5 102.0 L239.0 102.0 L239.5 102.0 L240.0 102.0 L240.5 102.0 L241.0 102.0 L241.5 97.6 L242.0 87.7 L242.5 79.5 L243.0 73.4 L243.5 69.6 L244.0 67.6 L244.5 66.5 L245.0 65.5 L245.5 63.2 L246.0 58.7 L246.5 51.4 L247.0 41.2 L247.5 28.5 L248.0 14.3 L248.5 14.0 L249.0 14.0 L249.5 14.0 L250.0 14.0 L250.5 14.0 L251.0 14.0 L251.5 14.0 L252.0 14.0 L252.5 14.0 L253.0 29.8 L253.5 45.9 L254.0 59.8 L254.5 70.8 L255.0 78.3 L255.5 82.5 L256.0 84.3 L256.5 84.7 L257.0 84.9 L257.5 86.0 L258.0 89.1 L258.5 94.4 L259.0 101.8 L259.5 102.0 L260.0 102.0 L260.5 102.0 L261.0 102.0 L261.5 102.0 L262.0 102.0 L262.5 102.0 L263.0 102.0 L263.5 98.0 L264.0 80.0 L264.5 61.4 L265.0 43.8 L265.5 28.7 L266.0 17.0 L266.5 14.0 L267.0 14.0 L267.5 14.0 L268.0 14.0 L268.5 14.0 L269.0 15.9 L269.5 18.7 L270.0 20.0 L270.5 19.4 L271.0 17.4 L271.5 14.5 L272.0 14.0 L272.5 14.0 L273.0 14.0 L273.5 15.1 L274.0 22.4 L274.5 32.9 L275.0 46.1 L275.5 60.8 L276.0 75.9 L276.5 89.9 L277.0 101.7 L277.5 102.0 L278.0 102.0 L278.5 102.0 L279.0 102.0 L279.5 102.0 L280.0 102.0 L280.5 95.2 L281.0 88.5 L281.5 83.0 L282.0 79.0 L282.5 76.7 L283.0 75.7 L283.5 75.4 L284.0 75.0 L284.5 73.7 L285.0 70.8 L285.5 66.0 L286.0 59.1 L286.5 50.6 L287.0 40.8 L287.5 30.8 L288.0 21.5 L288.5 14.0 L289.0 14.0 L289.5 14.0 L290.0 14.0 L290.5 14.0 L291.0 16.4 L291.5 24.1 L292.0 32.5 L292.5 40.8 L293.0 48.2 L293.5 54.1 L294.0 58.4 L294.5 61.0 L295.0 62.4 L295.5 63.1 L296.0 63.7 L296.5 65.0 L297.0 67.4 L297.5 71.2 L298.0 76.4 L298.5 82.8 L299.0 89.7 L299.5 96.3 L300.0 101.9 L300.5 102.0 L301.0 102.0 L301.5 102.0 L302.0 100.2 L302.5 92.9 L303.0 83.5 L303.5 73.1 L304.0 62.4 L304.5 52.6 L305.0 44.2 L305.5 37.9 L306.0 33.9 L306.5 31.9 L307.0 31.6 L307.5 32.2 L308.0 32.9 L308.5 33.0 L309.0 31.9 L309.5 29.4 L310.0 25.6 L310.5 20.9 L311.0 16.0 L311.5 14.0 L312.0 14.0 L312.5 14.0 L313.0 14.0 L313.5 20.5 L314.0 30.8 L314.5 43.6 L315.0 58.0 L315.5 72.7 L316.0 86.5 L316.5 98.1 L317.0 102.0 L317.5 102.0 L318.0 102.0 L318.5 102.0 L319.0 102.0 L319.5 102.0 L320.0 98.6 L320.5 94.6 L321.0 92.1 L321.5 91.4 L322.0 92.2 L322.5 93.9 L323.0 95.3 L323.5 95.5 L324.0 93.3 L324.5 87.9 L325.0 78.9 L325.5 66.4 L326.0 51.0 L326.5 34.0 L327.0 16.8 L327.5 14.0 L328.0 14.0 L328.5 14.0 L329.0 14.0 L329.5 14.0 L330.0 14.0 L330.5 14.0 L331.0 14.0 L331.5 14.1 L332.0 25.2 L332.5 34.4 L333.0 41.2 L333.5 45.4 L334.0 47.7 L334.5 48.8 L335.0 50.0 L335.5 52.5 L336.0 57.3 L336.5 65.0 L337.0 75.6 L337.5 88.7 L338.0 102.0 L338.5 102.0 L339.0 102.0 L339.5 102.0 L340.0 102.0 L340.5 102.0 L341.0 102.0 L341.5 102.0 L342.0 102.0 L342.5 102.0 L343.0 85.7 L343.5 69.9 L344.0 56.2 L344.5 45.7 L345.0 38.5 L345.5 34.5 L346.0 32.9 L346.5 32.7 L347.0 32.7 L347.5 31.7 L348.0 29.0 L348.5 24.2 L349.0 17.5 L349.5 14.0 L350.0 14.0 L350.5 14.0 L351.0 14.0 L351.5 14.0 L352.0 14.0 L352.5 14.0 L353.0 14.0 L353.5 22.7 L354.0 38.6 L354.5 55.0 L355.0 70.4 L355.5 83.5 L356.0 93.5 L356.5 99.8 L357.0 102.0 L357.5 102.0 L358.0 100.3 L358.5 97.0 L359.0 93.7 L359.5 91.2 L360.0 90.0 L360.5 90.4 L361.0 92.1 L361.5 94.4 L362.0 96.6 L362.5 97.7 L363.0 97.0 L363.5 93.6 L364.0 87.6 L364.5 78.8 L365.0 67.9 L365.5 55.7 L366.0 43.2 L366.5 31.5 L367.0 21.7 L367.5 14.5 L368.0 14.0 L368.5 14.0 L369.0 14.0 L369.5 15.3 L370.0 20.7 L370.5 26.6 L371.0 32.2 L371.5 36.8 L372.0 40.0 L372.5 41.9 L373.0 42.7 L373.5 42.9 L374.0 43.2 L374.5 44.3 L375.0 46.7 L375.5 50.9 L376.0 57.0 L376.5 64.7 L377.0 73.6 L377.5 82.9 L378.0 91.7 L378.5 99.2 L379.0 102.0 L379.5 102.0 L380.0 102.0 L380.5 102.0 L381.0 98.6 L381.5 91.4 L382.0 83.4 L382.5 75.3 L383.0 67.9 L383.5 62.0 L384.0 57.6 L384.5 54.8 L385.0 53.4 L385.5 52.6 L386.0 51.9 L386.5 50.5 L387.0 47.8 L387.5 43.5 L388.0 37.6 L388.5 30.3 L389.0 22.4 L389.5 14.6 L390.0 14.0 L390.5 14.0 L391.0 14.0 L391.5 14.0 L392.0 14.0 L392.5 17.2 L393.0 28.0 L393.5 40.2 L394.0 52.7 L394.5 64.5 L395.0 74.4 L395.5 82.0 L396.0 86.9 L396.5 89.3 L397.0 89.8 L397.5 89.1 L398.0 88.3 L398.5 88.2 L399.0 89.5 L399.5 92.5 L400.0 97.1 L400.5 102.0 L401.0 102.0 L401.5 102.0 L402.0 102.0 L402.5 102.0 L403.0 102.0 L403.5 102.0 L404.0 90.4 L404.5 75.1 L405.0 58.0" fill="none" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="315.0" y="130" text-anchor="middle" font-size="14" fill="var(--figure-ink)">Clipped</text>
+  </svg>
+  <figcaption>The dashed red lines are 0 dBFS, the maximum. Clipped peaks are cut off flat.</figcaption>
+</figure>
+<p>Clipping works like <a href="photo.html#histogram">blown highlights in a photo</a>: the information isn't there. Repair tools can reduce it a little, but a badly clipped recording can't be fixed. A recording that's a little quiet can. When in doubt, record lower.</p>
+<p class="software"><strong>Where to find it:</strong> In Audition, <span class="path">Effects › Diagnostics › DeClipper</span>. In Audacity, <span class="path">Effect › Noise Removal and Repair › Clip Fix</span>. Use either as a last resort.</p>
+
+<h3>32-bit float recorders</h3>
+<p>Some newer recorders and wireless mics record in <b>32-bit float</b>. These files hold sound far above 0 dBFS, so a level set too high can be turned down later without clipping. It doesn't fix a mic that's too far away, a noisy room, or a loud sound distorting the mic itself. Set levels as if it didn't exist.</p>
+
+
+<h2 id="sample-rate">Sample rate, bit depth, and channels</h2>
+
+<h3>Sample rate</h3>
+<p>Digital audio measures the sound wave thousands of times per second. The <b>sample rate</b> is how many times.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Sample rate</th><th>Use it for</th></tr></thead>
+  <tbody>
+    <tr><td>48 kHz</td><td>Anything that goes with video. Also fine for podcasts.</td></tr>
+    <tr><td>44.1 kHz</td><td>Music, and podcasts if that's what your editor is set to</td></tr>
+    <tr><td>96 kHz</td><td>Music recording and sound design that will be slowed or pitched down. Not needed for voice.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Pick one rate and record everything at it. Mixing 44.1 and 48 kHz files can cause pitch changes or drifting sync. Set the recorder to 48 kHz unless you have a reason not to.</p>
+
+<h3>Bit depth</h3>
+<p>Bit depth is how finely each measurement records loudness. It sets how much room there is between the quietest and loudest sound.</p>
+<ul>
+  <li><b>24-bit:</b> record at this. It leaves room to record lower without adding noise.</li>
+  <li><b>16-bit:</b> fine for finished files. CDs are 16-bit.</li>
+  <li><b>32-bit float:</b> see <a href="#levels">32-bit float recorders</a>.</li>
+</ul>
+
+<h3>Mono and stereo</h3>
+<ul>
+  <li><b>Mono</b> is one channel. One mic makes one mono recording. Voice is usually mono.</li>
+  <li><b>Stereo</b> is two channels, left and right. Music and ambient sound are usually stereo.</li>
+</ul>
+<p>Many recorders and cameras save each mic to its own channel of a stereo file: a lav on the left, a camera mic on the right. If you edit that file as-is, the voice plays in only one ear. In editing, set the clip so the voice channel plays in both ears.</p>
+<p class="software"><strong>Where to find it:</strong> In Premiere Pro, select the clip and use <span class="path">Clip › Modify › Audio Channels</span>, or apply the <b>Fill Left with Right</b> or <b>Fill Right with Left</b> effect. In Audition, <span class="path">Edit › Convert Sample Type</span> converts a file to mono. In Audacity, choose <b>Split Stereo to Mono</b> from the track’s menu (the track name), then delete the empty track.</p>
+
+
+<h2 id="formats">File formats</h2>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Format</th><th>Type</th><th>Use it for</th></tr></thead>
+  <tbody>
+    <tr><td>WAV</td><td>Uncompressed</td><td>Recording, editing, and sending to other editors. The standard.</td></tr>
+    <tr><td>AIFF</td><td>Uncompressed</td><td>Same as WAV. Common on Macs.</td></tr>
+    <tr><td>MP3</td><td>Lossy</td><td>Podcast episodes and anything that has to play everywhere</td></tr>
+    <tr><td>AAC (.m4a)</td><td>Lossy</td><td>Same uses as MP3, slightly better quality at the same size. iPhone recordings and Apple apps.</td></tr>
+    <tr><td>FLAC</td><td>Lossless</td><td>Music archives. Smaller than WAV, same quality. Not all editing software opens it.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Record and edit in WAV or AIFF. Export MP3 or AAC only at the end. Each time a lossy file is edited and exported again, quality drops. Lossy and lossless are explained on <a href="graphics.html#compression">Graphics</a>.</p>
+
+<h3>Bitrate</h3>
+<p>For MP3 and AAC, the bitrate sets quality and file size. Higher is better and bigger.</p>
+<ul>
+  <li><b>Voice, mono:</b> 96–128 kbps</li>
+  <li><b>Voice with music, stereo:</b> 128–192 kbps</li>
+  <li><b>Music:</b> 256–320 kbps</li>
+</ul>
+
+<h3>Session files</h3>
+<p>A multitrack project, such as an Audition session (.sesx) or a Premiere project, doesn't contain the audio. It points to the audio files. Keep the audio files in the project folder and don't rename or move them, or the session can't find them. This works like linked images in a layout. See <a href="graphics.html#formats">Linked images</a>. An Audacity project (.aup3) is different: it holds the audio inside one file, so it can get very large.</p>
+
+
+<h2 id="editing">Editing</h2>
+
+<h3>Destructive and non-destructive editing</h3>
+<ul>
+  <li><b>Destructive:</b> the change is written into the audio file. Audition's <b>Waveform</b> view works this way. Save a copy before you start.</li>
+  <li><b>Non-destructive:</b> the change is stored in the project, and the original file is untouched. Audition's <b>Multitrack</b> view and Premiere Pro work this way.</li>
+  <li><b>Audacity</b> does both. Effects from the <b>Effect</b> menu are written into the audio. Effects added in a track's <b>Effects</b> panel, called realtime effects, can be changed or removed later.</li>
+</ul>
+<p>Build podcasts and stories in Multitrack. Use Waveform for repairs to a single file. In Audacity, use realtime effects while you're still deciding.</p>
+
+<h3>Order of work</h3>
+<ol>
+  <li><b>Cut the story.</b> Choose and arrange the tape first. Don't polish sound you'll delete.</li>
+  <li><b>Clean up.</b> Remove noise, hum, and clicks. Use the lightest setting that works. Heavy noise reduction makes voices sound watery and robotic.</li>
+  <li><b>EQ.</b> A high-pass filter at about 80 Hz removes rumble from voices. Make other changes small.</li>
+  <li><b>Compression.</b> Evens out loud and quiet words so the listener doesn't reach for the volume.</li>
+  <li><b>Mix.</b> Set music and ambient sound well under the voice. If you have to strain to hear words, the music is too loud.</li>
+  <li><b>Loudness.</b> Bring the whole piece to the target for where it's going. See <a href="#loudness">Loudness</a>.</li>
+</ol>
+<p class="software"><strong>Where to find it:</strong> In Audition, noise reduction is under <span class="path">Effects › Noise Reduction/Restoration</span>. In Premiere Pro, the <b>Essential Sound</b> panel has Repair, Clarity, and Enhance Speech settings. In Audacity, <span class="path">Effect › Noise Removal and Repair › Noise Reduction</span>: select room tone, choose Get Noise Profile, then select the whole track and apply.</p>
+
+<h3>AI speech enhancement</h3>
+<p>Enhance Speech in Premiere Pro and similar tools rebuild a voice to sound like a studio recording. They can rescue bad audio. They can also change how a voice sounds, add artifacts, and remove the room so it no longer matches the video. Use them at partial strength and compare with the original.</p>
+
+<h3>Editing standards</h3>
+<p>In journalism, edits can't change what a person meant.</p>
+<ul>
+  <li><b>Allowed:</b> removing ums, pauses, false starts, and repeated words, when the meaning stays the same. Tightening for time.</li>
+  <li><b>Not allowed:</b> joining parts of different answers so they sound like one, moving an answer to a different question, or adding sound that wasn't there and presenting it as real.</li>
+  <li><b>Disclose</b> re-created scenes, sound effects, and music added to reported scenes.</li>
+</ul>
+<p>Strategic communication has more room, but quoted people should still sound like what they said. Get approval when a quote is edited heavily.</p>
+
+
+<h2 id="loudness">Loudness</h2>
+
+<p>Peak levels show the loudest instant. They don't tell you how loud something sounds. <b>LUFS</b> (loudness units relative to full scale) measures loudness as people hear it, averaged over the whole piece. Platforms use it to set every file to about the same volume.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Destination</th><th>Loudness target</th><th>Peak limit</th></tr></thead>
+  <tbody>
+    <tr><td>Podcasts</td><td>−16 LUFS</td><td>−1 dBTP</td></tr>
+    <tr><td>YouTube, Spotify, social video</td><td>−14 LUFS</td><td>−1 dBTP</td></tr>
+    <tr><td>U.S. broadcast TV</td><td>−24 LKFS</td><td>−2 dBTP</td></tr>
+    <tr><td>Video for class or a website</td><td>−16 to −14 LUFS</td><td>−1 dBTP</td></tr>
+  </tbody>
+</table>
+</div>
+<p>LKFS is the same measurement as LUFS under another name. <b>dBTP</b> (true peak) is a peak measurement that also catches peaks between samples.</p>
+<p>Too quiet sounds unprofessional next to other podcasts. Too loud gets turned down by the platform and can sound squashed.</p>
+<p class="software"><strong>Where to find it:</strong> In Audition, <span class="path">Window › Match Loudness</span> measures and sets loudness. In Premiere Pro, the export settings have a <b>Loudness Normalization</b> option under Effects. In Audacity, <span class="path">Effect › Volume and Compression › Loudness Normalization</span>. Apply a limiter at −1 dB to catch the last peaks.</p>
+
+
+<h2 id="exporting">Exporting</h2>
+
+<h3>Export settings by destination</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Destination</th><th>Settings</th></tr></thead>
+  <tbody>
+    <tr><td>Podcast episode</td><td>MP3, 44.1 or 48 kHz, 128 kbps (96 kbps is fine for mono voice), −16 LUFS</td></tr>
+    <tr><td>Soundtrack for a video</td><td>Edit in the video project at 48 kHz. The video export sets the audio, usually AAC at 320 kbps.</td></tr>
+    <tr><td>Sending to another editor</td><td>WAV, 48 kHz, 24-bit</td></tr>
+    <tr><td>Audio on a web page</td><td>MP3, 128 kbps. Or host it on a podcast or audio host and embed the player.</td></tr>
+    <tr><td>Social media</td><td>Social platforms don't post audio alone. Make a video: audiogram (waveform and captions over an image) or video clip.</td></tr>
+    <tr><td>Master copy to keep</td><td>WAV, at the sample rate and bit depth of the project</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="software"><strong>Where to find it:</strong> In Audition, <span class="path">File › Export › Multitrack Mixdown › Entire Session</span>. In Premiere Pro, <span class="path">File › Export › Media</span> and choose MP3 or Waveform Audio as the format. In Audacity, <span class="path">File › Export Audio</span>.</p>
+
+<h3>Podcast episodes</h3>
+<p>A podcast host stores the files and makes the feed that apps like Apple Podcasts and Spotify read. Each episode needs:</p>
+<ul>
+  <li><b>An episode title</b> that says what it's about. Apps cut titles off, so put the important words first.</li>
+  <li><b>Show notes:</b> a short description, guests' names, links mentioned, and credits for music.</li>
+  <li><b>Cover art</b> for the show: a square image, 3000 × 3000 px, JPG or PNG, RGB. It shows tiny in apps, so test it at thumbnail size. See <a href="graphics.html#viewing-size">Viewing at size</a>.</li>
+</ul>
+
+<h3>Check on small speakers</h3>
+<p>Most people hear your work on earbuds, a phone speaker, or a laptop. Before you hand it in, listen on at least one of those, not only on studio headphones. Low voices and quiet music can disappear on a phone speaker.</p>
+
+
+<h2 id="transcripts">Transcripts and accessibility</h2>
+
+<ul>
+  <li><b>Post a transcript</b> with every podcast episode and audio story. People who are deaf or hard of hearing need it. It also makes the episode searchable.</li>
+  <li><b>Label speakers</b> by name, and note important sounds and music in brackets: [laughter], [phone rings], [upbeat music].</li>
+  <li><b>Check automatic transcripts.</b> Premiere Pro, Apple Podcasts, and podcast hosts make them, but they misspell names and places and get words wrong. Read the whole thing against the audio before publishing.</li>
+  <li><b>Audio in video</b> needs captions. See <a href="video.html#accessibility">Captions and accessibility</a>.</li>
+</ul>
+<p class="software"><strong>Where to find it:</strong> In Premiere Pro, the <span class="path">Text</span> panel's Transcript tab transcribes a sequence and exports the text.</p>
+
+
+<h2 id="quick-answers">Quick answers</h2>
+
+<dl class="qa">
+  <dt>Why does my recording sound distorted?</dt>
+  <dd>The level was too high and the recording clipped. It usually can't be fixed. Record again with peaks around −12 dBFS. See <a href="#levels">Levels and clipping</a>.</dd>
+
+  <dt>Why does my recording sound echoey or far away?</dt>
+  <dd>The mic was too far from the person, or the room has hard surfaces. Move the mic closer and record in a softer room. See <a href="#microphones">Mic placement</a>.</dd>
+
+  <dt>Why is my audio only in one ear?</dt>
+  <dd>The mic was recorded to one channel of a stereo file. Set the clip to play that channel in both ears. See <a href="#sample-rate">Mono and stereo</a>.</dd>
+
+  <dt>Why is my podcast quieter than everyone else's?</dt>
+  <dd>It hasn't been brought to a loudness target. Set it to −16 LUFS. See <a href="#loudness">Loudness</a>.</dd>
+
+  <dt>Why does my voice sound robotic after cleanup?</dt>
+  <dd>The noise reduction or speech enhancement is too strong. Use a lighter setting, and record in a quieter room next time. See <a href="#editing">Editing</a>.</dd>
+
+  <dt>Why can't my session find the audio files?</dt>
+  <dd>The files were moved or renamed. Keep them in the project folder. See <a href="#formats">Session files</a>.</dd>
+
+  <dt>Can I use this song?</dt>
+  <dd>Probably not without a license. See <a href="rights.html#by-medium">Rights and Credit</a>.</dd>
+</dl>
+
+<p class="back-top"><a href="#top">Back to top</a></p>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">School of Journalism and Mass Communication</div>
+</footer>
+
+<script src="toc.js"></script>
+</body>
+</html>
