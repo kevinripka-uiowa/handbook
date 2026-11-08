@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | SJMC Production Handbook</title>
+<meta name="description" content="How to build a portfolio site that people can use and that tells your story: the capstone requirement, site structure, the homepage, project pages, showing each kind of media, and building and sharing the site.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="index.html">SJMC Production Handbook</a>
+    <nav class="site-nav" aria-label="Handbook pages">
+      <ul>
+        <li><a href="graphics.html">Graphics</a></li>
+        <li><a href="type.html">Type</a></li>
+        <li><a href="photo.html">Photo</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="web.html">Web</a></li>
+        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+        <li><a href="rights.html">Rights and Credit</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="files.html">Files</a></li>
+        <li><a href="ai.html">AI</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#requirement">The SJMC portfolio requirement</a></li>
+    <li><a href="#effective">What makes a portfolio effective</a></li>
+    <li><a href="#choosing">Choosing your work</a></li>
+    <li><a href="#structure">Site structure</a></li>
+    <li><a href="#homepage">The homepage</a></li>
+    <li><a href="#pages">Other pages and navigation</a></li>
+    <li><a href="#microcopy">Microcopy</a></li>
+    <li><a href="#project-pages">Project pages</a></li>
+    <li><a href="#showing">Showing each kind of work</a></li>
+    <li><a href="#writing">Writing for your portfolio</a></li>
+    <li><a href="#publish">Before you publish</a></li>
+    <li><a href="#building">Building the site</a></li>
+    <li><a href="#sharing">Sharing it</a></li>
+    <li><a href="#quick-answers">Quick answers</a></li>
+  </ol>
+</nav>
+
+<article>
+
+<h1 id="top">Portfolio</h1>
+<p class="lede">How to build a portfolio site that people can use and that tells your story: the capstone requirement, site structure, the homepage, project pages, showing each kind of media, and building and sharing the site.</p>
+<p>No one hiring in media will ask about your grades. Your degree lets you apply. Your portfolio gets you the interview. The interview, where you talk through your work and show you understand it, gets you hired.</p>
+
+
+<h2 id="requirement">The SJMC portfolio requirement</h2>
+
+<p>Every SJMC major turns in a portfolio site during the capstone course. It must have:</p>
+<ul>
+  <li><strong>At least four pieces</strong> of your work.</li>
+  <li><strong>At least one piece that shows your writing,</strong> such as an article, a feature, a press release, a script, or the copy for a campaign.</li>
+  <li><strong>At least one multimedia piece,</strong> such as a video, an audio story or podcast, a photo story, graphics or design work, a social media campaign, or an interactive story.</li>
+</ul>
+<p>Class work counts. This is a student portfolio, and the people who look at it know that.</p>
+<p class="todo">NOTE FOR KEVIN, remove before publishing: find out whether one piece can count as both the writing piece and the multimedia piece (for example, a multimedia story with substantial writing). Also confirm what counts as each: does a campaign's copy count as writing, and does a single photo or graphic count as multimedia?</p>
+
+<h3>Start now</h3>
+<p>Your 2000-, 3000-, and 4000-level courses will ask you to add work to your portfolio. Start with the simplest version: a homepage and a page for each project. Write the context for each piece while you still remember it. When an internship or job comes up, your best work and its story are already collected.</p>
+<p>A portfolio is never done. Keep adding new work and taking out weaker pieces.</p>
+
+
+<h2 id="effective">What makes a portfolio effective</h2>
+
+<p>Most students sit down to build a pretty portfolio site. What you need is an effective one. An effective portfolio does two things:</p>
+<ul>
+  <li><strong>Usability:</strong> people can find, view, and understand your work.</li>
+  <li><strong>Storytelling:</strong> people know who you are and why each piece matters.</li>
+</ul>
+
+<h3>Pretty can be a mirage</h3>
+<p>People tend to think attractive designs are easier to use, whether or not they are. This is called the aesthetic-usability effect. It buys you some patience for small problems, but not for long. A site that looks great and is hard to use still loses people.</p>
+<p>Think about who's looking. Someone hiring may look at dozens of portfolios. For them, yours is a task. Make everything easy, obvious, and explicit, and cut clicks wherever you can.</p>
+
+<h3>Aim for contextually attractive</h3>
+<p>Looks are part of usability. Instead of pretty, aim for what fits: what feeling should people take away, and what suits the work and the audience?</p>
+<p>A portfolio is communication, and the subject is you. It should show your taste and personality and still meet people's expectations for a professional site.</p>
+<ul>
+  <li><strong>Business or corporate jobs:</strong> keep it professional.</li>
+  <li><strong>Creative agencies:</strong> you can go big and creative.</li>
+  <li><strong>Most of you:</strong> somewhere in the middle. Clean, with a hint of your sensibilities, and never louder than the work.</li>
+</ul>
+<p>Your portfolio isn't a portfolio piece, but every word and design choice on it gives an impression of you.</p>
+
+<h3>The order to build in</h3>
+<ol>
+  <li><strong>Usability:</strong> navigation and information. Can people get to the work?</li>
+  <li><strong>Storytelling:</strong> the site as a whole and every project on it.</li>
+  <li><strong>Expressive design:</strong> one pass, last. Don't let it get in the way of the first two.</li>
+</ol>
+
+
+<h2 id="choosing">Choosing your work</h2>
+
+<p>Lead with your strongest skills and the kind of job you want. Then show that you can do other things too.</p>
+<p>Some of you want to specialize ("I'm a photographer"). Others want jobs that use a broad skill set, like content creator or communications director. Either way, today's media jobs ask for more than one skill. Even specialists need range.</p>
+<p>An SJMC portfolio is a multimedia portfolio, not a single-medium one. It can include any of these:</p>
+<ul>
+  <li>articles and other writing</li>
+  <li>multimedia stories and projects</li>
+  <li>video</li>
+  <li>single photos, photo collections, and photo essays</li>
+  <li>audio</li>
+  <li>graphic, motion, web, and social media design</li>
+  <li>strategy work, such as social media or multimedia marketing campaigns</li>
+</ul>
+<p>Before you add a piece, check that you're allowed to publish it. Class work that uses other people's photos, music, or footage, and work you made for an employer or client, may not be yours to post. See <a href="rights.html#fair-use">Fair use in class and in your portfolio</a> and <a href="rights.html#your-work">Your own work</a>.</p>
+
+
+<h2 id="structure">Site structure</h2>
+
+<p>Every portfolio needs, at minimum, a homepage and a page for each project. How people get from one to the other is the site's structure. There are four common patterns.</p>
+
+<figure>
+  <svg viewBox="0 0 640 285" style="max-width: 44rem" role="img" aria-labelledby="patterns-title">
+    <title id="patterns-title">Four site structures. Homepage collection: the homepage shows the work, and each piece links to its own project page. Lightbox: the homepage shows the work, and each piece pops up over the homepage. Separate collection page: the homepage links to a Work page, which links to project pages. Multiple collections: the homepage links to a page for each kind of work, such as Writing, Video, and Design, and each of those links to project pages.</title>
+    <rect x="25" y="20" width="110" height="70" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="80.0" y="38.0" text-anchor="middle" font-size="13" fill="var(--figure-ink)">Homepage</text>
+    <rect x="31" y="56" width="26" height="22" fill="var(--figure-ink)" fill-opacity="0.35"/>
+    <rect x="71" y="56" width="26" height="22" fill="var(--figure-ink)" fill-opacity="0.35"/>
+    <rect x="111" y="56" width="26" height="22" fill="var(--figure-ink)" fill-opacity="0.35"/>
+    <line x1="44" y1="90" x2="44" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="27" y="150" width="34" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <line x1="84" y1="90" x2="84" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="67" y="150" width="34" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <line x1="124" y1="90" x2="124" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="107" y="150" width="34" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="80" y="216" text-anchor="middle" font-size="12" fill="var(--figure-ink)">Project pages</text>
+    <text x="80" y="252" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">Homepage</text>
+    <text x="80" y="271" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">collection</text>
+    <rect x="185" y="20" width="110" height="70" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="240.0" y="38.0" text-anchor="middle" font-size="13" fill="var(--figure-ink)">Homepage</text>
+    <rect x="200" y="50" width="80" height="70" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="240.0" y="89.5" text-anchor="middle" font-size="13" fill="var(--figure-ink)">Work</text>
+    <text x="240" y="150" text-anchor="middle" font-size="12" fill="var(--figure-ink)">Pops up over</text>
+    <text x="240" y="166" text-anchor="middle" font-size="12" fill="var(--figure-ink)">the homepage</text>
+    <text x="240" y="252" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">Lightbox</text>
+    <rect x="345" y="20" width="110" height="40" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="400.0" y="44.5" text-anchor="middle" font-size="13" fill="var(--figure-ink)">Homepage</text>
+    <line x1="400" y1="60" x2="400" y2="85" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="355" y="85" width="90" height="36" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="400.0" y="107.5" text-anchor="middle" font-size="13" fill="var(--figure-ink)">Work</text>
+    <line x1="400" y1="121" x2="360" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="343" y="150" width="34" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <line x1="400" y1="121" x2="400" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="383" y="150" width="34" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <line x1="400" y1="121" x2="440" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="423" y="150" width="34" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="400" y="216" text-anchor="middle" font-size="12" fill="var(--figure-ink)">Project pages</text>
+    <text x="400" y="252" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">Separate</text>
+    <text x="400" y="271" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">collection page</text>
+    <rect x="505" y="20" width="110" height="40" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="560.0" y="44.5" text-anchor="middle" font-size="13" fill="var(--figure-ink)">Homepage</text>
+    <line x1="560" y1="60" x2="508" y2="85" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="484" y="85" width="48" height="36" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="508.0" y="106.8" text-anchor="middle" font-size="11" fill="var(--figure-ink)">Writing</text>
+    <line x1="508" y1="121" x2="508" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="494" y="150" width="28" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <line x1="560" y1="60" x2="560" y2="85" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="536" y="85" width="48" height="36" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="560.0" y="106.8" text-anchor="middle" font-size="11" fill="var(--figure-ink)">Video</text>
+    <line x1="560" y1="121" x2="560" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="546" y="150" width="28" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <line x1="560" y1="60" x2="612" y2="85" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="588" y="85" width="48" height="36" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="612.0" y="106.8" text-anchor="middle" font-size="11" fill="var(--figure-ink)">Design</text>
+    <line x1="612" y1="121" x2="612" y2="150" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <rect x="598" y="150" width="28" height="46" rx="3" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="1.5"/>
+    <text x="560" y="216" text-anchor="middle" font-size="12" fill="var(--figure-ink)">Project pages</text>
+    <text x="560" y="252" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">Multiple</text>
+    <text x="560" y="271" text-anchor="middle" font-size="15" font-weight="600" fill="var(--figure-ink)">collections</text>
+  </svg>
+  <figcaption>Four common ways to get people from your homepage to your work.</figcaption>
+</figure>
+
+<table>
+  <thead>
+    <tr><th>Pattern</th><th>How it works</th><th>Works because</th><th>Watch out</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Homepage collection</td><td>The homepage shows your work. Each piece links to its project page.</td><td>Fewest clicks to the work. Simple to build and keep up. Every project gets room for its story.</td><td>The homepage has to do everything. Crowded past 12–15 pieces.</td></tr>
+    <tr><td>Lightbox</td><td>The homepage shows your work. Each piece pops up over the page.</td><td>Viewers never leave the page. Fast for browsing images.</td><td>Least room for story. Common for photographers, but not recommended for an SJMC multimedia portfolio.</td></tr>
+    <tr><td>Separate collection page</td><td>The homepage links to a "Work" page, which links to project pages.</td><td>Frees the homepage for featured work, skills, or an about section. Keeps a growing body of work tidy.</td><td>One more click to the work. Needs a clear "See my work" button in your intro.</td></tr>
+    <tr><td>Multiple collections</td><td>The homepage links to a page for each kind of work, such as Writing, Video, and Design.</td><td>Viewers go straight to what they're hiring for.</td><td>At least two clicks to a piece. A section with one piece looks thin.</td></tr>
+  </tbody>
+</table>
+
+<p>A collection page (or a homepage collection) should show no more than 12 to 15 pieces.</p>
+<p>Build a project page for every piece, even published work you could link to directly. The project page is where your context goes. See <a href="#project-pages">Project pages</a>.</p>
+
+
+<h2 id="homepage">The homepage</h2>
+
+<p>Your homepage is a first introduction, not love at first sight. Looks may get someone to stop. What they learn in the next minute decides whether they stay. The homepage answers four questions:</p>
+<ul>
+  <li><strong>Am I in the right place?</strong> For someone who came from your email, cover letter, or résumé.</li>
+  <li><strong>Who is this person?</strong> For someone who landed here by chance.</li>
+  <li><strong>What does this person do?</strong> Answered twice: by your intro and by the work shown.</li>
+  <li><strong>How do they see themself?</strong> This frames everything people see next.</li>
+</ul>
+<p>The homepage has four parts: your name, the navigation, your intro, and a way to get to the work.</p>
+
+<h3>Your name</h3>
+<p>Type your name as a logotype, top left. You don't need a logo unless you're a designer who makes one. On every page, clicking your name goes back to the homepage.</p>
+
+<h3>Navigation</h3>
+<p>Put the navigation to the right of your name or under it. Use text links. A portfolio has only a few pages, so a hamburger menu just adds a click.</p>
+<p>Your name and the navigation are your header. They go on every page and work the same way everywhere.</p>
+
+<h3>Your intro</h3>
+<p>The intro (also called the hero) is a short blurb near the top. Your name already says who you are. The intro says what you do and how people should see you. Short or a little longer both work:</p>
+<ul>
+  <li>"Kevin Ripka. Information Designer."</li>
+  <li>"My name is Kevin Ripka, an information designer who believes in the beauty of information to change minds."</li>
+  <li>"University of Iowa journalism student who hopes to be a sports reporter." That's who you are right now, and it's fine to say so.</li>
+</ul>
+<p>Leave these out of the intro:</p>
+<ul>
+  <li>your history and brand story (they go on an About page)</li>
+  <li>"Welcome to my website"</li>
+  <li>claims like "the best," which your work should make for you</li>
+  <li>clichés</li>
+</ul>
+
+<h3>A photo of yourself</h3>
+<p>Think twice. A photo invites bias, and people may judge you on your looks before they see your work.</p>
+<p>The exception is on-camera work. If you want to be in front of the camera, how you look and come across is part of what's being hired. Show it, next to your reel.</p>
+<p>If you use a photo, make it a clean, well-lit headshot on a simple background. Not a selfie, and not a busy background. Your photo shows your attention to detail.</p>
+
+<h3>Get people to the work</h3>
+<p>Once people know who you are and how you see yourself, get them to the work right away so they can judge for themselves. This is usually a set of cards. A card needs at least a representative image and the project name. Anything more is optional.</p>
+<p>With a separate collection page or multiple collections, use a clear button in your intro ("See my work") or a card for each collection.</p>
+
+
+<h2 id="pages">Other pages and navigation</h2>
+
+<h3>Contact</h3>
+<p>You may not need a contact page. Put your contact information in the header or footer so it's on every page.</p>
+<p>Don't use a contact form. People want to know they're reaching a real person. If you don't want to post your personal email or phone number, list only an email address, even one you create just for portfolio inquiries.</p>
+
+<h3>About</h3>
+<p>An About page is where your longer story goes: how you got here and what drives your work. If you don't want to tell that story, skip the page.</p>
+
+<h3>Résumé</h3>
+<p>Give your résumé its own page and put it in the navigation. It can be a built page, which reads well on a phone and matches your site, or a PDF of your print résumé, which means one document to keep updated.</p>
+<p>Either way, it's public. Leave off your home address and personal phone number unless you're comfortable sharing them.</p>
+
+<h3>What goes in the navigation</h3>
+<table>
+  <thead>
+    <tr><th>If your structure is…</th><th>Your navigation needs…</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Homepage collection</td><td>Nothing for the work. Add About and Résumé if you have them.</td></tr>
+    <tr><td>Lightbox</td><td>Nothing for the work. Add About and Résumé if you have them.</td></tr>
+    <tr><td>Separate collection page</td><td>"Work," plus About and Résumé if you have them.</td></tr>
+    <tr><td>Multiple collections</td><td>A link to each collection (or a "Work" menu that lists them), plus About and Résumé if you have them.</td></tr>
+  </tbody>
+</table>
+
+
+<h2 id="microcopy">Microcopy</h2>
+
+<p>Microcopy is the small text that tells people what something is and what happens next: navigation labels, buttons, link text, and headings. It's tiny, and it does much of a site's usability work. Good microcopy is obvious.</p>
+<table>
+  <thead>
+    <tr><th>Rule</th><th>Not this</th><th>This</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Nothing cutesy</td><td>"Stuff I've Made"</td><td>"Work," "Portfolio," or "Projects"</td></tr>
+    <tr><td>Be obvious</td><td>"Who Am I?"</td><td>"About"</td></tr>
+    <tr><td>Be specific</td><td>"Things"</td><td>"Writing," "Video," "Design"</td></tr>
+    <tr><td>No empty links</td><td>"Click here"</td><td>"See the project"</td></tr>
+  </tbody>
+</table>
+<p>Contact is the one place you can be a little casual, such as "Get in touch."</p>
+
+
+<h2 id="project-pages">Project pages</h2>
+
+<p>"My work should stand on its own" isn't true, and it's even less true now that AI can make polished-looking work. People need context:</p>
+<ul>
+  <li>Why did you make it?</li>
+  <li>How did you make it, beyond what the final product shows?</li>
+  <li>What thinking, decisions, or learning went into it?</li>
+</ul>
+<p>Giving that context is storytelling. You're framing how people see the work. Skipping it is for established professionals whose names people already know, and even they usually give context.</p>
+
+<h3>Three ways to give context</h3>
+<ul>
+  <li><strong>Project summary:</strong> tells people how to read the work before they judge it.</li>
+  <li><strong>Reflection:</strong> explains why the work reached its goal or solved its problem.</li>
+  <li><strong>Process:</strong> walks through how you got there.</li>
+</ul>
+<p>Every project gets at least a summary. Never post an image of your work with only a title.</p>
+
+<h3 id="summary">Project summary</h3>
+<p>The summary defines the project, in your own words. Don't paste in the assignment prompt. For class work, answer:</p>
+<ol>
+  <li>What is the project?</li>
+  <li>What was its communication goal?</li>
+  <li>What were the learning objectives?</li>
+  <li>What were the constraints (time, budget, length, format, tools)?</li>
+</ol>
+
+<h3 id="reflection">Reflection</h3>
+<p>Reflection is analysis, not a diary entry. Don't say whether you liked the project.</p>
+<ul>
+  <li>Say how well the work met its goals.</li>
+  <li>Name its strengths and its limits.</li>
+  <li>Assess your work the way a professional would.</li>
+  <li>Use the vocabulary from your classes.</li>
+</ul>
+
+<h3 id="process">Process</h3>
+<p>Show the steps and the things you made along the way. Don't jump from a sketch to a finished piece and skip everything in between.</p>
+<ol>
+  <li><strong>Research:</strong> primary and secondary research, and inspiration.</li>
+  <li><strong>Ideas:</strong> the possible solutions you came up with.</li>
+  <li><strong>Making and revising:</strong> drafts, critiques, user testing, and versions.</li>
+  <li><strong>Final product.</strong></li>
+</ol>
+
+<h3 id="case-studies">Case studies</h3>
+<p>A case study uses all three: a summary, the process with what you learned at each step and how it changed what you did next, and the final work with a reflection.</p>
+
+<h3>Which one to use</h3>
+<table>
+  <thead>
+    <tr><th>Use</th><th>When the work is…</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Summary only</td><td>A simple, single piece: a photo collection, a photo essay, a video, a podcast episode, or published work people click through to.</td></tr>
+    <tr><td>Summary and reflection</td><td>Most work. This is your default.</td></tr>
+    <tr><td>Case study</td><td>Process-heavy work where the final product hides the decisions, such as campaigns, strategy, and design.</td></tr>
+  </tbody>
+</table>
+
+<h3>Group work</h3>
+<p>Credit the team, and say exactly what your role was. "I shot and edited the video; Sam reported and wrote the script" is clear. "We made a documentary" isn't.</p>
+
+
+<h2 id="showing">Showing each kind of work</h2>
+
+<p>Keep people on your site, next to your context, as much as you can.</p>
+<table>
+  <thead>
+    <tr><th>Your work</th><th>How it goes on the page</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Writing</td><td>Not published: paste it in as real text. Published: write a summary, then link to it.</td></tr>
+    <tr><td>Print design</td><td>Show images of the pages, and let people view them bigger.</td></tr>
+    <tr><td>Images</td><td>Upload them. Show them inline, in a grid that enlarges, or (sparingly) in a carousel.</td></tr>
+    <tr><td>Video</td><td>Upload to YouTube or Vimeo, then embed it on your page.</td></tr>
+    <tr><td>Audio</td><td>Upload to an audio host such as SoundCloud, then embed it on your page.</td></tr>
+  </tbody>
+</table>
+
+<h3>Writing</h3>
+<p>If a piece isn't published anywhere, such as a class paper or an unpublished story, paste it onto the page as real text. Real text reads on a phone. A screenshot of a Word document doesn't.</p>
+<p>If the design is the point, such as a magazine spread or a brochure, show images of the pages and let people click to view them bigger.</p>
+
+<h3>Images</h3>
+<ul>
+  <li><strong>Inline is the default.</strong> Everyone sees every image, in your order, next to your story.</li>
+  <li><strong>A grid that enlarges</strong> works for a photo series. It's easy to scan, and people can click any image to see it bigger.</li>
+  <li><strong>Use carousels sparingly.</strong> They hide most of the work, and many people see only the first image.</li>
+</ul>
+<p>Don't put every image from a case study into one carousel. People need the images next to the text that explains them. A carousel is fine for a set of related images: all the pieces of a final campaign, all the parts of one step in your process, or work that was a carousel to begin with, like an Instagram carousel post.</p>
+
+<h3>Video</h3>
+<ul>
+  <li>Upload to YouTube or Vimeo and embed it on your project page. Don't send people off to YouTube. They may not come back.</li>
+  <li>On a team production, say what you did.</li>
+  <li>For a long piece, say where to start, or cut a short reel.</li>
+</ul>
+
+<h3>Audio</h3>
+<ul>
+  <li>Upload to an audio host and embed it on your project page.</li>
+  <li>Audio has no picture, so add one: cover art or a photo from the story.</li>
+  <li>Say how long it is and what to listen for.</li>
+  <li>Include a transcript or a good summary for people who can't play it right now.</li>
+</ul>
+
+<h3>Other multimedia work</h3>
+<ul>
+  <li><strong>Social media posts:</strong> show them as they appeared. Add the goal and any results.</li>
+  <li><strong>Motion graphics:</strong> embed the video. Loop short pieces.</li>
+  <li><strong>Websites and interactive stories:</strong> screenshots, a link, and a screen recording. Sites go down.</li>
+  <li><strong>Campaigns:</strong> lead with the big idea, then show each piece. A campaign is usually a case study.</li>
+</ul>
+
+<h3 id="published-work">Published work</h3>
+<p>Don't just link out to work that's live somewhere else. A link gives people no context. Instead, use one of these:</p>
+<ul>
+  <li><strong>A project page:</strong> a summary, then a clear button to the live work.</li>
+  <li><strong>A collection page:</strong> a short intro, then cards for each piece. For example: "I covered politics for The Daily Iowan for two years…"</li>
+</ul>
+<p>Context matters most when the work had several contributors. If you worked on a group site with many bylines, say what it is and which parts are yours. A single-byline story can link more directly, but a collection with an overview, such as all your sports stories, is usually stronger.</p>
+<p>For embeds in general, see <a href="web.html#embeds">Embeds</a> on the Web page.</p>
+
+
+<h2 id="writing">Writing for your portfolio</h2>
+
+<ul>
+  <li><strong>Don't write a book.</strong> One or two paragraphs per section is usually enough. Make it as long as it needs to be, then edit.</li>
+  <li><strong>Use the vocabulary from your classes.</strong> It shows you understand what you did.</li>
+  <li><strong>Put the reflection next to the work,</strong> especially for visual work.</li>
+  <li><strong>In a case study, weave the artifacts into the text.</strong> Put each sketch, outline, or mood board next to the part of the process it belongs to, with what you learned from it.</li>
+  <li><strong>Write it yourself.</strong> Your project text is evidence of your thinking, and an interviewer will ask you about it. See the <a href="ai.html">AI</a> page.</li>
+</ul>
+<p>Every word on your portfolio is also a writing sample. Proofread it like one.</p>
+
+
+<h2 id="publish">Before you publish</h2>
+
+<h3>Check it</h3>
+<ul>
+  <li><strong>Test on different screen sizes.</strong> Looking right on your laptop means nothing. Drag your browser window narrower, then check on a real phone, a tablet, and a large monitor. See <a href="web.html#check-phone">Check on a phone</a>.</li>
+  <li><strong>Play every embed on your phone.</strong></li>
+  <li><strong>Let people view visual work bigger</strong> if they want to.</li>
+  <li><strong>Add a "Next project" link</strong> at the bottom of each project page, so people keep going instead of backing out.</li>
+  <li><strong>Check rights,</strong> especially music in video and work for an employer. See <a href="rights.html">Rights and Credit</a>.</li>
+</ul>
+
+<h3>Make it accessible</h3>
+<p>Accessible work reaches more people, and it shows an employer you know how to publish responsibly.</p>
+<ul>
+  <li><strong>Images:</strong> alt text that says what's in the image.</li>
+  <li><strong>Video:</strong> captions. Proofread automatic captions, especially names.</li>
+  <li><strong>Audio:</strong> a transcript.</li>
+  <li><strong>Text and links:</strong> good contrast, and link text that makes sense on its own.</li>
+</ul>
+<p>See <a href="web.html#accessibility">Accessibility</a> on the Web page.</p>
+
+<h3>Keep your own copies</h3>
+<p>Links break, sites shut down, and publications redesign. Keep a copy of every piece: the files, a PDF of each published story, and screenshots or screen recordings of web work. See <a href="files.html">Files</a>.</p>
+
+
+<h2 id="building">Building the site</h2>
+
+<p>Start from the structure you want. Then be honest about how much time you'll put in. More freedom costs more effort. A clean Google Sites portfolio beats a half-finished Wix site.</p>
+<table>
+  <thead>
+    <tr><th>Platform</th><th>Effort</th><th>Freedom</th><th>Best for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Google Sites</td><td>Low</td><td>Low</td><td>Getting started for free. Simple and clean, with few layout choices.</td></tr>
+    <tr><td>Adobe Portfolio</td><td>Low</td><td>Low</td><td>A simple homepage collection. Comes with Adobe subscriptions.</td></tr>
+    <tr><td>Wix or Squarespace</td><td>High</td><td>High</td><td>Most students. You can build what you designed, if you put in the time.</td></tr>
+    <tr><td>WordPress.com</td><td>Medium</td><td>Medium</td><td>Portfolios built mostly on writing. Has a free plan with ads and a wordpress.com address.</td></tr>
+    <tr><td>JournoPortfolio</td><td>Low</td><td>Low</td><td>A list of published clips. Little room for the story around multimedia work.</td></tr>
+  </tbody>
+</table>
+
+<h3>Site builders</h3>
+<p>Wix and Squarespace templates are often fussy and showy for no reason. That's the mirage again. Pick a simple template, then change the colors and strip out what you don't need.</p>
+<p>Every builder has quirks. Find them before you've built every page:</p>
+<ul>
+  <li>How does it handle layout? Builders use their own sections and grids.</li>
+  <li>Is the phone layout separate from the desktop layout? A fix at one size may not carry over.</li>
+  <li>What happens to the order of things on a phone? Blocks can stack in ways you didn't plan.</li>
+  <li>What can't it do?</li>
+</ul>
+
+<h3>Not Canva</h3>
+<p>Canva makes slideshows, not websites. A Canva "site" makes people go through your work in order, one screen after another. On the web, people go where they want.</p>
+
+<h3>Code written by AI</h3>
+<p>AI is good at writing website code. It isn't good at making your portfolio for you. Work out your story and your design decisions yourself first. Then AI can build what you planned. You'll also need to know how to host the files. See <a href="web.html#ai-code">Code written by AI</a> and <a href="web.html#hosting">Hosting and domains</a>.</p>
+
+<h3>Before you pay for anything</h3>
+<ul>
+  <li>Look at real sites built on the platform, on your phone. Not the template gallery.</li>
+  <li>Make sure it can do the structure you want, at the plan you can afford.</li>
+  <li>Check the price after any student discount or first-year deal ends.</li>
+  <li>Find out what happens to your site if you stop paying. Leaving a builder usually means rebuilding.</li>
+</ul>
+
+<h3>Get your own domain</h3>
+<p>A free address like yourname.wixsite.com/portfolio is fine while you build. Before you send your portfolio to employers, get your own domain, like yourname.com. It's short, it looks professional, and it stays yours if you change platforms, as long as you keep paying for it. Check that your plan allows a custom domain. See <a href="web.html#hosting">Hosting and domains</a>.</p>
+
+
+<h2 id="sharing">Sharing it</h2>
+
+<p>If you build it, they won't come on their own. Send it out.</p>
+<ul>
+  <li><strong>Put the link everywhere:</strong> LinkedIn, your résumé and cover letters, your email signature, and your social media bios.</li>
+  <li><strong>Send it to people who can help:</strong> faculty, mentors, internship supervisors, alumni in your field, and recruiters you meet. Ask them for feedback. It's also a good reason to get in touch.</li>
+  <li><strong>Search your own name</strong> and see what an employer would find.</li>
+</ul>
+<p>If you build it right, people will stay, at least long enough to consider hiring you.</p>
+
+
+<h2 id="quick-answers">Quick answers</h2>
+<dl>
+  <dt>How many pieces does my capstone portfolio need?</dt>
+  <dd>At least four, with at least one that shows your writing and at least one multimedia piece. See <a href="#requirement">The SJMC portfolio requirement</a>.</dd>
+
+  <dt>Do I need a logo?</dt>
+  <dd>No. Type your name, top left, and link it to your homepage. See <a href="#homepage">The homepage</a>.</dd>
+
+  <dt>Should I use a hamburger menu?</dt>
+  <dd>Not on a portfolio. You have only a few pages, so use text links.</dd>
+
+  <dt>Can I just link to my published stories?</dt>
+  <dd>Give them context first, on a project page or a collection page with an intro. See <a href="#published-work">Published work</a>.</dd>
+
+  <dt>Can I put a case study in a carousel?</dt>
+  <dd>No. Put images inline, next to the text that explains them. See <a href="#showing">Images</a>.</dd>
+
+  <dt>Should I put a photo of myself on my homepage?</dt>
+  <dd>Only if you want on-camera work, or you're sure it helps. If you do, use a clean headshot. See <a href="#homepage">A photo of yourself</a>.</dd>
+
+  <dt>Should I use a contact form?</dt>
+  <dd>No. List an email address in your header or footer.</dd>
+
+  <dt>Can I build my portfolio in Canva?</dt>
+  <dd>No. Canva makes slideshows, not websites. See <a href="#building">Building the site</a>.</dd>
+
+  <dt>Do I need my own domain?</dt>
+  <dd>Not while you build. Get one before you send the portfolio to employers.</dd>
+</dl>
+
+<p class="back-top"><a href="#top">Back to top</a></p>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">School of Journalism and Mass Communication</div>
+</footer>
+
+<script src="toc.js"></script>
+</body>
+</html>

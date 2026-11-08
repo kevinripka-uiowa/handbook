@@ -308,3 +308,6 @@ pre.folders {
   line-height: 1.5;
   margin: 0 0 1rem;
 }
+
+/* Editor notes: open questions to resolve before publishing. Remove each note once answered. */
+.todo { color: var(--alert); font-weight: 700; }
