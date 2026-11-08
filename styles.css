@@ -151,6 +151,7 @@ h2 {
   border-top: 5px solid var(--accent);   /* gold line marks each new section */
 }
 h3 { font-size: 1.2rem; margin: 2rem 0 0.5rem; }
+h4 { font-size: 1.05rem; margin: 1.5rem 0 0.4rem; }
 
 .lede { font-size: 1.15rem; }
 

@@ -261,7 +261,7 @@
   <li><strong>Segment:</strong> the part of a path between two anchor points.</li>
   <li><strong>Closed path:</strong> the path ends where it started, like a circle or a logo shape. It can be filled with color.</li>
   <li><strong>Open path:</strong> the path has two loose ends, like a line or an arc.</li>
-  <li><strong>Fill and stroke:</strong> the fill is the color inside a path. The stroke is the line along the path, with its own color and width.</li>
+  <li><strong>Fill and stroke:</strong> the color inside a path and the line along it. See <a href="#fill-stroke">Fills and strokes</a>.</li>
 </ul>
 
 <h3 id="bezier">Handles and Bézier curves</h3>
@@ -326,6 +326,67 @@
 <p>Good paths use as few anchor points as possible. Put them at the ends of a curve and at its outermost points (top, bottom, left, right), not along the curve. Extra anchor points make curves lumpy and harder to edit. Image Trace in Illustrator, which turns a raster image into paths, often makes too many.</p>
 <p>Fonts are vector too. Every letter is a set of Bézier paths, which is why type stays sharp at any size. See <a href="type.html">Type</a>.</p>
 <p class="software"><strong>Where to find it:</strong> Illustrator: the Pen tool (P). Click to place a corner point; click and drag to place a smooth point and pull out its handles. The Direct Selection tool (A) moves single anchor points and handles. The Anchor Point tool (Shift+C) switches a point between smooth and corner. Photoshop and InDesign have the same Pen tool for shapes and paths.</p>
+
+<h3 id="fill-stroke">Fills and strokes</h3>
+<p>A path has no color of its own. You give it color in two ways:</p>
+<ul>
+  <li><strong>Fill:</strong> the color inside the path. A fill can be a solid color, a gradient, a pattern, or None.</li>
+  <li><strong>Stroke:</strong> the line drawn along the path. A stroke has its own color and its own width, measured in points (pt).</li>
+</ul>
+
+<figure>
+  <svg viewBox="0 0 520 200" role="img" aria-labelledby="fs-title">
+    <title id="fs-title">The same closed shape three times: filled with solid color and no stroke, with a thick outline stroke and no fill, and with a light fill and a thick dark stroke.</title>
+    <path d="M30 90 C30 45 65 28 95 32 C135 38 152 70 148 100 C144 135 110 150 80 146 C45 142 30 125 30 90Z" fill="var(--figure-ink)" stroke="none"/>
+    <text x="90" y="185" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Fill only</text>
+    <path d="M200 90 C200 45 235 28 265 32 C305 38 322 70 318 100 C314 135 280 150 250 146 C215 142 200 125 200 90Z" fill="none" stroke="var(--figure-ink)" stroke-width="8" stroke-linejoin="round"/>
+    <text x="260" y="185" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Stroke only</text>
+    <path d="M370 90 C370 45 405 28 435 32 C475 38 492 70 488 100 C484 135 450 150 420 146 C385 142 370 125 370 90Z" fill="var(--figure-fill)" stroke="var(--figure-ink)" stroke-width="8" stroke-linejoin="round"/>
+    <text x="430" y="185" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Fill and stroke</text>
+  </svg>
+  <figcaption>The same path with three settings.</figcaption>
+</figure>
+
+<p>A path can have a fill, a stroke, both, or neither. A path with neither is invisible but still there. You can still select it, and it can still get in the way.</p>
+<p>Open paths usually get a stroke and no fill. If you give an open path a fill, the app fills it as if a straight line joined its two ends, which rarely looks right.</p>
+
+<h4>Stroke alignment</h4>
+<p>By default, a stroke is centered on the path: half its width falls inside the shape and half outside. You can move it to sit all inside or all outside. Inside and outside work only on closed paths.</p>
+
+<figure>
+  <svg viewBox="0 0 520 210" role="img" aria-labelledby="align-title">
+    <title id="align-title">The same square path, shown as a dashed blue line, with a thick gray stroke three ways. Center: the stroke straddles the path. Inside: the stroke sits inside the path. Outside: the stroke sits outside the path, so the shape looks bigger.</title>
+    <rect x="50" y="40" width="110" height="110" fill="none" stroke="var(--figure-ink)" stroke-opacity="0.45" stroke-width="16"/>
+    <rect x="50" y="40" width="110" height="110" fill="none" stroke="var(--figure-safe)" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="105.0" y="195" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Center</text>
+    <rect x="223.0" y="48.0" width="94.0" height="94.0" fill="none" stroke="var(--figure-ink)" stroke-opacity="0.45" stroke-width="16"/>
+    <rect x="215" y="40" width="110" height="110" fill="none" stroke="var(--figure-safe)" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="270.0" y="195" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Inside</text>
+    <rect x="372.0" y="32.0" width="126.0" height="126.0" fill="none" stroke="var(--figure-ink)" stroke-opacity="0.45" stroke-width="16"/>
+    <rect x="380" y="40" width="110" height="110" fill="none" stroke="var(--figure-safe)" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="435.0" y="195" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Outside</text>
+  </svg>
+  <figcaption>The dashed blue line is the path. The gray band is the stroke.</figcaption>
+</figure>
+
+<p>Alignment changes how big the shape looks. An outside stroke makes the shape look bigger than its path. An inside stroke keeps the shape exactly the size of the path, which helps when it has to fit a set size.</p>
+
+<h4>Ends and corners</h4>
+<p>Strokes also have settings for how they end and how they turn corners:</p>
+<ul>
+  <li><strong>Caps</strong> (the ends of an open path): butt (square, stops at the anchor point), round, or projecting (square, extends past the anchor point by half the stroke width).</li>
+  <li><strong>Corners:</strong> miter (sharp point), round, or bevel (cut off flat). Very sharp miter corners can stick out far past the shape; round or bevel tames them.</li>
+</ul>
+
+<h4>Scaling strokes</h4>
+<p>When you resize a shape in Illustrator, the stroke stays the same width unless you tell it otherwise. Shrink a logo with a 4 pt stroke to a quarter of its size and the stroke is still 4 pt, so the lines look much heavier. Enlarge it and the lines look thin.</p>
+<p>Turn on Scale Strokes &amp; Effects to make strokes resize with the shape. Check it before you resize a logo or icon.</p>
+<p>Before you send a logo to a printer or vendor, you can turn its strokes into filled shapes with Outline Stroke. Then the lines scale with the logo no matter what settings the next person uses.</p>
+
+<h4>Thin strokes</h4>
+<p>Very thin strokes may not print or may break up. Many print shops ask for at least 0.25 pt. On screens, a stroke thinner than one pixel gets blended into gray by antialiasing. See <a href="#antialiasing">Antialiasing</a>.</p>
+
+<p class="software"><strong>Where to find it:</strong> Illustrator: the Fill and Stroke boxes at the bottom of the toolbar. Press X to switch which one you're editing, Shift+X to swap their colors, and / to set the active one to None. Window › Stroke sets width, alignment (Align Stroke), caps, and corners. Scale Strokes &amp; Effects is in Illustrator › Settings › General (Edit › Preferences › General on Windows) and in the Scale dialog (double-click the Scale tool). Object › Path › Outline Stroke turns a stroke into a filled shape. Photoshop shape layers and InDesign frames have Fill and Stroke settings in the Options bar and Control panel.</p>
 
 <h3>Which to use</h3>
 <ul>
