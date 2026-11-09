@@ -39,7 +39,7 @@
     <li><a href="#microphones">Microphones</a></li>
     <li><a href="#recording">Recording</a></li>
     <li><a href="#levels">Levels and clipping</a></li>
-    <li><a href="#sample-rate">Sample rate, bit depth, and channels</a></li>
+    <li><a href="#sample-rate">Sample rate and channels</a></li>
     <li><a href="#formats">File formats</a></li>
     <li><a href="#editing">Editing</a></li>
     <li><a href="#loudness">Loudness</a></li>
@@ -206,7 +206,7 @@
 <p>Some newer recorders and wireless mics record in <b>32-bit float</b>. These files hold sound far above 0 dBFS, so a level set too high can be turned down later without clipping. It doesn't fix a mic that's too far away, a noisy room, or a loud sound distorting the mic itself. Set levels as if it didn't exist.</p>
 
 
-<h2 id="sample-rate">Sample rate, bit depth, and channels</h2>
+<h2 id="sample-rate">Sample rate and channels</h2>
 
 <h3>Sample rate</h3>
 <p>Digital audio measures the sound wave thousands of times per second. The <b>sample rate</b> is how many times.</p>
@@ -221,14 +221,6 @@
 </table>
 </div>
 <p>Pick one rate and record everything at it. Mixing 44.1 and 48 kHz files can cause pitch changes or drifting sync. Set the recorder to 48 kHz unless you have a reason not to.</p>
-
-<h3>Bit depth</h3>
-<p>Bit depth is how finely each measurement records loudness. It sets how much room there is between the quietest and loudest sound.</p>
-<ul>
-  <li><b>24-bit:</b> record at this. It leaves room to record lower without adding noise.</li>
-  <li><b>16-bit:</b> fine for finished files. CDs are 16-bit.</li>
-  <li><b>32-bit float:</b> see <a href="#levels">32-bit float recorders</a>.</li>
-</ul>
 
 <h3>Mono and stereo</h3>
 <ul>
@@ -329,10 +321,10 @@
   <tbody>
     <tr><td>Podcast episode</td><td>MP3, 44.1 or 48 kHz, 128 kbps (96 kbps is fine for mono voice), −16 LUFS</td></tr>
     <tr><td>Soundtrack for a video</td><td>Edit in the video project at 48 kHz. The video export sets the audio, usually AAC at 320 kbps.</td></tr>
-    <tr><td>Sending to another editor</td><td>WAV, 48 kHz, 24-bit</td></tr>
+    <tr><td>Sending to another editor</td><td>WAV, 48 kHz</td></tr>
     <tr><td>Audio on a web page</td><td>MP3, 128 kbps. Or host it on a podcast or audio host and embed the player.</td></tr>
     <tr><td>Social media</td><td>Social platforms don't post audio alone. Make a video: audiogram (waveform and captions over an image) or video clip.</td></tr>
-    <tr><td>Master copy to keep</td><td>WAV, at the sample rate and bit depth of the project</td></tr>
+    <tr><td>Master copy to keep</td><td>WAV, at the sample rate of the project</td></tr>
   </tbody>
 </table>
 </div>
