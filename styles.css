@@ -387,3 +387,4 @@ pre.folders {
 .cc-fail { color: var(--alert); }
 .cc-key { color: var(--muted); }
 .cc-results td:nth-child(2) { white-space: nowrap; }
+.color-systems td:nth-child(2) { white-space: nowrap; }

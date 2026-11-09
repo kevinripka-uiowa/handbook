@@ -59,6 +59,20 @@
 
 <p>Every graphic file is raster, vector, or a mix of both.</p>
 
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th>Raster</th><th>Vector</th></tr></thead>
+  <tbody>
+    <tr><td>Made of</td><td>Pixels: a grid of tiny squares, each one color</td><td>Paths: anchor points joined by lines and curves, stored as math</td></tr>
+    <tr><td><b>Resolution</b></td><td><b>Resolution dependent.</b> It has a fixed number of pixels. Enlarge it past that and it turns blocky or soft.</td><td><b>Resolution independent.</b> It scales to any size, from a business card to a billboard, and stays sharp.</td></tr>
+    <tr><td>Best for</td><td>Photos, scans, textures, painted and blended effects</td><td>Logos, icons, type, charts, maps, illustrations with flat color</td></tr>
+    <tr><td>Editing</td><td>You change pixels. Reshaping an edge or changing one color cleanly is hard.</td><td>You change shapes. Any path, fill, or stroke can be changed at any time.</td></tr>
+    <tr><td>Made in</td><td>Photoshop, Lightroom, cameras and phones</td><td>Illustrator, Figma, shapes and type in InDesign</td></tr>
+    <tr><td>Common formats</td><td>JPG, PNG, GIF, WebP, HEIC, TIFF, PSD</td><td>SVG, AI, EPS. PDF can hold both.</td></tr>
+  </tbody>
+</table>
+</div>
+
 <figure>
   <svg viewBox="0 0 520 226" role="img" aria-labelledby="rv-title">
     <title id="rv-title">A circle drawn as pixels has jagged steps when enlarged. A circle drawn as a vector stays smooth.</title>
@@ -78,6 +92,7 @@
 <h3 id="antialiasing">Antialiasing</h3>
 <p>Pixels are squares in rows and columns, so a curve or a diagonal edge can't line up with them. If every pixel is either the shape's color or the background color, the edge looks like stairs. These steps are called jaggies.</p>
 <p>Antialiasing smooths the steps. Pixels along the edge get an in-between color, based on how much of each pixel the shape covers. A pixel that's half covered by a black shape on white turns middle gray. At normal size, your eye reads the gray pixels as a smooth edge.</p>
+<p>On a transparent background, edge pixels work differently. Instead of turning gray, they keep the shape's color and become partly transparent. A pixel that's half covered by a black shape is black at 50% opacity. The blending happens later, wherever the image is placed, so the edge looks smooth on any background.</p>
 
 <figure>
   <svg viewBox="0 0 520 258" role="img" aria-labelledby="aa-title">
@@ -251,8 +266,15 @@
 </figure>
 
 <p>Apps antialias text, shapes, and selections for you. Turn it off only when you need hard pixel edges, such as pixel art.</p>
-<p>Antialiased edges are blended with whatever color is behind them. A logo exported on white keeps a thin light edge, and that edge shows up as a halo when you place the logo on a dark background. To avoid it, export with a transparent background (PNG), or export on the color the logo will sit on.</p>
-<p class="software"><strong>Where to find it:</strong> Photoshop: the Anti-alias checkbox in the Options bar for the Lasso, Magic Wand, and Elliptical Marquee tools; the anti-aliasing menu (None, Sharp, Crisp, Strong, Smooth) in the Options bar for the Type tool. Illustrator: File › Export › Export As › PNG, then Anti-aliasing (Art Optimized, Type Optimized, or None).</p>
+<p>Antialiased edges are blended with whatever color is behind them. A logo exported on white keeps a thin light edge, and that edge shows up as a halo when you place the logo on a dark background. To avoid it, export with a transparent background, or export on the color the logo will sit on.</p>
+<ul>
+  <li><b>PNG and WebP</b> keep partly transparent edge pixels, so the edge stays smooth on any background.</li>
+  <li><b>GIF</b> transparency is only on or off. Edge pixels are either fully shown, which looks jagged, or blended with a set background color (called the matte), which brings the halo back.</li>
+  <li><b>JPG</b> has no transparency. The background fills in, usually as white.</li>
+  <li><b>SVG</b> and other vector files have no stored edge pixels. The screen or printer antialiases the edges each time it draws them, against whatever is behind them.</li>
+</ul>
+<p>Cutouts have the same problem. When you cut a subject out of a photo, the partly transparent edge pixels still hold some color from the old background. Placed on a new background, that shows as a thin fringe, such as a light edge around hair that was shot against a bright sky. Remove it before you place the cutout.</p>
+<p class="software"><strong>Where to find it:</strong> Photoshop: the Anti-alias checkbox in the Options bar for the Lasso, Magic Wand, and Elliptical Marquee tools; the anti-aliasing menu (None, Sharp, Crisp, Strong, Smooth) in the Options bar for the Type tool. Illustrator: File › Export › Export As › PNG, then Anti-aliasing (Art Optimized, Type Optimized, or None). To remove fringe from a cutout in Photoshop: turn on <b>Decontaminate Colors</b> in <span class="path">Select › Select and Mask</span>, or use <span class="path">Layer › Matting › Defringe</span> on a layer that's already cut out.</p>
 
 <h3>Vector: anchor points and math</h3>
 <p>A vector image is made of paths. A path is a line that runs through points called anchor points. The file doesn't store pixels. It stores numbers: where each anchor point is, how the line between them curves, and the fill and stroke colors.</p>
@@ -410,7 +432,13 @@
 <p>An <b>export</b> is a copy made for someone else to view or print. Examples: .jpg, .png, .pdf. Exports usually flatten layers and can't be edited the same way.</p>
 <p>Working files open fully only in the app that made them. Send exports to anyone who doesn't have that app.</p>
 <p>Keep the working file. Hand in or publish the export. If you only have the export, you can't fix a typo without rebuilding the design.</p>
-<p class="software"><strong>Where to find it:</strong> In Adobe apps, <span class="path">File › Save</span> saves the working file. <span class="path">File › Export</span> makes the export.</p>
+<p class="software"><strong>Where to find it:</strong> In Adobe apps:</p>
+<ul class="software">
+  <li><span class="path">File › Save</span> saves the working file.</li>
+  <li><span class="path">File › Save As</span> saves the file under a new name or in a new place, and you keep working in the new file. Use it to start a new version (see <a href="files.html#versions">Versions</a>).</li>
+  <li><span class="path">File › Save a Copy</span> saves a copy and leaves you in the file you had open. In Photoshop and Illustrator, it can also save other formats: Photoshop saves JPG, PNG, and PDF this way, and Illustrator saves PDF.</li>
+  <li><span class="path">File › Export</span> (and Export As) makes exports such as JPG, PNG, and SVG, and in InDesign, PDF.</li>
+</ul>
 
 <h3>Common formats</h3>
 <div class="table-wrap">
@@ -494,7 +522,7 @@
 <p>300 PPI is the standard for print: flyers, magazines, handouts, and posters. Only very large prints seen from far away, like banners and billboards, need less (see <a href="#distance">Viewing distance</a>).</p>
 <p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">Image › Image Size</span>. To change PPI without changing the pixels, turn off <b>Resample</b> first.</p>
 
-<h3>How many pixels you need for screens</h3>
+<h3 id="screen-pixels">How many pixels you need for screens</h3>
 <p>Most phones and laptops have high-density screens that use 2 pixels for every 1 they display. Export at twice the size the image will be shown. If a website shows a photo 800 px wide, export it 1600 px wide.</p>
 
 <h3 id="distance">Viewing distance</h3>
@@ -578,11 +606,12 @@
 
 <h3>Why your screen isn't a reliable size</h3>
 <p>Pixels in a file have no physical size. Screens pack different numbers of pixels into an inch, called pixel density or PPI. The same file shows at different sizes on a laptop, a lab monitor, and a phone.</p>
-<p>Apps also count pixels differently:</p>
+<p>Software also shows pixels in one of two ways:</p>
 <ul>
-  <li><b>Adobe apps</b> show one pixel of the file on one pixel of the screen at 100% zoom. On a high-density screen, 100% looks small.</li>
-  <li><b>Web browsers</b>, and apps that run in them, use their own pixel. Browsers treat 96 of their pixels as an inch, then scale up for the screen: most phones and laptops use 2 or 3 screen pixels for each browser pixel. Browser zoom changes the size again. A browser "inch" is rarely a real inch.</li>
+  <li><b>Fixed pixel mapping:</b> one pixel of the image on one physical pixel of the screen. Photoshop and other Adobe apps work this way at 100% zoom, as do many image editors. On a high-density screen, 100% looks small.</li>
+  <li><b>Layout box and density scaling:</b> the software lays things out in its own pixels, based on a standard density, then scales them up to fit the screen. Web browsers use a 96 PPI base: they treat 96 of their pixels as an inch, and most phones and laptops use 2 or 3 screen pixels for each one. Phone and computer apps, and tools that run in a browser such as Canva and Figma, work the same way, with slightly different math for each operating system. Zoom changes the size again, so a browser "inch" is rarely a real inch.</li>
 </ul>
+<p>Density scaling is why an image with too few pixels looks soft on a high-density screen: each of its pixels is stretched over 2 or 3 screen pixels. See <a href="#screen-pixels">How many pixels you need for screens</a>.</p>
 
 <h3>Find your screen's PPI</h3>
 <p>Look up your screen's specs, or work it out:</p>
@@ -659,21 +688,42 @@
 </ul>
 <p>A color outside a gamut can't be reproduced. When a file moves to a smaller gamut, such as RGB to CMYK or Adobe RGB to sRGB, those colors are replaced with the closest ones the new gamut can make. Bright, saturated colors get duller. You can't get them back by converting again, so keep an RGB original.</p>
 <p>For a color CMYK can't reach, such as a brand's bright orange, printers use a premixed spot color (see <a href="#spot-color">Spot color</a>).</p>
-<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">View › Gamut Warning</span> marks colors that won't print with the current CMYK setup. <span class="path">View › Proof Colors</span> shows a preview of how the file will look in print. The Color Picker shows a warning triangle next to a color that's out of the print gamut.</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">View › Gamut Warning</span> marks colors that won't print with the current CMYK setup. <span class="path">View › Proof Colors</span> shows a preview of how the file will look in print; <span class="path">View › Proof Setup</span> picks which printer and paper it previews. Illustrator and InDesign also have <span class="path">View › Proof Colors</span>. The Color Picker shows a warning triangle next to a color that's out of the print gamut.</p>
 
-<h3>Writing down a color</h3>
+<h3 id="print-darker">Why prints look darker and duller than your screen</h3>
+<p>Most students' first print looks darker and muddier than the file did on screen. Gamut is only part of the reason. Several things stack up:</p>
+<ul>
+  <li><b>Screens give off light. Paper only reflects it.</b> A screen's white is a light source. Paper's white is only as bright as the room light hitting it, so everything on paper has less contrast and less sparkle.</li>
+  <li><b>Screens are usually too bright.</b> Laptops and phones are often set near full brightness, much brighter than a page in normal room light. A design that looks right on a bright screen will print dark. Auto-brightness and Night Shift or True Tone also change how the screen shows color.</li>
+  <li><b>Ink can't reach screen colors.</b> Bright, saturated colors fall outside the print gamut and get duller (see <a href="#gamut">Color gamut</a>).</li>
+  <li><b>Ink spreads into paper.</b> Each dot of ink soaks in and grows a little, so midtones and shadows print darker than they look on screen. This is called <b>dot gain</b>. Dark areas can fill in and lose detail, such as shadows in a photo or thin light lines on a dark background.</li>
+  <li><b>Paper changes the result.</b> Uncoated paper, like copy paper or newsprint, soaks up more ink than coated (glossy) paper. Colors are flatter and darks spread more. Paper white is also rarely pure white.</li>
+  <li><b>Each printer is different.</b> A campus laser printer, an inkjet, and a print shop's press all print the same file differently.</li>
+</ul>
+<p>What to do:</p>
+<ul>
+  <li>Turn your screen brightness down to about half when you judge colors for print, and turn off Night Shift and True Tone.</li>
+  <li>Preview the file before you print with <span class="path">View › Proof Colors</span> in Photoshop, Illustrator, or InDesign.</li>
+  <li>Keep important details out of the darkest areas. For uncoated paper, lighten dark photos and midtones a little.</li>
+  <li>Don't build a design on a neon or very bright color that ink can't make. Use a spot color, or pick a color that's in the print gamut.</li>
+  <li>Print a proof on the same printer and paper you'll use, and look at it in good light, not under a dim desk lamp. If it's too dark, fix the file and print again.</li>
+</ul>
+
+<h3>Defining a color</h3>
 <div class="table-wrap">
-<table>
+<table class="color-systems">
   <thead><tr><th>System</th><th>Example</th><th>Used for</th></tr></thead>
   <tbody>
     <tr><td>Hex</td><td>#FFCD00</td><td>Websites, most design apps</td></tr>
     <tr><td>RGB</td><td>255, 205, 0</td><td>Screen design apps</td></tr>
+    <tr><td>HSB (hue, saturation, brightness)</td><td>48°, 100%, 100%</td><td>Picking and adjusting colors in Photoshop and Illustrator. Hue is the position on the color wheel. Saturation runs from gray to full color. Brightness runs from black to full brightness.</td></tr>
     <tr><td>CMYK</td><td>0, 15, 100, 0</td><td>Print</td></tr>
     <tr><td>Pantone (PMS)</td><td>PMS 116 C</td><td>Print with premixed ink</td></tr>
   </tbody>
 </table>
 </div>
-<p>A brand guide usually lists one color in all of these systems. Use the one that matches where the work is going.</p>
+<p>A brand guide usually lists one color as hex, RGB, CMYK, and Pantone. Use the one that matches where the work is going. HSB is for finding and adjusting colors, such as making a lighter or duller version of a brand color.</p>
+<p>Websites can also use <b>HSL</b> (hue, saturation, lightness) in CSS. It looks like HSB but isn't the same: in HSL, 100% lightness is always white, so the same gold is 48°, 100%, 50%.</p>
 
 <h3>Color profiles</h3>
 <p>A color profile tells the next app or printer how to read the color numbers in a file. Without one, the same file can look different on different devices.</p>
@@ -681,8 +731,8 @@
   <li><b>sRGB</b>: the standard for screens and the web. If you're not sure, use sRGB.</li>
   <li><b>Adobe RGB</b> and <b>ProPhoto RGB</b>: wider ranges of color for photo editing and print. They look dull or wrong online if not converted to sRGB first.</li>
 </ul>
-<p>When you export, keep the box that embeds the profile turned on.</p>
-<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">File › Export › Export As</span> has a <b>Convert to sRGB</b> option. <span class="path">Edit › Convert to Profile</span> changes a file's profile.</p>
+<p>When you export, turn on the option that embeds the profile. In some export windows it's off by default.</p>
+<p class="software"><strong>Where to find it:</strong> In Photoshop, <span class="path">File › Export › Export As</span> has two separate boxes under Color Space. <b>Convert to sRGB</b> converts the colors, but it doesn't add the profile to the file. Also turn on <b>Embed Color Profile</b> so other apps and browsers know the file is sRGB. <span class="path">Edit › Convert to Profile</span> changes a file's profile.</p>
 
 <h3 id="spot-color">Spot color</h3>
 <p>A <b>spot color</b> is one premixed ink, usually a Pantone color, printed on its own instead of being built from CMYK dots. It gives an exact match every time. Brands use it for logos. It costs more, so it's mostly used for jobs like business cards, shirts, and packaging.</p>
@@ -821,10 +871,12 @@
 </ul>
 <p>Don't send a JPG or PNG of a whole layout. Text in a raster file prints softer than text in a PDF.</p>
 
-<h3>Sending working files instead</h3>
-<p>Some shops want to open and adjust your files. InDesign and Illustrator can package a file. Packaging collects the working file, every linked image, and the fonts into one folder. Zip the folder and send it.</p>
-<p>Packaging leaves out Adobe Fonts. The shop can turn on the same fonts from its own Creative Cloud account. For fonts you bought or downloaded, check that the license allows sending them to a printer.</p>
-<p class="software"><strong>Where to find it:</strong> <span class="path">File › Package</span> in InDesign and Illustrator. Photoshop and Canva can't package, so send the PDF.</p>
+<h3 id="package">Packaging an InDesign project</h3>
+<p>For an InDesign project, hand in two things: the print-ready PDF and a packaged copy of the InDesign file. The PDF is what gets printed. The package is the whole working project, so someone else can open it and see how it was built: the page size and bleed, the grid, the paragraph styles, and the linked images. Without the package, a layout opened on another computer has missing fonts and missing images.</p>
+<p>Packaging collects the InDesign file, every linked image, and the fonts into one new folder. Zip the folder to send or hand it in (see <a href="files.html#zipping">Zipping and packaging</a>).</p>
+<p>Print shops usually want only the PDF. Some ask for packaged files so they can fix problems themselves. Ask the shop.</p>
+<p>Packaging leaves out Adobe Fonts. Anyone with Creative Cloud can turn on the same fonts from their own account. For fonts you bought or downloaded, check that the license allows sending them to someone else.</p>
+<p class="software"><strong>Where to find it:</strong> In InDesign, <span class="path">File › Package</span>. In the last step, you can also choose <b>Include PDF (Print)</b> and pick a PDF/X preset, so the package and the PDF are made at the same time. Illustrator also has <span class="path">File › Package</span>. Photoshop and Canva can't package, so send the PDF.</p>
 
 <h3>Printing on a campus printer</h3>
 <p>The printer in the student center prints only on letter and tabloid paper. Like most office printers, it can't print to the edge of the paper. It leaves a blank border, usually about 0.25 in, and it can't print bleed.</p>
@@ -843,7 +895,7 @@
 
 <h3>Websites</h3>
 <ul>
-  <li>Size: twice the width it will be shown (see <a href="#resolution">Pixels and resolution</a>).</li>
+  <li>Size: for raster images (JPG, PNG, WebP), twice the width it will be shown (see <a href="#screen-pixels">How many pixels you need for screens</a>). This doesn't apply to SVG. A vector file is sharp at any size, so set it to the size it will be shown.</li>
   <li>Format: WebP or JPG for photos. PNG or SVG for logos and graphics with text.</li>
   <li>Color: sRGB.</li>
   <li>File size: keep a full-width image under about 500 KB, and smaller images under about 200 KB. Large images make pages slow, especially on phones with weak signal. Many visitors leave a page that loads slowly.</li>
@@ -906,7 +958,7 @@
   <dd>The background wasn't made transparent before export, or the file was saved as JPG, which can't be transparent. See <a href="#formats">File formats</a>.</dd>
 
   <dt>Why did my colors change when I printed?</dt>
-  <dd>Screens use light (RGB) and printers use ink (CMYK). Ink can't match the brightest screen colors. Export in CMYK and print a proof. See <a href="#color">Color</a>.</dd>
+  <dd>Screens give off light and are usually set too bright. Paper only reflects light, ink can't match the brightest screen colors, and ink spreads into the paper and darkens the midtones. Turn your screen brightness down, preview with Proof Colors, and print a proof. See <a href="#print-darker">Why prints look darker and duller than your screen</a>.</dd>
 
   <dt>Why is there a white edge on my printed poster?</dt>
   <dd>From a print shop: the design had no bleed. Extend the background 0.125 in past the edge. From a campus printer: it can't print to the edge. See <a href="#print">Exporting for print</a>.</dd>
