@@ -388,3 +388,21 @@ pre.folders {
 .cc-key { color: var(--muted); }
 .cc-results td:nth-child(2) { white-space: nowrap; }
 .color-systems td:nth-child(2) { white-space: nowrap; }
+
+/* Visual weight cards (type.html) */
+.vw-cards { list-style: none; padding: 0; margin: 1rem 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1.25rem 1rem; }
+.vw-cards li { margin: 0; font-size: 0.97rem; line-height: 1.5; }
+.vw-sample { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.15rem; height: 6.5rem; margin-bottom: 0.5rem; border: 1px solid var(--line); background: var(--soft); font-size: 1.05rem; line-height: 1.2; overflow: hidden; }
+.vw-row { display: flex; gap: 0.9rem; }
+.vw-big { font-size: 1.9rem; }
+.vw-bold { font-weight: 800; font-size: 1.2rem; }
+.vw-light { font-weight: 300; font-size: 1.2rem; }
+.vw-serif { font-family: Georgia, "Times New Roman", serif; font-size: 1.25rem; }
+.vw-c1 { color: var(--figure-bleed); }
+.vw-c2 { color: var(--figure-safe); }
+.vw-v2 { color: var(--muted); }
+.vw-rotate { transform: rotate(-20deg); margin-top: 0.6rem; }
+.vw-italic { font-style: italic; }
+.vw-under { text-decoration: underline; text-underline-offset: 3px; }
+.vw-enclose { background: var(--line); padding: 0 0.3rem; }
+.vw-dodge { font-size: 0.8em; font-weight: 300; }
