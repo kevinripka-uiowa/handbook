@@ -311,3 +311,12 @@ pre.folders {
 
 /* Editor notes: open questions to resolve before publishing. Remove each note once answered. */
 .todo { color: var(--alert); font-weight: 700; }
+
+/* Callout box for a key rule (graphics.html: setting resolution) */
+.key-rule {
+  background: var(--soft);
+  border-left: 6px solid var(--accent);
+  padding: 1rem 1.25rem 0.25rem;
+  margin: 1.5rem 0 2rem;
+}
+.key-rule h3 { margin-top: 0; }
