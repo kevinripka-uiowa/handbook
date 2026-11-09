@@ -320,3 +320,70 @@ pre.folders {
   margin: 1.5rem 0 2rem;
 }
 .key-rule h3 { margin-top: 0; }
+
+/* Buttons inside demos */
+.demo button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.demo button:hover { background: var(--accent); color: #000000; border-color: var(--accent); }
+.demo button:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+
+/* Bézier handle demo (graphics.html) */
+.bez-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 0.75rem; }
+.bez-svg { display: block; width: 100%; height: auto; background: var(--bg); border: 1px solid var(--line); touch-action: pan-y; }
+.bez-knob { cursor: grab; touch-action: none; }
+.bez-knob.dragging { cursor: grabbing; }
+.bez-hit { fill: transparent; }
+.bez-knob:focus { outline: none; }
+.bez-knob:focus-visible .bez-hit { fill: none; stroke: var(--text); stroke-width: 2; stroke-dasharray: 4 3; }
+.bez-svg + div { margin-top: 0.6rem; }
+.bez-key { color: var(--muted); margin-top: 0.5rem; }
+
+/* Readability demo (type.html) */
+.read-box { position: relative; background: var(--bg); border: 1px solid var(--line); padding: 1rem; margin-top: 0.75rem; overflow: hidden; }
+.read-sample { margin: 0; }
+.read-together { color: var(--alert); font-weight: 700; margin: 0.5rem 0 0; }
+
+/* Recording level demo (audio.html) */
+.lvl-wave { display: block; width: 100%; height: auto; background: var(--bg); border: 1px solid var(--line); margin-top: 0.5rem; }
+.lvl-meter { margin: 0.75rem 0 0.5rem; }
+.lvl-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem; }
+.lvl-name { flex: 0 0 4.75rem; font-size: 0.85rem; font-weight: 700; }
+.lvl-track { position: relative; flex: 1; height: 0.9rem; background: var(--bg); border: 1px solid var(--line); }
+.lvl-target { position: absolute; top: 0; bottom: 0; background: var(--figure-fill); }
+.lvl-bar { position: absolute; left: 0; top: 0.15rem; bottom: 0.15rem; background: var(--figure-ink); transition: width 0.1s; }
+.lvl-bar.over { background: var(--figure-bleed); }
+.lvl-scale { position: relative; flex: 1; height: 1.1rem; }
+.lvl-scale span { position: absolute; top: 0; transform: translateX(-50%); font-size: 0.8rem; color: var(--muted); }
+.lvl-scale span:last-child { transform: translateX(-100%); }
+.lvl-scale span:first-child { transform: none; }
+.lvl-key { color: var(--muted); margin-top: 0.5rem; }
+@media (prefers-reduced-motion: reduce) { .lvl-bar { transition: none; } }
+
+/* Contrast checker (web.html) */
+.cc-presets { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1rem; }
+.cc-pickers { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.75rem 1rem; }
+.cc-pick label { display: block; font-weight: 700; }
+.cc-inputs { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.25rem; }
+.cc-inputs input[type="color"] { width: 2.75rem; height: 2.25rem; padding: 0.1rem; border: 1px solid var(--text); background: var(--bg); cursor: pointer; }
+.cc-inputs input[type="text"] { font: inherit; font-family: ui-monospace, Menlo, Consolas, monospace; width: 6.5rem; padding: 0.3rem 0.4rem; border: 1px solid var(--text); background: var(--bg); color: var(--text); }
+.cc-error { color: var(--alert); font-weight: 700; margin: 0.5rem 0 0; }
+.cc-preview { margin: 1rem 0 0.75rem; padding: 1rem 1.1rem; border: 1px solid var(--line); }
+.cc-preview p { margin: 0 0 0.5rem; }
+.cc-large { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.cc-normal { font-size: 1rem; }
+.cc-shapes { display: flex; align-items: center; gap: 1.25rem; margin-top: 0.75rem; }
+.cc-button { display: inline-block; padding: 0.3rem 0.8rem; border: 2px solid currentColor; border-radius: 4px; font-weight: 700; }
+.cc-ratio { font-size: 1.15rem; margin: 0.5rem 0; }
+.cc-results { margin-top: 0.25rem; }
+.cc-pass, .cc-fail { font-weight: 700; white-space: nowrap; }
+.cc-fail { color: var(--alert); }
+.cc-key { color: var(--muted); }
+.cc-results td:nth-child(2) { white-space: nowrap; }

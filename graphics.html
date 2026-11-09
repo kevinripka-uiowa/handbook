@@ -294,30 +294,33 @@
   <li><strong>Length:</strong> the longer the handle, the farther the curve follows that direction before it bends toward the next anchor point.</li>
 </ul>
 
-<figure>
-  <svg viewBox="0 0 520 220" role="img" aria-labelledby="len-title">
-    <title id="len-title">Three curves between the same two anchor points. The handles point straight up in all three. The longer the handles, the higher the curve rises before it turns back down.</title>
-    <path d="M30 175 C30 150 150 150 150 175" fill="none" stroke="var(--figure-ink)" stroke-width="3"/>
-    <line x1="30" y1="175" x2="30" y2="150" stroke="var(--figure-safe)" stroke-width="1.5"/><circle cx="30" cy="150" r="5" fill="var(--figure-safe)"/>
-    <line x1="150" y1="175" x2="150" y2="150" stroke="var(--figure-safe)" stroke-width="1.5"/><circle cx="150" cy="150" r="5" fill="var(--figure-safe)"/>
-    <rect x="24" y="169" width="12" height="12" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="2"/>
-    <rect x="144" y="169" width="12" height="12" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="2"/>
-    <text x="90" y="207" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Short handles</text>
-    <path d="M200 175 C200 105 320 105 320 175" fill="none" stroke="var(--figure-ink)" stroke-width="3"/>
-    <line x1="200" y1="175" x2="200" y2="105" stroke="var(--figure-safe)" stroke-width="1.5"/><circle cx="200" cy="105" r="5" fill="var(--figure-safe)"/>
-    <line x1="320" y1="175" x2="320" y2="105" stroke="var(--figure-safe)" stroke-width="1.5"/><circle cx="320" cy="105" r="5" fill="var(--figure-safe)"/>
-    <rect x="194" y="169" width="12" height="12" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="2"/>
-    <rect x="314" y="169" width="12" height="12" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="2"/>
-    <text x="260" y="207" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Medium handles</text>
-    <path d="M370 175 C370 50 490 50 490 175" fill="none" stroke="var(--figure-ink)" stroke-width="3"/>
-    <line x1="370" y1="175" x2="370" y2="50" stroke="var(--figure-safe)" stroke-width="1.5"/><circle cx="370" cy="50" r="5" fill="var(--figure-safe)"/>
-    <line x1="490" y1="175" x2="490" y2="50" stroke="var(--figure-safe)" stroke-width="1.5"/><circle cx="490" cy="50" r="5" fill="var(--figure-safe)"/>
-    <rect x="364" y="169" width="12" height="12" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="2"/>
-    <rect x="484" y="169" width="12" height="12" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="2"/>
-    <text x="430" y="207" text-anchor="middle" font-size="16" fill="var(--figure-ink)">Long handles</text>
+<section class="demo" aria-labelledby="bez-title">
+  <h3 id="bez-title">Try it: pull the handles</h3>
+  <p>Drag the round dots at the ends of the handles to change the curve. Drag the square anchor points to move them. With a keyboard, Tab to a dot or square and use the arrow keys.</p>
+  <div class="bez-presets" role="group" aria-label="Example handle settings">
+    <button type="button" data-preset="short">Short handles</button>
+    <button type="button" data-preset="medium">Medium handles</button>
+    <button type="button" data-preset="long">Long handles</button>
+    <button type="button" data-preset="s">S curve</button>
+    <button type="button" data-preset="one">One handle</button>
+  </div>
+  <svg id="bez" class="bez-svg" viewBox="0 0 520 280" role="img" aria-labelledby="bez-svg-title">
+    <title id="bez-svg-title">One curved segment between two anchor points, each with a handle you can drag. The description below the picture changes as the curve changes.</title>
+    <line id="bez-base" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <path id="bez-path" fill="none" stroke="var(--figure-ink)" stroke-width="4"/>
+    <line id="bez-l0" stroke="var(--figure-safe)" stroke-width="2"/>
+    <line id="bez-l1" stroke="var(--figure-safe)" stroke-width="2"/>
+    <g class="bez-knob" id="bez-h0" tabindex="0" role="slider" aria-label="Left handle" aria-valuetext=""><circle class="bez-hit" r="22"/><circle r="8" fill="var(--figure-safe)"/></g>
+    <g class="bez-knob" id="bez-h1" tabindex="0" role="slider" aria-label="Right handle" aria-valuetext=""><circle class="bez-hit" r="22"/><circle r="8" fill="var(--figure-safe)"/></g>
+    <g class="bez-knob" id="bez-a0" tabindex="0" role="slider" aria-label="Left anchor point" aria-valuetext=""><circle class="bez-hit" r="22"/><rect x="-8" y="-8" width="16" height="16" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="3"/></g>
+    <g class="bez-knob" id="bez-a1" tabindex="0" role="slider" aria-label="Right anchor point" aria-valuetext=""><circle class="bez-hit" r="22"/><rect x="-8" y="-8" width="16" height="16" fill="var(--bg)" stroke="var(--figure-safe)" stroke-width="3"/></g>
   </svg>
-  <figcaption>Same anchors, same handle direction. Only the handle length changes.</figcaption>
-</figure>
+  <div aria-live="polite">
+    <p class="effect-note"><b>Direction:</b> <span id="bez-dir"></span></p>
+    <p class="effect-note"><b>Length:</b> <span id="bez-len"></span></p>
+  </div>
+  <p class="effect-note bez-key">Squares are anchor points. Lines ending in dots are handles. The dashed line is the straight path between the anchors.</p>
+</section>
 
 <p>Anchor points come in two kinds:</p>
 <ul>
@@ -930,6 +933,94 @@
   <div class="inner">School of Journalism and Mass Communication</div>
 </footer>
 
+<script>
+/* Bézier handle demo (Graphics › Handles and Bézier curves) */
+(function () {
+  var svg = document.getElementById("bez");
+  if (!svg) return;
+  var P = {}, W = 520, H = 280, M = 12;
+  var PRESETS = {
+    short:  { a0: [110, 210], a1: [410, 210], h0: [110, 175], h1: [410, 175] },
+    medium: { a0: [110, 210], a1: [410, 210], h0: [110, 120], h1: [410, 120] },
+    long:   { a0: [110, 210], a1: [410, 210], h0: [110, 30],  h1: [410, 30] },
+    s:      { a0: [110, 140], a1: [410, 140], h0: [230, 30],  h1: [290, 250] },
+    one:    { a0: [110, 210], a1: [410, 210], h0: [200, 40],  h1: [410, 210] }
+  };
+  function $(id) { return document.getElementById(id); }
+  function set(p) { ["a0", "a1", "h0", "h1"].forEach(function (k) { P[k] = p[k].slice(); }); draw(); }
+  function len(v) { return Math.sqrt(v[0] * v[0] + v[1] * v[1]); }
+  function sub(a, b) { return [a[0] - b[0], a[1] - b[1]]; }
+  function place(id, p) { $(id).setAttribute("transform", "translate(" + p[0] + " " + p[1] + ")"); }
+  function line(id, a, b) { var l = $(id); l.setAttribute("x1", a[0]); l.setAttribute("y1", a[1]); l.setAttribute("x2", b[0]); l.setAttribute("y2", b[1]); }
+
+  function draw() {
+    $("bez-path").setAttribute("d", "M" + P.a0 + " C" + P.h0 + " " + P.h1 + " " + P.a1);
+    line("bez-base", P.a0, P.a1); line("bez-l0", P.a0, P.h0); line("bez-l1", P.a1, P.h1);
+    ["a0", "a1", "h0", "h1"].forEach(function (k) { place("bez-" + k, P[k]); });
+    notes();
+  }
+
+  function notes() {
+    var base = sub(P.a1, P.a0), d = len(base) || 1;
+    var v0 = sub(P.h0, P.a0), v1 = sub(P.h1, P.a1), l0 = len(v0), l1 = len(v1);
+    var side = function (v) { var c = base[0] * v[1] - base[1] * v[0]; return Math.abs(c) < d * 4 ? 0 : (c > 0 ? 1 : -1); };
+    var s0 = l0 < 4 ? 0 : side(v0), s1 = l1 < 4 ? 0 : side(v1);
+    var dir, ln;
+    if (l0 < 4 && l1 < 4) dir = "No handles, so the segment is a straight line.";
+    else if (l0 < 4 || l1 < 4) dir = "Only one anchor has a handle. The curve leaves that anchor toward its handle, then runs straight into the other anchor.";
+    else if (s0 === 0 && s1 === 0) dir = "Both handles lie along the straight line, so the segment stays straight.";
+    else if (s0 * s1 < 0) dir = "The handles point to opposite sides of the dashed line, so the curve bends one way, then the other: an S curve.";
+    else dir = "Both handles point to the same side, so the curve bulges toward them.";
+
+    var r = (l0 + l1) / 2 / d, big = Math.max(l0, l1), small = Math.min(l0, l1);
+    if (l0 < 4 && l1 < 4) ln = "Zero. Drag a dot away from its anchor to bend the segment.";
+    else if (small >= 4 && big / small > 2.5) ln = "One handle is much longer than the other, so the curve is lopsided. It holds the long handle's direction much longer before it turns.";
+    else if (r < 0.2) ln = "Short. The curve turns toward the next anchor almost right away, so the bend is shallow and tight.";
+    else if (r < 0.5) ln = "Medium. The curve follows each handle for a while, then turns. This makes an even, round curve.";
+    else if (r < 0.9) ln = "Long. The curve follows each handle a long way before it bends toward the next anchor.";
+    else ln = "Very long, longer than the distance between the anchors. The curve can loop or kink. Shorten the handles.";
+    $("bez-dir").textContent = dir; $("bez-len").textContent = ln;
+    $("bez-h0").setAttribute("aria-valuetext", "Left handle, " + Math.round(l0) + " units long");
+    $("bez-h1").setAttribute("aria-valuetext", "Right handle, " + Math.round(l1) + " units long");
+    $("bez-a0").setAttribute("aria-valuetext", "Left anchor at " + P.a0.map(Math.round).join(", "));
+    $("bez-a1").setAttribute("aria-valuetext", "Right anchor at " + P.a1.map(Math.round).join(", "));
+  }
+
+  function clamp(p) { return [Math.min(W - M, Math.max(M, p[0])), Math.min(H - M, Math.max(M, p[1]))]; }
+  function move(k, p) {
+    p = clamp(p);
+    if (k === "a0" || k === "a1") {          // an anchor carries its handle with it
+      var h = k === "a0" ? "h0" : "h1", off = sub(P[h], P[k]);
+      P[k] = p; P[h] = clamp([p[0] + off[0], p[1] + off[1]]);
+    } else P[k] = p;
+    draw();
+  }
+  function toSvg(e) {
+    var pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+    var q = pt.matrixTransform(svg.getScreenCTM().inverse()); return [q.x, q.y];
+  }
+  ["a0", "a1", "h0", "h1"].forEach(function (k) {
+    var el = $("bez-" + k), grab = null;
+    el.addEventListener("pointerdown", function (e) {
+      var q = toSvg(e); grab = sub(P[k], q);
+      el.setPointerCapture(e.pointerId); el.classList.add("dragging"); e.preventDefault();
+    });
+    el.addEventListener("pointermove", function (e) {
+      if (!grab) return; var q = toSvg(e); move(k, [q[0] + grab[0], q[1] + grab[1]]);
+    });
+    function stop() { grab = null; el.classList.remove("dragging"); }
+    el.addEventListener("pointerup", stop); el.addEventListener("pointercancel", stop);
+    el.addEventListener("keydown", function (e) {
+      var step = e.shiftKey ? 20 : 5, d = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] }[e.key];
+      if (!d) return; e.preventDefault(); move(k, [P[k][0] + d[0], P[k][1] + d[1]]);
+    });
+  });
+  document.querySelectorAll(".bez-presets button").forEach(function (b) {
+    b.addEventListener("click", function () { set(PRESETS[b.getAttribute("data-preset")]); });
+  });
+  set(PRESETS.medium);
+})();
+</script>
 <script src="toc.js"></script>
 </body>
 </html>

@@ -161,6 +161,47 @@
 <p>Clipping works like <a href="photo.html#histogram">blown highlights in a photo</a>: the information isn't there. Repair tools can reduce it a little, but a badly clipped recording can't be fixed. A recording that's a little quiet can. When in doubt, record lower.</p>
 <p class="software"><strong>Where to find it:</strong> In Audition, <span class="path">Effects › Diagnostics › DeClipper</span>. In Audacity, <span class="path">Effect › Noise Removal and Repair › Clip Fix</span>. Use either as a last resort.</p>
 
+<section class="demo" aria-labelledby="lvl-title">
+  <h3 id="lvl-title">Try it: set the recording level</h3>
+  <p>This clip is someone talking normally, then laughing. Pick a speaker, then turn the gain until normal speech peaks around −12 dBFS. Watch what happens to the laugh.</p>
+  <div class="demo-row">
+    <label for="lvl-voice">Who's talking</label>
+    <select id="lvl-voice">
+      <option value="-52">A quiet speaker</option>
+      <option value="-46" selected>A normal speaker</option>
+      <option value="-40">A loud speaker</option>
+    </select>
+  </div>
+  <div class="demo-row">
+    <label for="lvl-gain">Gain on the recorder: <span class="value" id="lvl-gain-out"></span></label>
+    <input type="range" id="lvl-gain" min="0" max="50" step="1" value="20">
+  </div>
+  <svg id="lvl-wave" class="lvl-wave" viewBox="0 0 600 170" role="img" aria-labelledby="lvl-wave-title">
+    <title id="lvl-wave-title">Waveform of the clip at the current gain. The description below the picture gives the peak levels.</title>
+    <line x1="0" y1="15" x2="600" y2="15" stroke="var(--figure-bleed)" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="0" y1="155" x2="600" y2="155" stroke="var(--figure-bleed)" stroke-width="1" stroke-dasharray="4 3"/>
+    <line x1="0" y1="67.5" x2="600" y2="67.5" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+    <line x1="0" y1="102.5" x2="600" y2="102.5" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+    <line x1="0" y1="85" x2="600" y2="85" stroke="var(--line)" stroke-width="1"/>
+    <path id="lvl-ok" stroke="var(--figure-ink)" stroke-width="1.6" fill="none"/>
+    <path id="lvl-clip" stroke="var(--figure-bleed)" stroke-width="1.6" fill="none"/>
+    <text x="4" y="12" font-size="13" fill="var(--muted)">0 dBFS</text>
+    <text x="4" y="64" font-size="13" fill="var(--muted)">−12</text>
+    <text x="195" y="12" text-anchor="middle" font-size="14" fill="var(--figure-ink)">Talking</text>
+    <text x="500" y="12" text-anchor="middle" font-size="14" fill="var(--figure-ink)">Laughing</text>
+  </svg>
+  <div class="lvl-meter" aria-hidden="true">
+    <div class="lvl-row"><span class="lvl-name">Talking</span><div class="lvl-track"><div class="lvl-target"></div><div class="lvl-bar" id="lvl-bar-s"></div></div></div>
+    <div class="lvl-row"><span class="lvl-name">Laughing</span><div class="lvl-track"><div class="lvl-target"></div><div class="lvl-bar" id="lvl-bar-l"></div></div></div>
+    <div class="lvl-row"><span class="lvl-name"></span><div class="lvl-scale" id="lvl-scale"></div></div>
+  </div>
+  <div aria-live="polite">
+    <p class="effect-note"><b>Talking peaks at <span id="lvl-s-db"></span>:</b> <span id="lvl-s-note"></span></p>
+    <p class="effect-note"><b>Laughing peaks at <span id="lvl-l-db"></span>:</b> <span id="lvl-l-note"></span></p>
+  </div>
+  <p class="effect-note lvl-key">The dashed red lines are 0 dBFS. The shaded band on the meter is the target for normal speech, around −12 dBFS.</p>
+</section>
+
 <h3>32-bit float recorders</h3>
 <p>Some newer recorders and wireless mics record in <b>32-bit float</b>. These files hold sound far above 0 dBFS, so a level set too high can be turned down later without clipping. It doesn't fix a mic that's too far away, a noisy room, or a loud sound distorting the mic itself. Set levels as if it didn't exist.</p>
 
@@ -354,6 +395,79 @@
   <div class="inner">School of Journalism and Mass Communication</div>
 </footer>
 
+<script>
+/* Recording level demo (Audio › Levels and clipping) */
+(function () {
+  var svg = document.getElementById("lvl-wave");
+  if (!svg) return;
+  function $(id) { return document.getElementById(id); }
+  var COLS = 290, X0 = 10, X1 = 590, MID = 85, FULL = 70, LAUGH = 6, MIN = -48;
+
+  // A made-up clip: three phrases of talking, a pause, then a laugh. Same every time.
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  var phrases = [[0.02, 0.17, 0], [0.21, 0.38, 0], [0.43, 0.62, 0], [0.70, 0.97, 1]];
+  var env = [], kind = [];
+  for (var i = 0; i < COLS; i++) {
+    var t = i / (COLS - 1), v = 0, k = -1;
+    phrases.forEach(function (p) {
+      if (t >= p[0] && t <= p[1]) {
+        var u = (t - p[0]) / (p[1] - p[0]), shape = Math.sin(Math.PI * u);
+        var syll = p[2] ? Math.abs(Math.sin(u * Math.PI * 7)) : 0.35 + 0.65 * Math.abs(Math.sin(u * Math.PI * 9 + p[0] * 20));
+        v = Math.pow(shape, 0.4) * syll * (0.55 + 0.45 * rnd()); k = p[2];
+      }
+    });
+    env.push(v); kind.push(k);
+  }
+  [0, 1].forEach(function (k) {                 // talking peaks at 1, laughing 6 dB higher
+    var m = 0; env.forEach(function (v, i) { if (kind[i] === k) m = Math.max(m, v); });
+    env.forEach(function (v, i) { if (kind[i] === k) env[i] = v / m * (k ? Math.pow(10, LAUGH / 20) : 1); });
+  });
+
+  var scale = $("lvl-scale");
+  [-48, -36, -24, -12, -6, 0].forEach(function (d) {
+    var s = document.createElement("span"); s.textContent = d === 0 ? "0" : "−" + -d; s.style.left = pos(d) + "%"; scale.appendChild(s);
+  });
+  document.querySelectorAll(".lvl-target").forEach(function (el) { el.style.left = pos(-15) + "%"; el.style.width = (pos(-9) - pos(-15)) + "%"; });
+
+  function pos(db) { return Math.max(0, Math.min(100, (db - MIN) / -MIN * 100)); }
+  function fmt(db) { return db >= 0 ? "0 dBFS (clipped)" : "−" + Math.round(-db) + " dBFS"; }
+  function talkNote(db) {
+    if (db < -30) return "Far too quiet. Turning it up later raises the hiss and room noise with it.";
+    if (db < -24) return "Too quiet. You'll be fighting noise when you turn it up in editing.";
+    if (db < -16) return "A little low, but safe. Turn the gain up a bit.";
+    if (db <= -9) return "Good. Normal speech should peak around −12 dBFS.";
+    if (db < -6) return "Hot. Normal speech is near the top, so louder moments may clip.";
+    if (db < 0) return "Too hot. Any laugh or shout will clip.";
+    return "Clipping. Even normal talking is cut off flat. Turn the gain down.";
+  }
+  function laughNote(db) {
+    if (db >= 0) return "It clips. The tops are cut off flat (shown in red), and that can't be repaired.";
+    if (db > -6) return "It fits, but only just. Loud moments should stay at −6 dBFS or lower.";
+    return "It fits, with room to spare.";
+  }
+  function render() {
+    var gain = +$("lvl-gain").value, talk = +$("lvl-voice").value + gain, a = Math.pow(10, talk / 20);
+    var ok = "", clip = "", noise = a * 0.012;
+    env.forEach(function (v, i) {
+      var x = (X0 + (X1 - X0) * i / (COLS - 1)).toFixed(1), amp = v > 0 ? v * a : noise * (0.5 + rnd() * 0.5);
+      var h = Math.max(0.6, Math.min(amp, 1) * FULL).toFixed(1), seg = "M" + x + " " + (MID - h) + "V" + (MID + +h);
+      if (amp >= 1) clip += seg; else ok += seg;
+    });
+    $("lvl-ok").setAttribute("d", ok); $("lvl-clip").setAttribute("d", clip);
+    var laugh = talk + LAUGH;
+    [["s", talk], ["l", laugh]].forEach(function (p) {
+      var b = $("lvl-bar-" + p[0]); b.style.width = pos(p[1]) + "%"; b.classList.toggle("over", p[1] >= 0);
+    });
+    $("lvl-gain-out").textContent = "+" + gain + " dB";
+    $("lvl-s-db").textContent = fmt(talk); $("lvl-l-db").textContent = fmt(laugh);
+    $("lvl-s-note").textContent = talkNote(talk); $("lvl-l-note").textContent = laughNote(laugh);
+  }
+  $("lvl-gain").addEventListener("input", render);
+  $("lvl-voice").addEventListener("change", render);
+  render();
+})();
+</script>
 <script src="toc.js"></script>
 </body>
 </html>

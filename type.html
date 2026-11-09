@@ -46,6 +46,7 @@
     <li><a href="#email-sizes">HTML email sizes</a></li>
     <li><a href="#line-length">Line length</a></li>
     <li><a href="#spacing">Spacing</a></li>
+    <li><a href="#try-readability">Try it: line length, size, and leading</a></li>
     <li><a href="#alignment">Alignment</a></li>
     <li><a href="#mistakes">Common type mistakes</a></li>
     <li><a href="#fonts">Font files and licenses</a></li>
@@ -332,6 +333,7 @@
 <p class="software"><strong>Where to find it:</strong> In InDesign, open <span class="path">Window › Info</span>, then triple-click a line of text. The Info panel shows how many characters it has.</p>
 
 
+
 <h2 id="spacing">Spacing</h2>
 
 <h3>Leading and paragraphs</h3>
@@ -359,6 +361,33 @@
 </ul>
 
 <p class="software"><strong>Where to find it:</strong> In InDesign and Illustrator, tracking, kerning, and leading are in the <span class="path">Character</span> panel. In Photoshop, <span class="path">Window › Character</span>. Space after paragraphs and first-line indents are in the <span class="path">Paragraph</span> panel.</p>
+
+
+<h2 id="try-readability">Try it: line length, size, and leading for web body text</h2>
+
+<section class="demo" aria-labelledby="try-readability">
+  <p>This demo is set up for <b>body text on a web page</b>. The notes use the web ranges: 50–75 characters per line, 16–22 px, and leading of 1.4–1.6 times the text size. Change the settings and read the paragraph each time.</p>
+  <p>Print works the same way: line length, size, and leading still have to work together. Only the numbers change. Use the print ranges above: 66–80 characters for a book page or 40–60 for a column, body copy at 9–11 pt for serif or 8–10 pt for sans serif (see <a href="#print-sizes">Print sizes</a>), and leading of 120–150% of the text size.</p>
+  <div class="demo-row">
+    <label for="r-len">Line length: <span class="value" id="r-len-out"></span></label>
+    <input type="range" id="r-len" min="20" max="110" step="1" value="65">
+    <p class="effect-note"><b>Line length:</b> <span id="r-len-note"></span></p>
+  </div>
+  <div class="demo-row">
+    <label for="r-size">Text size: <span class="value" id="r-size-out"></span></label>
+    <input type="range" id="r-size" min="12" max="28" step="1" value="17">
+    <p class="effect-note"><b>Size:</b> <span id="r-size-note"></span></p>
+  </div>
+  <div class="demo-row">
+    <label for="r-lead">Leading (line spacing): <span class="value" id="r-lead-out"></span></label>
+    <input type="range" id="r-lead" min="1" max="2.2" step="0.05" value="1.5">
+    <p class="effect-note"><b>Leading:</b> <span id="r-lead-note"></span></p>
+  </div>
+  <p class="effect-note read-together" id="r-together" aria-live="polite" hidden></p>
+  <div class="read-box">
+    <p id="r-sample" class="read-sample">Every spring, barn swallows return to the ballpark before the players do. They build their nests under the grandstand roof, where the beams keep the rain off, and they hunt over the outfield grass at dusk. Fans who stay for the late innings can watch them sweep low across the infield, catching the insects that rise from the turf under the lights. The grounds crew leaves the nests alone. Swallows are protected by federal law, and most people at the park are happy to share it with them. By August the young birds are flying too, and by the last home game of the season, the whole colony has left for South America.</p>
+  </div>
+</section>
 
 
 <h2 id="alignment">Alignment</h2>
@@ -470,6 +499,85 @@
   <div class="inner">School of Journalism and Mass Communication</div>
 </footer>
 
+<script>
+/* Readability demo (Type › Line length) */
+(function () {
+  var box = document.getElementById("r-sample");
+  if (!box) return;
+  function $(id) { return document.getElementById(id); }
+  var words = box.textContent.trim().split(/\s+/);
+  box.textContent = "";
+  words.forEach(function (w, i) {
+    var sp = document.createElement("span"); sp.textContent = w; box.appendChild(sp);
+    if (i < words.length - 1) box.appendChild(document.createTextNode(" "));
+  });
+  var spans = box.querySelectorAll("span");
+
+  function perLine() {                       // average characters (with spaces) in each full line
+    var lines = [], top = null, n = -1;
+    spans.forEach(function (s) {
+      if (s.offsetTop !== top) { top = s.offsetTop; lines.push(0); n++; } else lines[n] += 1;
+      lines[n] += s.textContent.length;
+    });
+    if (lines.length > 1) lines.pop();       // the last line is usually short
+    var sum = lines.reduce(function (a, b) { return a + b; }, 0);
+    return Math.round(sum / lines.length);
+  }
+  function lenNote(n) {
+    if (n < 30) return "Very short. Phrases break apart and the right edge gets very ragged.";
+    if (n < 45) return "Short. Right for a phone screen or a narrow column, but choppy on a desktop.";
+    if (n < 50) return "A little short for an article on a desktop (50–75 characters).";
+    if (n <= 75) return "In the range for an article on a screen (50–75 characters).";
+    if (n <= 80) return "Long for a screen. It would be fine on a printed book page (66–80 characters).";
+    if (n <= 95) return "Too long. The eye starts to lose its place on the way back to the next line.";
+    return "Far too long. Readers skip lines or read the same line twice.";
+  }
+  function sizeNote(px) {
+    if (px < 14) return "Too small for body text. Sizes this small are only for short labels, credits, and fine print. Nothing goes under 12 px.";
+    if (px < 16) return "Small. Right for captions and credits (14–16 px), small for body text.";
+    if (px === 16) return "The browser default and the most common body size.";
+    if (px < 18) return "In the range for body text (16–22 px).";
+    if (px <= 20) return "Comfortable for long reads, which often use 18–20 px.";
+    if (px <= 22) return "Large, but still in the range for body text (16–22 px).";
+    return "Bigger than body text. This is subhead size (22–24 px desktop) or larger.";
+  }
+  function leadNote(l) {
+    if (l < 1.1) return "Too tight. Lines crowd into each other, and letters like g and h nearly touch.";
+    if (l < 1.2) return "Tight. Fine for a large headline, too tight for body text.";
+    if (l < 1.4) return "In the range for print body copy (1.2–1.5), but a little tight on a screen.";
+    if (l <= 1.6) return "In the range for body text on a screen (1.4–1.6 times the text size).";
+    if (l <= 1.85) return "Loose. The lines start to look like separate stripes.";
+    return "Too loose. The paragraph falls apart into single lines.";
+  }
+  var ruler = document.createElement("span");   // measures the paragraph's average character width
+  ruler.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+  ruler.textContent = words.join(" ");
+  box.parentNode.appendChild(ruler);
+
+  function render() {
+    var want = +$("r-len").value, px = +$("r-size").value, lead = +$("r-lead").value;
+    box.style.fontSize = ruler.style.fontSize = px + "px";
+    box.style.lineHeight = lead;
+    var perChar = ruler.getBoundingClientRect().width / ruler.textContent.length;
+    box.style.maxWidth = Math.ceil(want * perChar) + "px";
+    var n = perLine();
+    var tooNarrow = box.getBoundingClientRect().width + 1 < want * perChar;
+    $("r-len-out").textContent = "about " + n + " characters per line" + (tooNarrow ? " (as wide as your screen allows. Make the text smaller to see longer lines.)" : "");
+    $("r-size-out").textContent = px + " px";
+    $("r-lead-out").textContent = lead.toFixed(2).replace(/0$/, "") + " times the text size";
+    $("r-len-note").textContent = lenNote(n);
+    $("r-size-note").textContent = sizeNote(px);
+    $("r-lead-note").textContent = leadNote(lead);
+    var t = $("r-together"), msg = "";
+    if (n > 75 && lead < 1.5) msg = "Together: long lines need more leading, so the eye can find the start of the next line. Open up the leading or shorten the lines.";
+    else if (n < 45 && lead > 1.6) msg = "Together: short lines need less leading. With this much space, the lines don't hold together as a paragraph.";
+    t.textContent = msg; t.hidden = !msg;
+  }
+  ["r-len", "r-size", "r-lead"].forEach(function (id) { $(id).addEventListener("input", render); });
+  window.addEventListener("resize", render);
+  render();
+})();
+</script>
 <script src="toc.js"></script>
 </body>
 </html>

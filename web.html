@@ -49,6 +49,7 @@
     <li><a href="#writing">Writing for the web</a></li>
     <li><a href="#share">Share previews</a></li>
     <li><a href="#accessibility">Accessibility</a></li>
+    <li><a href="#contrast-checker">Try it: contrast checker</a></li>
     <li><a href="#publishing">Before you publish</a></li>
     <li><a href="#quick-answers">Quick answers</a></li>
   </ol>
@@ -433,10 +434,11 @@ p {
   <li><b>Text in images</b> isn't readable by screen readers or search. Put important words in the page text, or in the alt text.</li>
   <li><b>Contrast:</b> text needs enough contrast with its background for people with low vision, and for anyone reading in bright sun.
     <ul>
-      <li>Normal text: at least 4.5 to 1.</li>
-      <li>Large text (about 24 px, or 19 px bold) and important graphic shapes, such as chart lines, icons, and button edges: at least 3 to 1.</li>
+      <li>Normal text: at least 4.5 to 1. This is regular text below 24 px, or bold text below 18.66 px.</li>
+      <li>Large text: at least 3 to 1. This is regular text 24 px or larger, or bold text 18.66 px or larger. (WCAG sets these as 18 pt and 14 pt bold.)</li>
+      <li>Important graphic shapes, such as chart lines, icons, and button edges: at least 3 to 1.</li>
     </ul>
-    Check with a contrast checker: search "WebAIM contrast checker" and paste in both hex codes.</li>
+    Check your colors with the <a href="#contrast-checker">contrast checker</a> below, or search "WebAIM contrast checker" and paste in both hex codes.</li>
   <li><b>Don't use color alone</b> to carry meaning. About 1 in 12 men has some form of color blindness. Underline links in body text. If a chart or map uses red and green to show a difference, add labels, patterns, or a second difference such as light versus dark.</li>
   <li><b>Headings in order</b> and <b>link text that says where it goes</b>. See <a href="#writing">Writing for the web</a>.</li>
   <li><b>Reflow:</b> at 320 px wide, or zoomed to 400% on a laptop, the page should read without scrolling sideways. Text zoomed to 200% shouldn't get cut off or overlap.</li>
@@ -445,6 +447,62 @@ p {
   <li><b>Embedded charts and maps</b> need a text version of the main point, in the text around them or in the alt text.</li>
 </ul>
 <p>Automatic checkers such as WAVE find missing alt text, low contrast, and skipped headings. They can't tell whether alt text is accurate or a page makes sense when read aloud. Check those yourself.</p>
+
+
+<h2 id="contrast-checker">Try it: contrast checker</h2>
+
+<section class="demo" aria-labelledby="contrast-checker">
+  <p>Pick a text color and a background color, or type their hex codes. The checker gives the contrast ratio and whether the pair passes WCAG AA for normal text, large text, and graphic shapes.</p>
+  <div class="cc-presets" role="group" aria-label="Example color pairs">
+    <button type="button" data-fg="#000000" data-bg="#ffffff">Black on white</button>
+    <button type="button" data-fg="#767676" data-bg="#ffffff">Gray on white</button>
+    <button type="button" data-fg="#999999" data-bg="#ffffff">Light gray on white</button>
+    <button type="button" data-fg="#ffcd00" data-bg="#ffffff">Gold on white</button>
+    <button type="button" data-fg="#000000" data-bg="#ffcd00">Black on gold</button>
+    <button type="button" data-fg="#ffffff" data-bg="#ffcd00">White on gold</button>
+    <button type="button" data-fg="#c8102e" data-bg="#000000">Red on black</button>
+  </div>
+  <div class="cc-pickers">
+    <div class="cc-pick">
+      <label for="cc-fg-hex">Text color</label>
+      <div class="cc-inputs">
+        <input type="color" id="cc-fg" value="#767676" aria-label="Text color picker">
+        <input type="text" id="cc-fg-hex" value="#767676" spellcheck="false" autocomplete="off" maxlength="7">
+      </div>
+    </div>
+    <button type="button" id="cc-swap" class="cc-swap">Swap</button>
+    <div class="cc-pick">
+      <label for="cc-bg-hex">Background color</label>
+      <div class="cc-inputs">
+        <input type="color" id="cc-bg" value="#ffffff" aria-label="Background color picker">
+        <input type="text" id="cc-bg-hex" value="#ffffff" spellcheck="false" autocomplete="off" maxlength="7">
+      </div>
+    </div>
+  </div>
+  <p class="cc-error" id="cc-error" role="alert" hidden>Type a hex code with 3 or 6 characters, such as #fff or #1a1a1a.</p>
+  <div class="cc-preview" id="cc-preview">
+    <p class="cc-large">Hawks win in extra innings</p>
+    <p class="cc-normal">A two-out single in the 11th inning brought the winning run home. Most of the crowd had stayed, and the cardinals nesting above the bullpen stayed too.</p>
+    <div class="cc-shapes" aria-hidden="true">
+      <span class="cc-button">Read more</span>
+      <svg viewBox="0 0 120 40" width="120" height="40"><polyline points="4,34 30,22 54,28 80,10 116,16" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+    </div>
+  </div>
+  <div aria-live="polite">
+    <p class="cc-ratio">Contrast ratio: <b id="cc-ratio"></b></p>
+    <div class="table-wrap">
+    <table class="cc-results">
+      <thead><tr><th>Use</th><th>Needs</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Normal text: regular below 24 px, or bold below 18.66 px</td><td>4.5 to 1</td><td id="cc-normal"></td></tr>
+        <tr><td>Large text: regular 24 px or larger, or bold 18.66 px or larger</td><td>3 to 1</td><td id="cc-large"></td></tr>
+        <tr><td>Graphic shapes: chart lines, icons, button edges</td><td>3 to 1</td><td id="cc-shape"></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <p class="effect-note cc-key">Ratios run from 1 to 1 (no contrast, the same color) to 21 to 1 (black on white). The ratio is rounded down, so a pair shown at 4.5 to 1 really passes.</p>
+</section>
 
 
 <h2 id="publishing">Before you publish</h2>
@@ -493,6 +551,51 @@ p {
   <div class="inner">School of Journalism and Mass Communication</div>
 </footer>
 
+<script>
+/* Contrast checker (Web › Try it: contrast checker). Uses the WCAG 2 formula. */
+(function () {
+  var fg = document.getElementById("cc-fg");
+  if (!fg) return;
+  function $(id) { return document.getElementById(id); }
+  var bg = $("cc-bg"), fgHex = $("cc-fg-hex"), bgHex = $("cc-bg-hex");
+
+  function norm(v) {                          // "#abc", "abc", "#aabbcc" -> "#aabbcc", or null
+    v = v.trim().replace(/^#/, "").toLowerCase();
+    if (/^[0-9a-f]{3}$/.test(v)) v = v.replace(/(.)/g, "$1$1");
+    return /^[0-9a-f]{6}$/.test(v) ? "#" + v : null;
+  }
+  function lum(hex) {
+    return [1, 3, 5].map(function (i) {
+      var c = parseInt(hex.substr(i, 2), 16) / 255;
+      return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    }).reduce(function (sum, c, i) { return sum + c * [0.2126, 0.7152, 0.0722][i]; }, 0);
+  }
+  function ratio(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+  function result(id, r, need) {
+    var ok = r >= need, el = $(id);
+    el.textContent = ok ? "✓ Passes" : "✗ Fails";
+    el.className = ok ? "cc-pass" : "cc-fail";
+  }
+  function render() {
+    var f = norm(fgHex.value), b = norm(bgHex.value);
+    $("cc-error").hidden = !!(f && b);
+    if (!f || !b) return;
+    fg.value = f; bg.value = b;
+    var p = $("cc-preview"); p.style.color = f; p.style.background = b;
+    var r = ratio(f, b), shown = Math.floor(r * 100) / 100;
+    $("cc-ratio").textContent = shown.toFixed(2).replace(/\.?0+$/, "") + " to 1";
+    result("cc-normal", r, 4.5); result("cc-large", r, 3); result("cc-shape", r, 3);
+  }
+  fg.addEventListener("input", function () { fgHex.value = fg.value; render(); });
+  bg.addEventListener("input", function () { bgHex.value = bg.value; render(); });
+  [fgHex, bgHex].forEach(function (el) { el.addEventListener("input", render); el.addEventListener("blur", function () { var n = norm(el.value); if (n) el.value = n; }); });
+  $("cc-swap").addEventListener("click", function () { var t = fgHex.value; fgHex.value = bgHex.value; bgHex.value = t; render(); });
+  document.querySelectorAll(".cc-presets button").forEach(function (btn) {
+    btn.addEventListener("click", function () { fgHex.value = btn.getAttribute("data-fg"); bgHex.value = btn.getAttribute("data-bg"); render(); });
+  });
+  render();
+})();
+</script>
 <script src="toc.js"></script>
 </body>
 </html>
