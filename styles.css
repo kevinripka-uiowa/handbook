@@ -406,3 +406,37 @@ pre.folders {
 .vw-under { text-decoration: underline; text-underline-offset: 3px; }
 .vw-enclose { background: var(--line); padding: 0 0.3rem; }
 .vw-dodge { font-size: 0.8em; font-weight: 300; }
+
+/* Human-in-the-loop process diagram (ai.html) */
+.hitl { margin: 1.5rem 0 2rem; }
+.hitl-bar { display: flex; gap: 3px; margin-bottom: 1rem; font-size: 0.8rem; font-weight: 700; line-height: 1.2; text-align: center; }
+.hitl-bar span { padding: 0.5rem 0.25rem; min-width: 0; }
+.hitl-bar-you { background: var(--accent); color: #1a1a1a; }
+.hitl-bar-ai { background: var(--figure-fill); color: var(--text); border: 2px dashed var(--muted); }
+.hitl-steps, .hitl-steps ol { margin: 0; }
+.hitl-steps { list-style: none; padding: 0; }
+.hitl-phase { background: var(--soft); border-left: 6px solid var(--accent); padding: 0.75rem 1rem 0.5rem; position: relative; }
+.hitl-phase + .hitl-phase { margin-top: 1.75rem; }
+.hitl-phase + .hitl-phase::before { content: "↓"; position: absolute; top: -1.6rem; left: 1.5rem; color: var(--muted); font-size: 1.2rem; line-height: 1; }
+.hitl-phase-ai { background: var(--bg); border: 2px dashed var(--muted); border-left: 6px dashed var(--muted); }
+.hitl-phase-title { font-weight: 700; margin: 0 0 0.5rem; }
+.hitl-phase ol { padding-left: 1.5rem; }
+.hitl-phase ol li { margin-bottom: 0.5rem; }
+.hitl-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.1rem 0.5rem; margin-right: 0.35rem; border-radius: 3px; vertical-align: 0.1em; }
+.hitl-tag-you { background: var(--accent); color: #1a1a1a; }
+.hitl-tag-ai { background: var(--figure-fill); color: var(--text); border: 1px dashed var(--muted); }
+.hitl-loop { margin: 0 0 0.5rem 1.5rem; font-weight: 700; color: var(--muted); }
+.hitl-loop span { font-size: 1.2rem; margin-right: 0.25rem; }
+.hitl figcaption { margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted); }
+.hitl-media td:first-child { font-weight: 700; }
+
+/* Learning-model equation (ai.html#friction) */
+.fr-eq { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 1rem 0 1.25rem; font-weight: 700; line-height: 1.25; }
+.fr-term { padding: 0.5rem 0.75rem; border: 2px solid var(--line); background: var(--soft); }
+.fr-friction { border-color: var(--accent); border-width: 3px; }
+.fr-result { background: var(--accent); border-color: var(--accent); color: #1a1a1a; }
+.fr-op { font-size: 1.4rem; color: var(--muted); }
+.fr-group { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+
+/* Red callout for a line that has to land (ai.html) */
+.callout-alert { border-left: 6px solid var(--alert); background: var(--soft); color: var(--alert); font-weight: 700; font-size: 1.1rem; padding: 0.75rem 1rem; margin: 1rem 0 1.5rem; }
