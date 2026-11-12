@@ -478,6 +478,18 @@ pre.folders {
   .nav-group details > ul { left: 0; right: 0; top: 100%; width: auto; max-width: none; }
 }
 
+/* Flyout: a sub-menu inside a dropdown (Manuals and tutorials) */
+.nav-sub { position: relative; }
+.nav-sub summary { list-style: none; cursor: pointer; color: #ffffff; display: block; padding: 0.4rem 0.9rem; }
+.nav-sub summary::-webkit-details-marker { display: none; }
+.nav-sub summary::after { content: " \25B8"; font-size: 0.8em; }
+.nav-sub details[open] summary::after { content: " \25C2"; }
+.nav-sub summary:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+.nav-sub details > ul { top: -0.5rem; left: 100%; margin-left: 0.25rem; max-width: 20rem; border-top: 0; border-left: 4px solid var(--accent); }
+@media (max-width: 700px) {
+  .nav-sub details > ul { position: static; box-shadow: none; border-left: 0; padding: 0 0 0 0.9rem; }
+}
+
 /* Placeholder pages */
 .placeholder-note { border: 2px dashed var(--line); background: var(--soft); padding: 0.75rem 1rem; }
 .placeholder-text { color: var(--muted); font-style: italic; }
