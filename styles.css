@@ -421,8 +421,8 @@ pre.folders {
 .hitl-phase + .hitl-phase::before { content: "↓"; position: absolute; top: -1.6rem; left: 1.5rem; color: var(--muted); font-size: 1.2rem; line-height: 1; }
 .hitl-phase-ai { background: var(--bg); border: 2px dashed var(--muted); border-left: 6px dashed var(--muted); }
 .hitl-phase-title { font-weight: 700; margin: 0 0 0.5rem; }
-.hitl-phase ol { padding-left: 1.5rem; }
-.hitl-phase ol li { margin-bottom: 0.5rem; }
+.hitl-phase ol, .hitl-phase ul { padding-left: 1.5rem; }
+.hitl-phase ol li, .hitl-phase ul li { margin-bottom: 0.5rem; }
 .hitl-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.1rem 0.5rem; margin-right: 0.35rem; border-radius: 3px; vertical-align: 0.1em; }
 .hitl-tag-you { background: var(--accent); color: #1a1a1a; }
 .hitl-tag-ai { background: var(--figure-fill); color: var(--text); border: 1px dashed var(--muted); }
